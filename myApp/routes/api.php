@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\Admin\FarmController;
+use App\Http\Controllers\Api\Admin\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,18 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+// Route::post('/register', [AuthController::class, 'register']);
+
+// users
+Route::get('/users', [UserController::class, 'index']);
+Route::delete('/deleteusers/{id}', [UserController::class, 'destroy']);
+Route::put('/editUser/{id}', [UserController::class, 'update']);
+Route::post('/createUser', [UserController::class, 'store']);
+
+
+// farms
+Route::get('/farms', [FarmController::class, 'index']);
+Route::delete('/deleteFarm/{id}', [FarmController::class, 'destroy']);
+Route::put('/editFarm/{id}', [FarmController::class, 'update']);
+Route::get('/createFarm', [FarmController::class, 'create']);
+Route::post('/insertFarm', [FarmController::class, 'store']);
