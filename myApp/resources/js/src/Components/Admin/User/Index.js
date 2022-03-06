@@ -32,7 +32,7 @@ const User = () => {
     // console.log(user);
     return (
         <div >
-            <h1>User Details</h1>
+            <h1>Users Details</h1>
             <Link to="/createUser">
             <div className='addUser'>
             <button >Add User</button>

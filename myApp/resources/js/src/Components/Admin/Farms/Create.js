@@ -4,7 +4,7 @@ import swal from 'sweetalert';
 import '../User/User.css'
 
 const CreateFarm = () => {
-
+const [Image,setImage]=useState('img/noimg.png')
 
     const [Governorate, setGovernorate] = useState('');
 
@@ -21,14 +21,20 @@ const CreateFarm = () => {
 
     let navigate = useNavigate()
     const [inputs, setInputs] = useState([]);
-
+// if(inputs){
+//    let img=inputs.image
+// console.log(img);
+// }
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
 
+
         setInputs(values => ({ ...values, [name]: value }));
 
-
+        if(event.target.name == 'image') {
+            setImage('img/'+event.target.files[0].name);
+        }
 
     }
     const handleSubmit = (event) => {
@@ -37,6 +43,15 @@ const CreateFarm = () => {
         axios.post('http://127.0.0.1:8000/api/insertFarm', inputs);
         navigate('/Farms')
     }
+
+// **************************
+
+
+
+
+// **************************
+
+
 
 
     return (
@@ -69,9 +84,12 @@ const CreateFarm = () => {
                     {/* <input onChange={handleChange} type="text" id="lname" name="description" placeholder="Your last name.." /> */}
                     <textarea onChange={handleChange} name="description" cols="30" rows="4" placeholder="Add description" required />
                     <label htmlFor="country">Image</label><br /><br />
-                    <input accept='image/*' onChange={handleChange} type="file" id="lname" name="image" placeholder="Your last name.." required />
 
-                    <br /><br /><img src={Image} /><br /><br />
+
+                    <input accept='image/*' onChange={handleChange} type="file" id="fileinput" name="image" placeholder="Your last name.." required />
+
+                    <br /><br /><img  width={200} src={Image} /><br /><br />
+
 
                     <input type="submit" value="Submit" />
                 </form>

@@ -95,13 +95,17 @@ class FarmController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = Farm::findOrFail($id);
+        $farm = Farm::findOrFail($id);
 
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->phone = $request->input('phone');
-        $user->role = $request->input('role') == True ? '1' : '0';
-        $user->save();
+        $farm->farmName = $request->input('farmName');
+        $farm->governorateID = $request->input('governorateID');
+        $farm->phone = $request->input('phone');
+        $farm->price = $request->input('price');
+        $farm->Time = $request->input('Time');
+        $farm->description = $request->input('description');
+
+        $farm->image = substr($request->input('image'),12);
+        $farm->save();
     }
 
     /**

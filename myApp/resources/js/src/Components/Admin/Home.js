@@ -7,6 +7,7 @@ import Farm from "./Farms/Index";
 import EditUser from "./User/edit";
 import CreateUser from "./User/Create";
 import CreateFarm from "./Farms/Create";
+import EditFarm from "./Farms/Edit";
 const Home = () => {
 
 
@@ -83,7 +84,7 @@ const Home = () => {
                         <Route path='editUser' element={<EditUser />} />
                         <Route path='createUser' element={<CreateUser />} />
                         <Route path='createFarm' element={<CreateFarm />} />
-
+                        <Route path='editFarm' element={<EditFarm />} />
                     </Routes>
                 </div>
             </main>

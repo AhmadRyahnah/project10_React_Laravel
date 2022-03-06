@@ -25,18 +25,18 @@ const Farm = () => {
     }
 
 
-    const EditClick = (user) => {
+    const EditClick = (Farm) => {
         // e.preventDefault();
         // console.log(props);
-        localStorage.setItem('editUser', JSON.stringify(user))
+        localStorage.setItem('editFarm', JSON.stringify(Farm))
     }
     // console.log(user);
     return (
         <div >
-            <h1>User Details</h1>
+            <h1>Farms Details</h1>
             <Link to="/createFarm">
                 <div className='addUser'>
-                    <button >Add User</button>
+                    <button >Add Farm</button>
                 </div>
             </Link>
             <br /><br />
@@ -69,7 +69,7 @@ const Farm = () => {
                             <td><img src={'img/'+Farm.image} width='100' /></td>
                             <td>{Farm.Time}</td>
 
-                            <td><Link to='/editUser'>
+                            <td><Link to='/editFarm'>
                                 <button variant="danger" onClick={() => EditClick(Farm)}>
                                     Edit
                                 </button></Link></td>
