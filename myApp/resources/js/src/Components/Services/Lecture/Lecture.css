@@ -1,0 +1,21 @@
+.Lecture{
+  width:80%;
+  display: grid;
+  grid-template-areas: "cardContainer cardContainer cardContainer";
+  justify-content: center;
+  margin: 0 auto;
+}
+@media screen and (max-width:1000px){
+  .Lecture{
+    
+      grid-template-areas: " cardContainer cardContainer";
+    
+  }
+}
+@media screen and (max-width:730px){
+  .Lecture{
+    
+      grid-template-areas: "cardContainer";
+    
+  }
+}

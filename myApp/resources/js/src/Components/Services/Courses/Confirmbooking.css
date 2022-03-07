@@ -1,0 +1,45 @@
+.ConfirmBooking {
+  width: 100%;
+  display: grid;
+  grid-template-areas: " ConfirmCard  Calender Calender";
+}
+.ConfirmCard {
+  width: 70%;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4em auto;
+  border-radius: 10px;
+  box-shadow: black 0 0 10px;
+}
+.ConfirmCard img {
+  margin: 1em 0;
+  width: 90%;
+}
+.ConfirmCard h2,
+.ConfirmCard h5,
+.ConfirmCard h4 {
+  margin-bottom: 1em;
+  text-align: center;
+  width: 80%;
+}
+.ConfirmBooking .ConfirmCalender {
+  width: 100%;
+  margin: auto;
+}
+@media screen and (max-width: 600px) {
+  .ConfirmBooking {
+    grid-template-areas:
+      " ConfirmCard "
+      " Calender";
+  }
+  .ConfirmCard {
+    width: 90%;
+  }
+  .ConfirmBooking .ConfirmCalender {
+    width: 90%;
+    margin:0 auto 2em;
+  }
+}

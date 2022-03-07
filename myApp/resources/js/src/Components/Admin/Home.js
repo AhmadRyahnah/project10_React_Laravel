@@ -12,7 +12,8 @@ import Governorate from "./Governorate/Index";
 import CreateGovernorate from "./Governorate/Create";
 import EditGovernorate from "./Governorate/Edit";
 import ViewFarm from "./Governorate/ViewFarms";
-const Home = () => {
+import ErrorPage from "../404/404";
+const HomeAdmin = () => {
 
 
     return (
@@ -106,6 +107,9 @@ const Home = () => {
                         <Route path='createGovernorate' element={<CreateGovernorate />} />
                         <Route path='editGovernorate' element={<EditGovernorate />} />
                         <Route path='viewFarms' element={<ViewFarm />} />
+
+
+                        <Route path='*' element={<ErrorPage />}/>
                     </Routes>
                 </div>
             </main>
@@ -114,4 +118,4 @@ const Home = () => {
 
     )
 }
-export default Home;
+export default HomeAdmin;

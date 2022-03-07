@@ -1,0 +1,44 @@
+.cardContainer {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+  border-radius: 10px;
+  box-shadow: black 0 0 10px;
+}
+.cardContainer img {
+  margin: 1em 0;
+  /* max-width: 250px; */
+  width: 300px;
+  height: 180px;
+}
+.cardContainer h5 {
+  width: 85%;
+  text-align: center;
+  margin: 1em 0;
+}
+.cardContainer h4 {
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+}
+.cardContainer .AddBtn {
+  margin-bottom: 1.5em;
+  width: 175px;
+  height: 40px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.cardContainer .CartBtn {
+  margin-bottom: 1.5em;
+  width: 175px;
+  height: 40px;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: #36a420;
+  color: white;
+  font-size: 1rem;
+  border: #36a420;
+}

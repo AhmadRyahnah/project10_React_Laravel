@@ -1,0 +1,138 @@
+.ContHeader{
+  min-height: 62vh;
+}
+.formAndLecture{
+  min-height: 70vh;
+}
+
+.header {
+  margin-bottom: 5em;
+}
+
+.CheckoutContainer {
+  background-color: white;
+  display: grid;
+  grid-template-areas: " one two";
+  height: 100%;
+}
+
+.checkoutCard .Card {
+  width: 80%;
+  background-color: whitesmoke;
+  margin: 2em auto;
+  box-shadow: black 0 0 5px;
+  display: grid;
+  grid-template-areas: " one two three four";
+  height: 100px;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+}
+.checkoutCard .Card button{
+height: 40px;
+width: 100px;
+background-color: #ff000094;
+color: white;
+border: none;
+border-radius: 7px;
+font-size: 1.05rem;
+cursor: pointer;
+}
+
+.checkoutCard .Card img {
+  height: 90px;
+}
+.formAndLecture h1 {
+  height: 56vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formAndLecture h1 button {
+  margin-left: 1em;
+  width: 175px;
+  height: 50px;
+  border-radius: 7px;
+  background-color: #36a420;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1.1rem;
+}
+.formChecout {
+  position: fixed;
+  left: 70%;
+  top: 120px;
+
+}
+.checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.checkout input {
+  padding-left: 1em;
+  display: block;
+  width: 250px;
+  border: none;
+  background-color: #e3f0ff;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  line-height: 1;
+  transition: box-shadow 0.22s ease-out;
+  height: 3rem;
+  margin: 0.8em 0;
+}
+.checkout p {
+  width: 300px;
+  text-align: center;
+}
+.checkout .Payment,.checkout .remove {
+  border-radius: 7px;
+  border: none;
+  color: white;
+  background-color: #36a420;
+  width: 175px;
+  height: 40px;
+  font-size: 1rem;
+  margin-top: 2em;
+  cursor: pointer;
+
+}
+.checkout .remove{
+  background-color: #FB6767;
+}
+@media screen and (max-width: 900px) {
+  .CheckoutContainer {
+    grid-template-areas:
+      " one "
+      "two";
+  }
+  .formChecout {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 2em auto;
+  }
+  .checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+
+  .checkoutCard .Card img {
+    height: 70px;
+    
+  }
+  .checkoutCard .Card{
+  width: 95%;
+}
+
+}

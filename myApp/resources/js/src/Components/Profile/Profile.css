@@ -1,0 +1,98 @@
+.profileCont{
+  min-height: 62vh;
+}
+
+.header {
+  text-align: center;
+  margin: 2em auto 0;
+}
+.profileContainer {
+  width: 50%;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  margin: 2em auto;
+}
+.userContainer {
+  background-color: #166fe5;
+  width: 100%;
+  text-align: center;
+  color: white;
+  border-radius: 7px;
+}
+.detailsUser p {
+  margin: 1.2em 0;
+}
+.BookingsContaiiner {
+  margin: 2em 0;
+  width: 70%;
+}
+.customProfile {
+  margin-bottom: 1.2em;
+
+}
+
+.Bookings h3{
+margin: 1.5em auto;
+text-align: center;
+
+}
+.customProfile table{
+  width: 100%;
+  text-align: center;
+}
+th {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid black;
+}
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+tr:nth-child(even) {background-color: white;}
+
+
+
+@media screen and (max-width:950px) {
+  .profileContainer {
+    width: 70%;
+    
+  }
+}
+
+@media screen and (max-width:670px) {
+  .profileContainer {
+    width: 85%;
+    
+  }
+  .BookingsContaiiner {
+    margin: 2em 0;
+    width: 100%;
+  }
+}
+@media screen and (max-width:385px) {
+  .profileContainer {
+    width: 98%;
+    
+  }
+  .BookingsContaiiner {
+    margin: 2em 0;
+    width: 100%;
+  }
+
+  th {
+    padding: 12px 0;
+    text-align: left;
+    border-bottom: 1px solid black;
+  }
+  td {
+    padding: 8px 0;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+}

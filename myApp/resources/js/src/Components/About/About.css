@@ -1,0 +1,36 @@
+.About h1{
+ text-align: center;
+ margin: 2em 0;
+}
+.aboutContainer{
+    width: 80%;
+  display: grid;
+  grid-template-areas: 'textAbout imgAbout';
+  margin: 4em auto;
+}
+.aboutContainer h1{
+    margin-bottom: 4em;
+  
+}
+.textAbout{
+    width: 90%;
+    margin-right: 2em;
+    line-height: 2;
+}
+.textAbout h2{
+    margin-bottom: 1.5em;
+ 
+}
+.imgAbout img{
+   width: 100%;
+    
+}
+
+@media screen and (max-width:900px) {
+    .aboutContainer{
+        width: 90%;
+      display: grid;
+      grid-template-areas: 'textAbout ''imgAbout';
+      margin: 4em auto;
+    }
+}
