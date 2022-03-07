@@ -8,6 +8,10 @@ import EditUser from "./User/edit";
 import CreateUser from "./User/Create";
 import CreateFarm from "./Farms/Create";
 import EditFarm from "./Farms/Edit";
+import Governorate from "./Governorate/Index";
+import CreateGovernorate from "./Governorate/Create";
+import EditGovernorate from "./Governorate/Edit";
+import ViewGovernorate from "./Governorate/ViewFarms";
 const Home = () => {
 
 
@@ -66,6 +70,13 @@ const Home = () => {
 
                                 </Link>
                             </li>
+                            <li className="sidebar-dropdown">
+                                <Link to="Governorates">
+                                    <i className="fa fa-tachometer-alt"></i>
+                                    <span>Governorates Dashboard</span>
+
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                     {/* sidebar-menu  */}
@@ -79,12 +90,22 @@ const Home = () => {
                     {/* <h1>ryahnah</h1> */}
                     {/* editUser */}
                     <Routes>
+
+                        {/* users */}
                         <Route path='Users' element={<User />} />
-                        <Route path='Farms' element={<Farm />} />
-                        <Route path='editUser' element={<EditUser />} />
                         <Route path='createUser' element={<CreateUser />} />
+                        <Route path='editUser' element={<EditUser />} />
+
+                        {/* farms */}
+                        <Route path='Farms' element={<Farm />} />
                         <Route path='createFarm' element={<CreateFarm />} />
                         <Route path='editFarm' element={<EditFarm />} />
+
+                        {/* Governorate */}
+                        <Route path='Governorates' element={<Governorate />} />
+                        <Route path='createGovernorate' element={<CreateGovernorate />} />
+                        <Route path='editGovernorate' element={<EditGovernorate />} />
+                        <Route path='viewFarms' element={<ViewGovernorate />} />
                     </Routes>
                 </div>
             </main>

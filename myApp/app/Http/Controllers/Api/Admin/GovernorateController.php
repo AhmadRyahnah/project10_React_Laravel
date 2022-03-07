@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\Farm;
 use App\Models\Governorate;
 use Illuminate\Http\Request;
 
@@ -17,6 +17,9 @@ class GovernorateController extends Controller
     public function index()
     {
         //
+        $Governorates = Governorate::all();
+
+        return $Governorates;
     }
 
     /**
@@ -46,9 +49,11 @@ class GovernorateController extends Controller
      * @param  \App\Models\Governorate  $governorate
      * @return \Illuminate\Http\Response
      */
-    public function show(Governorate $governorate)
+    public function show($governorateID)
     {
-        //
+        //governorateID
+        $farms = governorate::find(2)->farms;
+        return$farms;
     }
 
     /**
@@ -80,8 +85,9 @@ class GovernorateController extends Controller
      * @param  \App\Models\Governorate  $governorate
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Governorate $governorate)
+    public function destroy($id)
     {
-        //
+        $Governorate = Governorate::find($id);
+        $Governorate->delete();
     }
 }

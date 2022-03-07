@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Admin\FarmController;
+use App\Http\Controllers\Api\Admin\GovernorateController;
 use App\Http\Controllers\Api\Admin\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +35,12 @@ Route::delete('/deleteFarm/{id}', [FarmController::class, 'destroy']);
 Route::put('/editFarm/{id}', [FarmController::class, 'update']);
 Route::get('/createFarm', [FarmController::class, 'create']);
 Route::post('/insertFarm', [FarmController::class, 'store']);
+
+// Governorates
+
+Route::get('/Governorates', [GovernorateController::class, 'index']);
+Route::delete('/deleteGovernorate/{id}', [GovernorateController::class, 'destroy']);
+Route::put('/editGovernorate/{id}', [GovernorateController::class, 'update']);
+Route::get('/createGovernorate', [GovernorateController::class, 'create']);
+Route::post('/insertGovernorate', [GovernorateController::class, 'store']);
+Route::get('/showFarm/{governorateID}', [GovernorateController::class, 'show']);

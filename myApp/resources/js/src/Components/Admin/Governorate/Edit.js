@@ -1,9 +1,9 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 import '../User/User.css'
 
-const EditFarm = () => {
+const EditGovernorate = () => {
 
 
 
@@ -60,8 +60,7 @@ const EditFarm = () => {
 
 
     return (
-        <Fragment key={Farm.id}>
-
+        <div>
             <h1>Edit Farm</h1>
             <div className="container">
 
@@ -103,8 +102,8 @@ const EditFarm = () => {
                     <input type="submit" value="Submit" />
                 </form>
             </div>
-       </Fragment>
+        </div>
     )
 
 }
-export default EditFarm;
+export default EditGovernorate;
