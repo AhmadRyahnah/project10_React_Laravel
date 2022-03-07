@@ -15,7 +15,7 @@ class Farm extends Model
         'price',
         'image',
         'Time',
-        'governorateID',
+        'governorate_id',
         // 'userID'
     ];
 

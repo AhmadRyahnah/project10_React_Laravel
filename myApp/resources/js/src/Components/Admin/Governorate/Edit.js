@@ -69,8 +69,8 @@ const EditGovernorate = () => {
                     <input value={Farm.farmName} onChange={handleChange} type="text" name="farmName" placeholder="Your name.." required />
 
                     <label htmlFor="lname">Governorate Name</label>
-                    <select name='governorateID' onChange={handleChange} required>
-                        <option value={Farm.governorateID}>{Farm.governorateName}</option>
+                    <select name='governorate_id' onChange={handleChange} required>
+                        <option value={Farm.governorate_id}>{Farm.governorateName}</option>
                         {Governorate ? Governorate.map(item =>
                             <option value={item.id}>{item.governorateName}</option>) : null}
                     </select>

@@ -18,7 +18,7 @@ class FarmController extends Controller
     public function index()
     {
 
-        $farms = Governorate::join('farms', 'farms.governorateID', '=', 'governorates.id')
+        $farms = Governorate::join('farms', 'farms.governorate_id', '=', 'governorates.id')
         ->get(['*']);
 
     return $farms;
@@ -46,7 +46,7 @@ class FarmController extends Controller
 
         $farm = new Farm();
         $farm->farmName = $request->input('farmName');
-        $farm->governorateID = $request->input('governorateID');
+        $farm->governorate_id = $request->input('governorate_id');
         $farm->phone = $request->input('phone');
         $farm->price = $request->input('price');
         $farm->Time = $request->input('Time');
@@ -98,7 +98,7 @@ class FarmController extends Controller
         $farm = Farm::findOrFail($id);
 
         $farm->farmName = $request->input('farmName');
-        $farm->governorateID = $request->input('governorateID');
+        $farm->governorate_id = $request->input('governorate_id');
         $farm->phone = $request->input('phone');
         $farm->price = $request->input('price');
         $farm->Time = $request->input('Time');

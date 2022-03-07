@@ -2,17 +2,24 @@ import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import './Farm.css'
-const ViewGovernorate = () => {
+const ViewFarm = () => {
 
-    const [governorates, setgovernorates] = useState();
+
+
+
+
+    const governorate=JSON.parse(localStorage.getItem('governorate'));
+    const id=governorate.id
+    const name=governorate.governorateName
+    const [Farms, setFarms] = useState();
     const [deleted, setDeleted] = useState(0);
 
     // console.log(Farms);
     let i = 1;
     useEffect(async () => {
 
-        await axios.get("http://127.0.0.1:8000/api/governorates").then((response) => {
-            setgovernorates(response.data);
+        await axios.get("http://127.0.0.1:8000/api/showFarm/"+id).then((response) => {
+            setFarms(response.data);
             // console.log(response.date);
         });
     }, [deleted]);
@@ -25,10 +32,10 @@ const ViewGovernorate = () => {
     }
 
 
-    const EditClick = (governorate) => {
+    const EditClick = (Farm) => {
         // e.preventDefault();
         // console.log(props);
-        localStorage.setItem('editGovernorate', JSON.stringify(governorate))
+        localStorage.setItem('editFarm', JSON.stringify(Farm))
     }
     // console.log(user);
     return (
@@ -44,40 +51,37 @@ const ViewGovernorate = () => {
                 <thead>
                     <tr>
                         <th>#</th>
-
+                        <th>Name</th>
                         <th>Governorate</th>
-
-
+                        <th>Description</th>
+                        <th>Phone</th>
+                        <th>price</th>
                         <th>Image</th>
-                        <th>view Farms</th>
+                        <th>Time</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
-                {governorates ? governorates.map(governorate =>
+                {Farms ? Farms.map(Farm =>
 
 
                     <tbody>
                         <tr>
                             <td>{i++}</td>
+                            <td>{Farm.farmName}</td>
+                            <td>{name}</td>
+                            <td>{Farm.description}</td>
+                            <td>{Farm.phone}</td>
+                            <td>{Farm.price}</td>
+                            <td><img src={'img/'+Farm.image} width='100' /></td>
+                            <td>{Farm.Time}</td>
 
-                            <td>{governorate.governorateName}</td>
-
-                            <td><img src={'img/' + governorate.image} width='100' /></td>
-
-                            <td>
-                                <Link to='/editFarm/'>
-                                    <button variant="danger" onClick={() => viewClick(governorate.id)}>
-                                        view
-                                    </button>
-                                </Link>
-                            </td>
                             <td><Link to='/editFarm'>
-                                <button variant="danger" onClick={() => EditClick(governorate)}>
+                                <button variant="danger" onClick={() => EditClick(Farm)}>
                                     Edit
                                 </button></Link></td>
 
-                            <td> <button variant="danger" onClick={() => deleteProduct(governorate.id)}>
+                            <td> <button variant="danger" onClick={() => deleteProduct(Farm.id)}>
                                 Delete
                             </button></td>
 
@@ -91,4 +95,4 @@ const ViewGovernorate = () => {
     )
 
 }
-export default ViewGovernorate;
+export default ViewFarm;

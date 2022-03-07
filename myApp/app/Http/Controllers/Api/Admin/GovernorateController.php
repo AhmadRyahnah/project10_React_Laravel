@@ -49,11 +49,11 @@ class GovernorateController extends Controller
      * @param  \App\Models\Governorate  $governorate
      * @return \Illuminate\Http\Response
      */
-    public function show($governorateID)
+    public function show($governorate_id)
     {
-        //governorateID
-        $farms = governorate::find(2)->farms;
-        return$farms;
+        //governorate_id
+        $farms = governorate::find($governorate_id)->farms;
+        return $farms;
     }
 
     /**

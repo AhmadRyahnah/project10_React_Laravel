@@ -7,7 +7,7 @@ const EditFarm = () => {
 
 
 
-    const [Farm, setFarm] = useState(JSON.parse(localStorage.getItem('editFarm')));
+    const [Farm, setFarm] = useState(localStorage.getItem('editFarm')?JSON.parse(localStorage.getItem('editFarm')):[]);
 
     const [Image, setImage] = useState('img/' + Farm.image)
 
@@ -70,8 +70,8 @@ const EditFarm = () => {
                     <input value={Farm.farmName} onChange={handleChange} type="text" name="farmName" placeholder="Your name.." required />
 
                     <label htmlFor="lname">Governorate Name</label>
-                    <select name='governorateID' onChange={handleChange} required>
-                        <option value={Farm.governorateID}>{Farm.governorateName}</option>
+                    <select name='governorate_id' onChange={handleChange} required>
+                        <option value={Farm.governorate_id}>{Farm.governorateName}</option>
                         {Governorate ? Governorate.map(item =>
                             <option value={item.id}>{item.governorateName}</option>) : null}
                     </select>
@@ -95,7 +95,7 @@ const EditFarm = () => {
 
                     {/* <input accept='image/*' onChange={handleChange} type="text" id="fileinput" name="image"  required /> */}
 
-                    <input accept='image/*' onChange={handleChange} type="file" id="fileinput" name="image"  required />
+                    <input accept='image/*' onChange={handleChange} type="file" id="fileinput" name="image" required />
 
                     <br /><br /><img width={200} src={Image} /><br /><br />
 
@@ -103,7 +103,7 @@ const EditFarm = () => {
                     <input type="submit" value="Submit" />
                 </form>
             </div>
-       </Fragment>
+        </Fragment>
     )
 
 }

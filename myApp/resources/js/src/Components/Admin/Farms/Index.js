@@ -26,8 +26,9 @@ const Farm = () => {
 
 
     const EditClick = (Farm) => {
-        // e.preventDefault();
-        // console.log(props);
+           // if (localStorage.getItem('governorate')) {
+            //     setFarm(JSON.parse(localStorage.getItem('governorate')))
+            // }
         localStorage.setItem('editFarm', JSON.stringify(Farm))
     }
     // console.log(user);

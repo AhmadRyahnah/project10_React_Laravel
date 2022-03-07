@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->unsignedBigInteger('userID')->default('1');
             $table->foreign('userID')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('governorateID');
-            $table->foreign('governorateID')->references('id')->on('governorates')->onDelete('cascade');
+            $table->unsignedBigInteger('governorate_id');
+            $table->foreign('governorate_id')->references('id')->on('governorates')->onDelete('cascade');
         });
     }
 

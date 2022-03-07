@@ -31,6 +31,11 @@ const Governorate = () => {
         localStorage.setItem('editGovernorate', JSON.stringify(governorate))
     }
     // console.log(user);
+
+
+    const viewClick = (governorate) => {
+        localStorage.setItem('governorate', JSON.stringify(governorate))
+    }
     return (
         <div >
             <h1>Farms Details</h1>
@@ -67,7 +72,7 @@ const Governorate = () => {
 
                             <td>
                                 <Link to='/viewFarms'>
-                                    <button variant="danger" onClick={() => viewClick(governorate.id)}>
+                                    <button variant="danger" onClick={() => viewClick(governorate)}>
                                         view
                                     </button>
                                 </Link>

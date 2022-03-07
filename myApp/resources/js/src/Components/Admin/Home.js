@@ -11,7 +11,7 @@ import EditFarm from "./Farms/Edit";
 import Governorate from "./Governorate/Index";
 import CreateGovernorate from "./Governorate/Create";
 import EditGovernorate from "./Governorate/Edit";
-import ViewGovernorate from "./Governorate/ViewFarms";
+import ViewFarm from "./Governorate/ViewFarms";
 const Home = () => {
 
 
@@ -105,7 +105,7 @@ const Home = () => {
                         <Route path='Governorates' element={<Governorate />} />
                         <Route path='createGovernorate' element={<CreateGovernorate />} />
                         <Route path='editGovernorate' element={<EditGovernorate />} />
-                        <Route path='viewFarms' element={<ViewGovernorate />} />
+                        <Route path='viewFarms' element={<ViewFarm />} />
                     </Routes>
                 </div>
             </main>

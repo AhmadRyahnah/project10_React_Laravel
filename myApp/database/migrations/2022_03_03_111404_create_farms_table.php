@@ -18,21 +18,21 @@ return new class extends Migration
 
 
 
-            // $table->foreign('governorateID')->references('id')->on('governorates')->onDelete('cascade');
+            // $table->foreign('governorate_id')->references('id')->on('governorates')->onDelete('cascade');
 
 
 
 
             $table->string('farmName');
-            // $table->unsignedBigInteger('governorateID')->references('id')->on('governorates')->onDelete('cascade');
+            // $table->unsignedBigInteger('governorate_id')->references('id')->on('governorates')->onDelete('cascade');
 
             $table->longText('description');
             $table->text('phone');
             $table->double('price');
             $table->string('image')->default('');
             $table->enum('Time', ['available', 'unavailable']);
-            $table->unsignedBigInteger('governorateID')->nullable();
-            $table->foreign('governorateID')->references('id')->on('governorates')->onDelete('cascade');
+            $table->unsignedBigInteger('governorate_id')->nullable();
+            $table->foreign('governorate_id')->references('id')->on('governorates')->onDelete('cascade');
 
             $table->timestamps();
         });

@@ -5607,7 +5607,7 @@ var CreateFarm = function CreateFarm() {
           htmlFor: "lname",
           children: "Governorate Name"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
-          name: "governorateID",
+          name: "governorate_id",
           onChange: handleChange,
           required: true,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
@@ -5742,7 +5742,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var EditFarm = function EditFarm() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(JSON.parse(localStorage.getItem('editFarm'))),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(localStorage.getItem('editFarm') ? JSON.parse(localStorage.getItem('editFarm')) : []),
       _useState2 = _slicedToArray(_useState, 2),
       Farm = _useState2[0],
       setFarm = _useState2[1];
@@ -5831,11 +5831,11 @@ var EditFarm = function EditFarm() {
           htmlFor: "lname",
           children: "Governorate Name"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
-          name: "governorateID",
+          name: "governorate_id",
           onChange: handleChange,
           required: true,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-            value: Farm.governorateID,
+            value: Farm.governorate_id,
             children: Farm.governorateName
           }), Governorate ? Governorate.map(function (item) {
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
@@ -6015,8 +6015,9 @@ var Farm = function Farm() {
   }();
 
   var EditClick = function EditClick(Farm) {
-    // e.preventDefault();
-    // console.log(props);
+    // if (localStorage.getItem('governorate')) {
+    //     setFarm(JSON.parse(localStorage.getItem('governorate')))
+    // }
     localStorage.setItem('editFarm', JSON.stringify(Farm));
   }; // console.log(user);
 
@@ -6242,7 +6243,7 @@ var CreateGovernorate = function CreateGovernorate() {
           htmlFor: "lname",
           children: "Governorate Name"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
-          name: "governorateID",
+          name: "governorate_id",
           onChange: handleChange,
           required: true,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
@@ -6466,11 +6467,11 @@ var EditGovernorate = function EditGovernorate() {
           htmlFor: "lname",
           children: "Governorate Name"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
-          name: "governorateID",
+          name: "governorate_id",
           onChange: handleChange,
           required: true,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-            value: Farm.governorateID,
+            value: Farm.governorate_id,
             children: Farm.governorateName
           }), Governorate ? Governorate.map(function (item) {
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
@@ -6657,6 +6658,10 @@ var Governorate = function Governorate() {
   }; // console.log(user);
 
 
+  var viewClick = function viewClick(governorate) {
+    localStorage.setItem('governorate', JSON.stringify(governorate));
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
       children: "Farms Details"
@@ -6704,7 +6709,7 @@ var Governorate = function Governorate() {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
                   variant: "danger",
                   onClick: function onClick() {
-                    return viewClick(governorate.id);
+                    return viewClick(governorate);
                   },
                   children: "view"
                 })
@@ -6784,11 +6789,15 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var ViewGovernorate = function ViewGovernorate() {
+var ViewFarm = function ViewFarm() {
+  var governorate = JSON.parse(localStorage.getItem('governorate'));
+  var id = governorate.id;
+  var name = governorate.governorateName;
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
       _useState2 = _slicedToArray(_useState, 2),
-      governorates = _useState2[0],
-      setgovernorates = _useState2[1];
+      Farms = _useState2[0],
+      setFarms = _useState2[1];
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
       _useState4 = _slicedToArray(_useState3, 2),
@@ -6803,8 +6812,8 @@ var ViewGovernorate = function ViewGovernorate() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_2___default().get("http://127.0.0.1:8000/api/governorates").then(function (response) {
-              setgovernorates(response.data); // console.log(response.date);
+            return axios__WEBPACK_IMPORTED_MODULE_2___default().get("http://127.0.0.1:8000/api/showFarm/" + id).then(function (response) {
+              setFarms(response.data); // console.log(response.date);
             });
 
           case 2:
@@ -6840,10 +6849,10 @@ var ViewGovernorate = function ViewGovernorate() {
     };
   }();
 
-  var EditClick = function EditClick(governorate) {
+  var EditClick = function EditClick(Farm) {
     // e.preventDefault();
     // console.log(props);
-    localStorage.setItem('editGovernorate', JSON.stringify(governorate));
+    localStorage.setItem('editFarm', JSON.stringify(Farm));
   }; // console.log(user);
 
 
@@ -6865,47 +6874,54 @@ var ViewGovernorate = function ViewGovernorate() {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
             children: "#"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+            children: "Name"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
             children: "Governorate"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+            children: "Description"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+            children: "Phone"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+            children: "price"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
             children: "Image"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
-            children: "view Farms"
+            children: "Time"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
             children: "Edit"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
             children: "Delete"
           })]
         })
-      }), governorates ? governorates.map(function (governorate) {
+      }), Farms ? Farms.map(function (Farm) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tbody", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
               children: i++
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-              children: governorate.governorateName
+              children: Farm.farmName
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+              children: name
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+              children: Farm.description
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+              children: Farm.phone
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+              children: Farm.price
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-                src: 'img/' + governorate.image,
+                src: 'img/' + Farm.image,
                 width: "100"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
-                to: "/editFarm/",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-                  variant: "danger",
-                  onClick: function onClick() {
-                    return viewClick(governorate.id);
-                  },
-                  children: "view"
-                })
-              })
+              children: Farm.Time
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
                 to: "/editFarm",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
                   variant: "danger",
                   onClick: function onClick() {
-                    return EditClick(governorate);
+                    return EditClick(Farm);
                   },
                   children: "Edit"
                 })
@@ -6914,7 +6930,7 @@ var ViewGovernorate = function ViewGovernorate() {
               children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
                 variant: "danger",
                 onClick: function onClick() {
-                  return deleteProduct(governorate.id);
+                  return deleteProduct(Farm.id);
                 },
                 children: "Delete"
               })]
@@ -6926,7 +6942,7 @@ var ViewGovernorate = function ViewGovernorate() {
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ViewGovernorate);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ViewFarm);
 
 /***/ }),
 

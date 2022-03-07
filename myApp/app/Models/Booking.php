@@ -15,7 +15,7 @@ class Booking extends Model
         'price',
         'image',
         'Time',
-        'governorateID',
+        'governorate_id',
         'userID'
     ];
 

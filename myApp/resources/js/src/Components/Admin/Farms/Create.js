@@ -64,7 +64,7 @@ const [Image,setImage]=useState('img/noimg.png')
                     <input onChange={handleChange} type="text" name="farmName" placeholder="Your name.." required />
 
                     <label htmlFor="lname">Governorate Name</label>
-                    <select name='governorateID' onChange={handleChange} required>
+                    <select name='governorate_id' onChange={handleChange} required>
                         <option value={''}>select</option>
                         {Governorate ? Governorate.map(item => <option value={item.id}>{item.governorateName}</option>) : null}
                     </select>
