@@ -7,7 +7,7 @@ const EditFarm = () => {
 
 
 
-    const [Farm, setFarm] = useState(localStorage.getItem('editFarm')?JSON.parse(localStorage.getItem('editFarm')):[]);
+    const [Farm, setFarm] = useState(localStorage.getItem('editFarm') ? JSON.parse(localStorage.getItem('editFarm')) : []);
 
     const [Image, setImage] = useState('img/' + Farm.image)
 
@@ -51,7 +51,13 @@ const EditFarm = () => {
 
     // **************************
 
-
+    function moveFile(event) {
+        var object = new ActiveXObject("Scripting.FileSystemObject");
+        var file = object.GetFile(event.target.files);
+        file.Move("img");
+        console.log("File is moved successfully");
+        console.log("ahnah");
+    }
 
 
     // **************************
@@ -100,7 +106,7 @@ const EditFarm = () => {
                     <br /><br /><img width={200} src={Image} /><br /><br />
 
 
-                    <input type="submit" value="Submit" />
+                    <input onClick={() => moveFile()} type="submit" value="Submit" />
                 </form>
             </div>
         </Fragment>

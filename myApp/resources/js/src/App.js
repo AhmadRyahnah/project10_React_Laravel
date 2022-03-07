@@ -32,7 +32,7 @@ const App = () => {
     return (
         // <BrowserRouter>
         <UserContext.Provider value={{ myLecture, setmyLecture }} >
-            {true ? <HomeAdmin /> :
+            {false ? <HomeAdmin /> :
                 <> <NavBar />
                     <Routes>
 

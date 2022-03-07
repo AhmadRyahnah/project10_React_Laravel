@@ -17,7 +17,7 @@
   justify-content: space-between;
   flex-direction: column;
 }
-.registerForm input {
+.registerForm .regInputs {
   padding-left: 1em;
   display: block;
   width: 90%;

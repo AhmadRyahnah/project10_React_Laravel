@@ -16,13 +16,12 @@
     <title>Farms Booking</title>
     <link href="{{ asset('https://use.fontawesome.com/releases/v5.6.3/css/all.css') }}" rel="stylesheet" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 
-  <body>
+<body>
 
     <div id="app"> </div>
-  </body>
+</body>
 </html>
