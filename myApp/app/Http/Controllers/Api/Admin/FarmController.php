@@ -103,8 +103,12 @@ class FarmController extends Controller
         $farm->price = $request->input('price');
         $farm->Time = $request->input('Time');
         $farm->description = $request->input('description');
+        if($request->input('image')[0]==='C' && $request->input('image')[1]===':'){
+            $farm->image = substr($request->input('image'),12);
+        }else{
 
-        $farm->image = $request->input('image');
+            $farm->image = $request->input('image');
+        }
         $farm->save();
     }
 
