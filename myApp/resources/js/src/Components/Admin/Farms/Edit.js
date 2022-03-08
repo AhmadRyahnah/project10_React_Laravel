@@ -101,7 +101,7 @@ const EditFarm = () => {
 
                     {/* <input accept='image/*' onChange={handleChange} type="text" id="fileinput" name="image"  required /> */}
 
-                    <input accept='image/*' onChange={handleChange} type="file" id="fileinput" name="image" required />
+                    <input accept='image/*' onChange={handleChange} type="file" id="fileinput" name="image"  />
 
                     <br /><br /><img width={200} src={Image} /><br /><br />
 

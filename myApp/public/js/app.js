@@ -6087,8 +6087,7 @@ var EditFarm = function EditFarm() {
           onChange: handleChange,
           type: "file",
           id: "fileinput",
-          name: "image",
-          required: true
+          name: "image"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
           width: 200,
           src: Image

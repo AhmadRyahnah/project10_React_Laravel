@@ -104,7 +104,7 @@ class FarmController extends Controller
         $farm->Time = $request->input('Time');
         $farm->description = $request->input('description');
 
-        $farm->image = substr($request->input('image'),12);
+        $farm->image = $request->input('image');
         $farm->save();
     }
 
