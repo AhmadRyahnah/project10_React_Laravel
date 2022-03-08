@@ -17,10 +17,6 @@ return new class extends Migration
             $table->id();
             $table->text('governorateName');
             $table->string('Image')->nullable();
-
-
-
-
             $table->timestamps();
         });
     }

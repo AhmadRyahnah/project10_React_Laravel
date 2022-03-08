@@ -15,7 +15,7 @@ export default function Navpath() {
 
 const NavBar = (props) => {
 
-  const { myLecture ,setmyLecture } = useContext(UserContext)
+//   const { myLecture ,setmyLecture } = useContext(UserContext)
 
   let isLoggedIn = localStorage.getItem('loggedUser');
   const logout = () => {
@@ -25,7 +25,7 @@ const NavBar = (props) => {
     localStorage.removeItem('fromDelete')
     localStorage.removeItem('Courses')
 
-    setmyLecture(0)
+    // setmyLecture(0)
     props.handleUseNavigate()
   }
 
@@ -61,7 +61,10 @@ const NavBar = (props) => {
           <ul >
             <li>
 
-              {isLoggedIn ? <button style={{backgroundColor:"#FB6767" }} onClick={logout}><Link to="/SignInUp" onClick={handleClick}>Log out</Link></button>
+              {isLoggedIn ?
+
+
+              <button style={{backgroundColor:"#FB6767" }} onClick={logout}><Link to="/SignInUp" onClick={handleClick}>Log out</Link></button>
                 :
                 <button><Link to="/SignInUp" onClick={handleClick}>Log In</Link></button>}
 

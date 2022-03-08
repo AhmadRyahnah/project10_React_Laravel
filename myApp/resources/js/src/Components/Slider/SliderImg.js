@@ -38,10 +38,10 @@ function Slider() {
   return (
 
     <div className="img-slider">
-      <i class="fas fa-arrow-left" onClick={back} ></i>
+      <i className="fas fa-arrow-left" onClick={back} ></i>
       <img src={img} alt="..." />
 
-      <i class="fas fa-arrow-right" onClick={next}></i>
+      <i className="fas fa-arrow-right" onClick={next}></i>
     </div>
 
   );

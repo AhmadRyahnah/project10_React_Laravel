@@ -19,20 +19,25 @@ import ErrorPage from './Components/404/404';
 
 export const UserContext = createContext();
 const App = () => {
-    const [myLecture, setmyLecture] = useState(0);
 
+    const [User, setUser] = useState(0)
+
+
+    // const [myLecture, setmyLecture] = useState(0);
     useEffect(() => {
-        const myLecture = (localStorage.getItem('Lecture'))
-            ? JSON.parse(localStorage.getItem('Lecture')) : [];
-        setmyLecture(myLecture.length)
-    }, [])
+        const myUser = (localStorage.getItem('loggedUser'))
+        ? JSON.parse(localStorage.getItem('loggedUser')) : [];
+        setUser(myUser.role)
+    })
 
     // <Route path="adminDashboard" element={<HomeAdmin />} />
 
     return (
         // <BrowserRouter>
-        <UserContext.Provider value={{ myLecture, setmyLecture }} >
-            {false ? <HomeAdmin /> :
+        <UserContext.Provider value={{ User, setUser }} >
+        {/* <UserContext.Provider  > */}
+
+            {User ? <HomeAdmin /> :
                 <> <NavBar />
                     <Routes>
 

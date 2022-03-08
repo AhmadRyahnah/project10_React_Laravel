@@ -46,8 +46,8 @@ const Profile = () => {
             <div className='profileContainer'>
                 <div className="userContainer">
                     <div className="detailsUser">
-                        <p> Hello {`${loggedUser[0].username}`}😃😃</p>
-                        <p>Email: {loggedUser[0].email}</p>
+                        <p> Hello {`${loggedUser.name}`}😃😃</p>
+                        <p>Email: {loggedUser.email}</p>
 
                     </div>
                 </div>

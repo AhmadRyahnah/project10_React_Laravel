@@ -15,17 +15,7 @@ return new class extends Migration
     {
         Schema::create('farms', function (Blueprint $table) {
             $table->id();
-
-
-
-            // $table->foreign('governorate_id')->references('id')->on('governorates')->onDelete('cascade');
-
-
-
-
             $table->string('farmName');
-            // $table->unsignedBigInteger('governorate_id')->references('id')->on('governorates')->onDelete('cascade');
-
             $table->longText('description');
             $table->text('phone');
             $table->double('price');
@@ -33,7 +23,6 @@ return new class extends Migration
             $table->enum('Time', ['available', 'unavailable']);
             $table->unsignedBigInteger('governorate_id')->nullable();
             $table->foreign('governorate_id')->references('id')->on('governorates')->onDelete('cascade');
-
             $table->timestamps();
         });
 

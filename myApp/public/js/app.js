@@ -5514,23 +5514,24 @@ var UserContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createConte
 var App = function App() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState2 = _slicedToArray(_useState, 2),
-      myLecture = _useState2[0],
-      setmyLecture = _useState2[1];
+      User = _useState2[0],
+      setUser = _useState2[1]; // const [myLecture, setmyLecture] = useState(0);
+
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var myLecture = localStorage.getItem('Lecture') ? JSON.parse(localStorage.getItem('Lecture')) : [];
-    setmyLecture(myLecture.length);
-  }, []); // <Route path="adminDashboard" element={<HomeAdmin />} />
+    var myUser = localStorage.getItem('loggedUser') ? JSON.parse(localStorage.getItem('loggedUser')) : [];
+    setUser(myUser.role);
+  }); // <Route path="adminDashboard" element={<HomeAdmin />} />
 
   return (
     /*#__PURE__*/
     // <BrowserRouter>
     (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(UserContext.Provider, {
       value: {
-        myLecture: myLecture,
-        setmyLecture: setmyLecture
+        User: User,
+        setUser: setUser
       },
-      children:  false ? /*#__PURE__*/0 : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.Fragment, {
+      children: User ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Components_Admin_Home__WEBPACK_IMPORTED_MODULE_14__["default"], {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.Fragment, {
         children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Components_navbar_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Routes, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
             path: "/",
@@ -8483,12 +8484,21 @@ var Welcome = function Welcome() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Navpath)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Login_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Login.css */ "./resources/js/src/Components/Login/Login.css");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../App */ "./resources/js/src/App.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -8506,19 +8516,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function Navpath() {
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
 
-  var handleUseNavigate = function handleUseNavigate() {
-    localStorage.getItem('User') ? navigate('/Services') : navigate('/SignInUp');
-  };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Login, {
-    handleUseNavigate: handleUseNavigate
-  });
-}
 
-var Login = function Login(props) {
+var Login = function Login() {
+  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_App__WEBPACK_IMPORTED_MODULE_2__.UserContext),
+      User = _useContext.User,
+      setUser = _useContext.setUser;
+
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)();
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
       _useState2 = _slicedToArray(_useState, 2),
       email = _useState2[0],
@@ -8534,55 +8541,90 @@ var Login = function Login(props) {
       errorMsg = _useState6[0],
       setErrormsg = _useState6[1];
 
-  var handleSubmit = function handleSubmit(e) {
-    e.preventDefault();
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState8 = _slicedToArray(_useState7, 2),
+      inputs = _useState8[0],
+      setInputs = _useState8[1];
 
-    for (var i = 0; i <= localStorage.length; i++) {
-      var user = JSON.parse(localStorage.getItem('User'));
-
-      if (user[i].email === email && user[i].password === password) {
-        localStorage.setItem('loggedUser', JSON.stringify(user)); // alert('Successful Login');
-
-        props.handleUseNavigate();
-      } else {
-        setErrormsg('The Email or Password incorrect');
-      }
-    }
+  var handleChange = function handleChange(event) {
+    var name = event.target.name;
+    var value = event.target.value;
+    setInputs(function (values) {
+      return _objectSpread(_objectSpread({}, values), {}, _defineProperty({}, name, value));
+    });
+    console.log(inputs);
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault(); // for (let i = 0; i <= localStorage.length; i++) {
+    //     const user = JSON.parse(localStorage.getItem('User'));
+    //     if (user[i].email ===email && user[i].password === password) {
+    //         localStorage.setItem('loggedUser', JSON.stringify(user))
+    //         // alert('Successful Login');
+    //     } else {
+    //         setErrormsg('The Email or Password incorrect')
+    //     }
+    // }
+
+    axios.post('http://127.0.0.1:8000/api/login', inputs).then(function (response) {
+      console.log(response.data);
+
+      if (response.data[0] === 'Not Matched') {
+        sweetalert__WEBPACK_IMPORTED_MODULE_3___default()({
+          title: "You Have an Account ",
+          text: "Welcome!",
+          icon: "error",
+          button: "ok "
+        });
+      } else {
+        setUser(response.data.user.role);
+        localStorage.setItem('loggedUser', JSON.stringify(response.data.user));
+        response.data.user.role !== 0 ? navigate('/') : navigate('/Services');
+      }
+    })["catch"](function (error) {
+      console.log("registration error", error);
+      sweetalert__WEBPACK_IMPORTED_MODULE_3___default()({
+        title: "You entered the wrong email or password",
+        text: "please try again!",
+        icon: "error",
+        button: "ok "
+      });
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: "loginContainer",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+    onSubmit: handleSubmit,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
       className: "loginForm",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
         children: "Sign In"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+        name: "email",
         className: "email",
         type: "Email",
         value: email,
-        onChange: function onChange(e) {
-          setEmail(e.target.value);
-        },
+        onChange: handleChange,
         required: true,
         placeholder: "Email"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+        name: "password",
         className: "password",
         type: "password",
         value: password,
-        onChange: function onChange(e) {
-          setPassword(e.target.value);
-        },
+        onChange: handleChange,
         required: true,
         placeholder: "Password"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
         children: errorMsg
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-        onClick: handleSubmit,
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
         children: "Sign In"
       })]
     })
   });
-}; // export default Login;
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Login);
 
 /***/ }),
 
@@ -8666,9 +8708,9 @@ var Profile = function Profile() {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "detailsUser",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
-            children: [" Hello ", "".concat(loggedUser[0].username), "\uD83D\uDE03\uD83D\uDE03"]
+            children: [" Hello ", "".concat(loggedUser.name), "\uD83D\uDE03\uD83D\uDE03"]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
-            children: ["Email: ", loggedUser[0].email]
+            children: ["Email: ", loggedUser.email]
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -8781,7 +8823,6 @@ var Register = function Register() {
         button: "ok "
       });
     });
-    ;
   }; // const [username, setUsername] = useState();
   // const [errname, setErrname] = useState();
   // const [email, setEmail] = useState();
@@ -9373,13 +9414,13 @@ function Slider() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "img-slider",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
-      "class": "fas fa-arrow-left",
+      className: "fas fa-arrow-left",
       onClick: back
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
       src: img,
       alt: "..."
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
-      "class": "fas fa-arrow-right",
+      className: "fas fa-arrow-right",
       onClick: next
     })]
   });
@@ -9513,10 +9554,7 @@ function Navpath() {
 }
 
 var NavBar = function NavBar(props) {
-  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_App__WEBPACK_IMPORTED_MODULE_2__.UserContext),
-      myLecture = _useContext.myLecture,
-      setmyLecture = _useContext.setmyLecture;
-
+  //   const { myLecture ,setmyLecture } = useContext(UserContext)
   var isLoggedIn = localStorage.getItem('loggedUser');
 
   var logout = function logout() {
@@ -9524,8 +9562,8 @@ var NavBar = function NavBar(props) {
     localStorage.removeItem('Lecture');
     localStorage.removeItem('date');
     localStorage.removeItem('fromDelete');
-    localStorage.removeItem('Courses');
-    setmyLecture(0);
+    localStorage.removeItem('Courses'); // setmyLecture(0)
+
     props.handleUseNavigate();
   };
 
@@ -9664,11 +9702,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var _Components_Slider_SliderImg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Components/Slider/SliderImg */ "./resources/js/src/Components/Slider/SliderImg.js");
-/* harmony import */ var _Services_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Services.css */ "./resources/js/src/Page/Services.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _Components_Slider_SliderImg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Components/Slider/SliderImg */ "./resources/js/src/Components/Slider/SliderImg.js");
+/* harmony import */ var _Services_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Services.css */ "./resources/js/src/Page/Services.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -9677,43 +9735,59 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Services = function Services() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
+      _useState2 = _slicedToArray(_useState, 2),
+      governorates = _useState2[0],
+      setgovernorates = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return axios.get("http://127.0.0.1:8000/api/Governorates").then(function (response) {
+              setgovernorates(response.data);
+              console.log(response.date);
+            });
+
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  })), []);
+
+  var viewClick = function viewClick(governorate) {
+    localStorage.setItem('governorate', JSON.stringify(governorate));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
       className: "header",
       children: "Services"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "LectureAndCourses",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "Lecture",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-          to: "/Lecture",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-            src: "img/Lecture/lecture.jpg",
-            alt: "Lecture"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-            children: "Civil Engineering Courses"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
-            children: "Starting at : 50.00 $"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            children: "See Courses"
-          })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "Courses",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-          to: "/Courses",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-            src: "img/Lecture/Courses.jpg",
-            alt: "Courses"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-            children: "Civil Engineering Software"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
-            children: "Starting at : 150.00 $"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            children: "See Software"
-          })]
-        })
-      })]
+      children: governorates ? governorates.map(function (governorate) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "Courses",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+            to: "/Courses",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+              src: 'img/' + governorate.Image,
+              alt: "Courses"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+              children: governorate.governorateName
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+              onClick: function onClick() {
+                return viewClick(governorate);
+              },
+              children: "See Farms"
+            })]
+          })
+        });
+      }) : null
     })]
   });
 };
@@ -15364,7 +15438,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".header {\r\n  text-align: center;\r\n  margin: 2em auto 0;\r\n}\r\n.LectureAndCourses {\r\n  display: grid;\r\n  grid-template-columns: 1fr 2fr 2fr 1fr;\r\n  /* grid-template-rows: minmax(100px,auto); */\r\n}\r\n\r\n.LectureAndCourses a {\r\n  text-decoration: none;\r\n}\r\n.Lecture {\r\n  width: 95%;\r\n  grid-column: 2;\r\n  grid-row: 1;\r\n}\r\n.Courses {\r\n  width: 95%;\r\n  grid-column: 3;\r\n  grid-row: 1;\r\n}\r\n.LectureAndCourses .Lecture,\r\n.LectureAndCourses .Courses {\r\n  background-color: whitesmoke;\r\n  border-radius: 7px;\r\n  box-shadow: 0 0 10px #0000008c;\r\n  display: flex;\r\n  /* flex-direction: column;\r\n  justify-content: center; */\r\n  align-items: center;\r\n  margin: 5em auto;\r\n}\r\n\r\n.LectureAndCourses .Lecture img,\r\n.LectureAndCourses .Courses img {\r\n  width: 300px;\r\n  height: 200px;\r\n  margin: 2.5em 0 0 0.5em;\r\n}\r\n.LectureAndCourses .Lecture h2,\r\n.LectureAndCourses .Courses h2,\r\n.LectureAndCourses .Lecture h3,\r\n.LectureAndCourses .Courses h3 {\r\n  margin: 0 0 1.5em;\r\n  text-align: center;\r\n}\r\n\r\n.LectureAndCourses .Lecture button,\r\n.LectureAndCourses .Courses button {\r\n  text-align: center;\r\n  width: 175px;\r\n  height: 40px;\r\n  border-radius: 7px;\r\n  cursor: pointer;\r\n  margin: 0 auto 1.5em;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n@media screen and (max-width: 1200px) {\r\n  .LectureAndCourses {\r\n    display: grid;\r\n    grid-template-columns: 1fr 5fr 5fr 1fr;\r\n    /* grid-template-rows: minmax(100px,auto); */\r\n  }\r\n}\r\n\r\n@media screen and (max-width: 870px) {\r\n  .LectureAndCourses {\r\n    display: grid;\r\n    grid-template-columns: 1fr;\r\n    grid-template-rows: 1fr 1fr;\r\n  }\r\n  .Lecture {\r\n    width: 70%;\r\n    grid-column: 1;\r\n    grid-row: 1;\r\n  }\r\n  .Courses {\r\n    width: 70%;\r\n    grid-column: 1;\r\n    grid-row: 2;\r\n  }\r\n}\r\n@media screen and (max-width: 440px) {\r\n  .LectureAndCourses .Lecture img,\r\n  .LectureAndCourses .Courses img {\r\n    width: 250px;\r\n    height: 200px;\r\n    /* margin: 2.5em auto 0.5em; */\r\n  }\r\n  .Lecture {\r\n    width: 95% !important;\r\n  }\r\n  .Courses {\r\n    width: 95% !important;\r\n  }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".header {\n  text-align: center;\n  margin: 2em auto 0;\n}\n.LectureAndCourses {\n  display: grid;\n  grid-template-columns: repeat(3,auto);\n  width: 80%;\n  margin: 0 auto;\n  /* grid-template-rows: repeat(3,auto); */\n  /* grid-template-rows: minmax(100px,auto); */\n}\n\n.LectureAndCourses a {\n  text-decoration: none;\n}\n\n.LectureAndCourses .Lecture,\n.LectureAndCourses .Courses {\n  background-color: whitesmoke;\n  border-radius: 7px;\n  box-shadow: 0 0 10px #0000008c;\n  display: flex;\n  /* flex-direction: column;\n  justify-content: center; */\n  align-items: center;\n  margin: 2em auto;\n}\n\n.LectureAndCourses .Lecture img,\n.LectureAndCourses .Courses img {\n  width: 300px;\n  height: 200px;\n  margin: 2.5em 0 0 0.5em;\n}\n.LectureAndCourses .Lecture h2,\n.LectureAndCourses .Courses h2,\n.LectureAndCourses .Lecture h3,\n.LectureAndCourses .Courses h3 {\n  margin: 0 0 1.5em;\n  text-align: center;\n}\n\n.LectureAndCourses .Lecture button,\n.LectureAndCourses .Courses button {\n  text-align: center;\n  width: 175px;\n  height: 40px;\n  border-radius: 7px;\n  cursor: pointer;\n  margin: 0 auto 1.5em;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media screen and (max-width: 1200px) {\n  .LectureAndCourses {\n    display: grid;\n    grid-template-columns: 1fr 5fr 5fr 1fr;\n    /* grid-template-rows: minmax(100px,auto); */\n  }\n}\n\n@media screen and (max-width: 870px) {\n  .LectureAndCourses {\n    display: grid;\n    grid-template-columns: 1fr;\n    grid-template-rows: 1fr 1fr;\n  }\n  .Lecture {\n    width: 70%;\n    grid-column: 1;\n    grid-row: 1;\n  }\n  .Courses {\n    width: 70%;\n    grid-column: 1;\n    grid-row: 2;\n  }\n}\n@media screen and (max-width: 440px) {\n  .LectureAndCourses .Lecture img,\n  .LectureAndCourses .Courses img {\n    width: 250px;\n    height: 200px;\n    /* margin: 2.5em auto 0.5em; */\n  }\n  .Lecture {\n    width: 95% !important;\n  }\n  .Courses {\n    width: 95% !important;\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

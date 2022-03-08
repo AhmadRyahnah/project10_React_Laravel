@@ -53,7 +53,7 @@ const Register = () => {
                 icon: "error",
                 button: "ok ",
             });
-        });;
+        });
 
     }
 

@@ -21,24 +21,36 @@ class AuthController extends Controller
         $user->email = $request->input('email');
 
         $user->password = Hash::make($request->input('password'));
-
         $user->save();
-        return response(['status' => 'created', 'user' => $user, 'access_token' => '$accessToken', 200]);
+        // $accessToken = auth()->user()->createToken('authToken')->accessToken;
+        return response(['status' => 'created', 'user' => $user, 200]);
     }
 
-    public function login(Request $request)
+    public function login(Request $req)
     {
-        $loginData = $request->validate([
-            'email' => 'email|required',
-            'password' => 'required'
-        ]);
+        //     $loginData = $request->validate([
+        //         'email' => 'email|required',
+        //         'password' => 'required'
+        //     ]);
 
-        if (!auth()->attempt($loginData)) {
-            return response(['message' => 'Invalid Credentials']);
+        //     if (!auth()->attempt($loginData)) {
+        //         return response(['message' => 'Invalid Credentials']);
+        //     }
+
+        //     $accessToken = auth()->user()->createToken('authToken')->accessToken;
+
+        //     return response(['user' => auth()->user(), 'access_token' => $accessToken]);
+        // $user = DB::table('users')->where('email',$email)->first();
+        // // return $user;
+        // return response(['status' => 'created', 'user' => $user, 'access_token' => '$accessToken', 200]);
+        $email =  $req->input('email');
+        $password = $req->input('password');
+
+        $user = DB::table('users')->where('email', $email)->first();
+        if (!Hash::check($password, $user->password)) {
+            return response(["Not Matched"]);
+        } else {
+            return response(['status' => 'created', 'user' => $user, 200]);
         }
-
-        $accessToken = auth()->user()->createToken('authToken')->accessToken;
-
-        return response(['user' => auth()->user(), 'access_token' => $accessToken]);
     }
 }
