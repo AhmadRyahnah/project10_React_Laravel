@@ -5717,8 +5717,13 @@ var CreateFarm = function CreateFarm() {
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState4 = _slicedToArray(_useState3, 2),
-      Governorate = _useState4[0],
-      setGovernorate = _useState4[1];
+      fileImg = _useState4[0],
+      setfileImg = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+      _useState6 = _slicedToArray(_useState5, 2),
+      Governorate = _useState6[0],
+      setGovernorate = _useState6[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
@@ -5740,10 +5745,10 @@ var CreateFarm = function CreateFarm() {
 
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)();
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
-      _useState6 = _slicedToArray(_useState5, 2),
-      inputs = _useState6[0],
-      setInputs = _useState6[1]; // if(inputs){
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState8 = _slicedToArray(_useState7, 2),
+      inputs = _useState8[0],
+      setInputs = _useState8[1]; // if(inputs){
   //    let img=inputs.image
   // console.log(img);
   // }
@@ -5757,14 +5762,21 @@ var CreateFarm = function CreateFarm() {
     });
 
     if (event.target.name == 'image') {
-      setImage('img/' + event.target.files[0].name);
+      setImage(event.target.files[0].name);
+      setfileImg(event.target.files[0]);
     }
   };
 
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
-    axios.post('http://127.0.0.1:8000/api/insertFarm', inputs);
-    navigate('/Farms');
+    var dataImg = new FormData();
+    dataImg.append('image', fileImg);
+    console.log(fileImg);
+    axios.post('http://127.0.0.1:8000/api/insertFarm', inputs).then(function (response) {// console.log(response);
+    });
+    axios.post('http://127.0.0.1:8000/api/insertImg', dataImg).then(function (response) {// console.log(response);
+    }); // navigate('/Farms')
+    // console.log(inputs);
   }; // **************************
   // **************************
 
@@ -6269,7 +6281,7 @@ var Farm = function Farm() {
               children: Farm.price
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-                src: 'img/' + Farm.image,
+                src: 'img/Farms/' + Farm.image,
                 width: "100"
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {

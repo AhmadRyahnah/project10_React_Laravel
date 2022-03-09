@@ -4,8 +4,8 @@ import swal from 'sweetalert';
 import '../User/User.css'
 
 const CreateFarm = () => {
-const [Image,setImage]=useState('img/noimg.png')
-
+    const [Image, setImage] = useState('img/noimg.png')
+    const [fileImg, setfileImg] = useState('');
     const [Governorate, setGovernorate] = useState('');
 
     useEffect(async () => {
@@ -21,35 +21,55 @@ const [Image,setImage]=useState('img/noimg.png')
 
     let navigate = useNavigate()
     const [inputs, setInputs] = useState([]);
-// if(inputs){
-//    let img=inputs.image
-// console.log(img);
-// }
+    // if(inputs){
+    //    let img=inputs.image
+    // console.log(img);
+    // }
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
 
-
         setInputs(values => ({ ...values, [name]: value }));
 
-        if(event.target.name == 'image') {
-            setImage('img/'+event.target.files[0].name);
+        if (event.target.name == 'image') {
+            setImage(event.target.files[0].name);
+            setfileImg(event.target.files[0])
         }
 
+
     }
+
+
     const handleSubmit = (event) => {
 
         event.preventDefault();
-        axios.post('http://127.0.0.1:8000/api/insertFarm', inputs);
-        navigate('/Farms')
+        let dataImg = new FormData()
+        dataImg.append('image', fileImg)
+        console.log(fileImg);
+
+        axios.post('http://127.0.0.1:8000/api/insertFarm', inputs).then((response) => {
+            // console.log(response);
+
+        });
+        axios.post('http://127.0.0.1:8000/api/insertImg', dataImg).then((response) => {
+            // console.log(response);
+
+        });
+
+
+
+        // navigate('/Farms')
+        // console.log(inputs);
+
+
     }
 
-// **************************
+    // **************************
 
 
 
 
-// **************************
+    // **************************
 
 
 
@@ -88,7 +108,7 @@ const [Image,setImage]=useState('img/noimg.png')
 
                     <input accept='image/*' onChange={handleChange} type="file" id="fileinput" name="image" placeholder="Your last name.." required />
 
-                    <br /><br /><img  width={200} src={Image} /><br /><br />
+                    <br /><br /><img width={200} src={Image} /><br /><br />
 
 
                     <input type="submit" value="Submit" />

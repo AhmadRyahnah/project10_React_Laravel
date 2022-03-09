@@ -67,7 +67,7 @@ const Farm = () => {
                             <td>{Farm.description}</td>
                             <td>{Farm.phone}</td>
                             <td>{Farm.price}</td>
-                            <td><img src={'img/'+Farm.image} width='100' /></td>
+                            <td><img src={'img/Farms/'+Farm.image} width='100' /></td>
                             <td>{Farm.Time}</td>
 
                             <td><Link to='/editFarm'>

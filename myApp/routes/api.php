@@ -24,6 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::post('/register', [AuthController::class, 'register']);
 
 
+// insertImg
+
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
@@ -42,7 +44,7 @@ Route::delete('/deleteFarm/{id}', [FarmController::class, 'destroy']);
 Route::put('/editFarm/{id}', [FarmController::class, 'update']);
 Route::get('/createFarm', [FarmController::class, 'create']);
 Route::post('/insertFarm', [FarmController::class, 'store']);
-
+Route::post('/insertImg', [FarmController::class, 'storeImg']);
 // Governorates
 
 Route::get('/Governorates', [GovernorateController::class, 'index']);
