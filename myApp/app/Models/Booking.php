@@ -16,7 +16,7 @@ class Booking extends Model
         'image',
         'Time',
         'governorate_id',
-        'userID'
+        'user_id'
     ];
 
     public function governorates(){

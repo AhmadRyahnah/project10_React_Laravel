@@ -38,6 +38,13 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         //
+        $user = new Booking();
+        // $user->name = $request->input('name');
+        // $user->email = $request->input('email');
+        // $user->phone = $request->input('phone');
+        // $user->password = Hash::make($request->input('password'));
+        // $user->role = $request->input('role') == True ? '1' : '0';
+        // $user->save();
     }
 
     /**

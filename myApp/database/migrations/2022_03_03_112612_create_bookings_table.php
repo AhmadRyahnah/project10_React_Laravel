@@ -14,10 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->unsignedBigInteger('userID')->default('1');
-            $table->foreign('userID')->references('id')->on('users')->onDelete('cascade');
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('governorate_id');
             $table->foreign('governorate_id')->references('id')->on('governorates')->onDelete('cascade');
+            $table->string('farmName');
+            $table->string('date');
+            $table->timestamps();
+
         });
     }
 

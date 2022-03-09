@@ -11,7 +11,7 @@ const CardCourses = (props) => {
     }
     return (
         <div className='CoursesContainer' onClick={handleClick}>
-            <img src={props.img} alt={props.alt} />
+            <img src={'img/'+props.img} alt={props.alt} />
             <h2>{props.title}</h2>
             <h5>{props.desc}</h5>
             <h4>{props.numUS} $</h4>
