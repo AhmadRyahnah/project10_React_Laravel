@@ -16,15 +16,12 @@ const CreateFarm = () => {
         });
     }, []);
 
-    // console.log(Governorate);
+
 
 
     let navigate = useNavigate()
     const [inputs, setInputs] = useState([]);
-    // if(inputs){
-    //    let img=inputs.image
-    // console.log(img);
-    // }
+
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -32,10 +29,16 @@ const CreateFarm = () => {
         setInputs(values => ({ ...values, [name]: value }));
 
         if (event.target.name == 'image') {
-            setImage(event.target.files[0].name);
+            setImage('img/Farms/' + event.target.files[0].name);
             setfileImg(event.target.files[0])
-        }
+            let dataImg = new FormData()
+            dataImg.append('image', event.target.files[0])
+            // console.log(fileImg);
+            axios.post('http://127.0.0.1:8000/api/insertImg', dataImg).then((response) => {
+                // console.log(response);
 
+            });
+        }
 
     }
 
@@ -43,33 +46,13 @@ const CreateFarm = () => {
     const handleSubmit = (event) => {
 
         event.preventDefault();
-        let dataImg = new FormData()
-        dataImg.append('image', fileImg)
-        console.log(fileImg);
 
         axios.post('http://127.0.0.1:8000/api/insertFarm', inputs).then((response) => {
             // console.log(response);
 
         });
-        axios.post('http://127.0.0.1:8000/api/insertImg', dataImg).then((response) => {
-            // console.log(response);
-
-        });
-
-
-
-        // navigate('/Farms')
-        // console.log(inputs);
-
-
+        navigate('/Farms')
     }
-
-    // **************************
-
-
-
-
-    // **************************
 
 
 

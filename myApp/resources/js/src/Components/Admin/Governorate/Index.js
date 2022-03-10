@@ -39,9 +39,9 @@ const Governorate = () => {
     return (
         <div >
             <h1>Farms Details</h1>
-            <Link to="/createFarm">
+            <Link to="/createGovernorate">
                 <div className='addUser'>
-                    <button >Add Farm</button>
+                    <button >Add Governorate</button>
                 </div>
             </Link>
             <br /><br />
@@ -68,7 +68,7 @@ const Governorate = () => {
 
                             <td>{governorate.governorateName}</td>
 
-                            <td><img src={'img/' + governorate.Image} width='100' /></td>
+                            <td><img src={'img/Governorate/' + governorate.Image} width='100' /></td>
 
                             <td>
                                 <Link to='/viewFarms'>

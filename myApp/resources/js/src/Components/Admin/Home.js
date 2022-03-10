@@ -71,6 +71,13 @@ const logout = () => {
                                 <span>General</span>
                             </li>
                             <li className="sidebar-dropdown">
+                                <Link to="Orders">
+                                    <i className="fa fa-tachometer-alt"></i>
+                                    <span>Orders Dashboard</span>
+
+                                </Link>
+                            </li>
+                            <li className="sidebar-dropdown">
                                 <Link to="Users">
                                     <i className="fa fa-tachometer-alt"></i>
                                     <span>Users Dashboard</span>

@@ -40,9 +40,48 @@ class GovernorateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Governorate = new Governorate();
+        $Governorate->governorateName = $request->input('governorateName');
+
+
+        $Governorate->Image = substr($request->input('image'),12);
+        // if($request->hasFile('image'))
+        // {
+        //     $file = $request->file('image');
+
+        //     $filename = $file->getClientOriginalName();;
+        //     $file->move('img\Farms',$filename);
+        //     $farm->image = $filename;
+        // }
+
+        $response["status"] = "successs";
+        $response["message"] = "Success! image(s) uploaded";
+        $Governorate->save();
+        return response()->json($request);
     }
 
+
+    public function storeImg(Request $request)
+    {
+
+        // $farm = new Farm();
+        // $farm->farmName = $request->input('farmName');
+        // $farm->governorate_id = $request->input('governorate_id');
+        // $farm->phone = $request->input('phone');
+        // $farm->price = $request->input('price');
+        // $farm->Time = $request->input('Time');
+        // $farm->description = $request->input('description');
+
+        // $farm->image = substr($request->input('image'),12);
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+
+            $filename = $file->getClientOriginalName();;
+            $file->move('img\Governorate',$filename);
+            // $farm->image = $filename;
+        }
+    }
     /**
      * Display the specified resource.
      *
@@ -74,9 +113,18 @@ class GovernorateController extends Controller
      * @param  \App\Models\Governorate  $governorate
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Governorate $governorate)
+    public function update(Request $request, $id)
     {
-        //
+        $Governorate = Governorate::findOrFail($id);
+
+        $Governorate->governorateName = $request->input('governorateName');
+        if($request->input('image')[0]==='C' && $request->input('image')[1]===':'){
+            $Governorate->Image = substr($request->input('image'),12);
+        }else{
+
+            $Governorate->Image = $request->input('image');
+        }
+        $Governorate->save();
     }
 
     /**

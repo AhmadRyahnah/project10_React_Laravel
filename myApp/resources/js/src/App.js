@@ -26,7 +26,7 @@ const App = () => {
     // const [myLecture, setmyLecture] = useState(0);
     useEffect(() => {
         const myUser = (localStorage.getItem('loggedUser'))
-        ? JSON.parse(localStorage.getItem('loggedUser')) : [];
+            ? JSON.parse(localStorage.getItem('loggedUser')) : [];
         setUser(myUser.role)
     })
 
@@ -35,7 +35,7 @@ const App = () => {
     return (
         // <BrowserRouter>
         <UserContext.Provider value={{ User, setUser }} >
-        {/* <UserContext.Provider  > */}
+            {/* <UserContext.Provider  > */}
 
             {User ? <HomeAdmin /> :
                 <> <NavBar />

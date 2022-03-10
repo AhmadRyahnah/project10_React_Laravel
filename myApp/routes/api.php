@@ -53,3 +53,4 @@ Route::put('/editGovernorate/{id}', [GovernorateController::class, 'update']);
 Route::get('/createGovernorate', [GovernorateController::class, 'create']);
 Route::post('/insertGovernorate', [GovernorateController::class, 'store']);
 Route::get('/showFarm/{governorate_id}', [GovernorateController::class, 'show']);
+Route::post('/insertImgGover', [GovernorateController::class, 'storeImg']);

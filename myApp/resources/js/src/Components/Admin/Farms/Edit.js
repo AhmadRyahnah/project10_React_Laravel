@@ -9,7 +9,7 @@ const EditFarm = () => {
 
     const [Farm, setFarm] = useState(localStorage.getItem('editFarm') ? JSON.parse(localStorage.getItem('editFarm')) : []);
 
-    const [Image, setImage] = useState('img/' + Farm.image)
+    const [Image, setImage] = useState('img/Farms/' + Farm.image)
 
     const [Governorate, setGovernorate] = useState('');
 
@@ -37,8 +37,19 @@ const EditFarm = () => {
 
         setInputs(values => ({ ...values, [name]: value }));
         setFarm(values => ({ ...values, [name]: value }));
+        // if (event.target.name == 'image') {
+        //     setImage('img/' + event.target.files[0].name);
+        // }
         if (event.target.name == 'image') {
-            setImage('img/' + event.target.files[0].name);
+            setImage('img/Farms/' + event.target.files[0].name);
+            // setfileImg(event.target.files[0])
+            let dataImg = new FormData()
+            dataImg.append('image', event.target.files[0])
+            // console.log(fileImg);
+            axios.post('http://127.0.0.1:8000/api/insertImg', dataImg).then((response) => {
+                // console.log(response);
+
+            });
         }
 
     }
@@ -49,18 +60,7 @@ const EditFarm = () => {
         navigate('/Farms')
     }
 
-    // **************************
 
-    function moveFile(event) {
-        var object = new ActiveXObject("Scripting.FileSystemObject");
-        var file = object.GetFile(event.target.files);
-        file.Move("img");
-        console.log("File is moved successfully");
-        console.log("ahnah");
-    }
-
-
-    // **************************
 
 
 
