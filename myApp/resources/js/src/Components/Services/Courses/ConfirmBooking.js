@@ -12,7 +12,7 @@ const ConfirmBooking = () => {
                 <img src={'img/'+Course.img} alt={Course.alt} />
                 <h2>{Course.title}</h2>
                 <h5>{Course.desc}</h5>
-                <h4>{Course.numUS} $</h4>
+                <h4>{Course.price} $</h4>
             </div>
             <div className='ConfirmCalender'>
                 {/* <Calender /> */}

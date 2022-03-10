@@ -41,7 +41,7 @@ const Courses = () => {
                     img={CardItem.image}
                     title={CardItem.farmName}
                     desc={CardItem.description}
-                    numUS={CardItem.price}
+                    price={CardItem.price}
                     alt={CardItem.farmName}
                     id={CardItem.id}
                 />

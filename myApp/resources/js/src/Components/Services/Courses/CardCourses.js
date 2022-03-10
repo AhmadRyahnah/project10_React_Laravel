@@ -14,7 +14,7 @@ const CardCourses = (props) => {
             <img src={'img/'+props.img} alt={props.alt} />
             <h2>{props.title}</h2>
             <h5>{props.desc}</h5>
-            <h4>{props.numUS} $</h4>
+            <h4>{props.price} $</h4>
             <Link to='/ConfirmBooking'><button >Book Now</button></Link>
         </div>
     )

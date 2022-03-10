@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import './Home.css'
 
@@ -13,8 +13,21 @@ import CreateGovernorate from "./Governorate/Create";
 import EditGovernorate from "./Governorate/Edit";
 import ViewFarm from "./Governorate/ViewFarms";
 import ErrorPage from "../404/404";
+import { UserContext } from '../../App'
+
+
 const HomeAdmin = () => {
 
+    const { setUser } = useContext(UserContext)
+const logout = () => {
+    localStorage.removeItem('loggedUser')
+    localStorage.removeItem('Lecture')
+    localStorage.removeItem('date')
+    localStorage.removeItem('fromDelete')
+    localStorage.removeItem('Courses')
+    setUser(false)
+
+  }
 
     return (
 
@@ -26,7 +39,7 @@ const HomeAdmin = () => {
                 <div className="sidebar-content">
                     <div className="sidebar-brand">
                         <a href="#">pro sidebar</a>
-                        <div id="close-sidebar">
+                        <div onClick={logout} id="close-sidebar">
                             <i className="fas fa-times"></i>
                         </div>
                     </div>
