@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="heroContainer">
             <div className="heroImage">
                 <div className="btnOne">
-                    <h1> Helping You On Your Journey To Become A Professional Engineer</h1>
+                    <h1> Booking Farms Made Easy</h1>
                     <Link to="/Services"><button className="btn btnH">Services</button></Link>
                 </div>
             </div>

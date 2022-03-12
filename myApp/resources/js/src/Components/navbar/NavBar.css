@@ -1,47 +1,47 @@
-
 .navbarContainer {
-  background-color: white;
-  display: grid;
-  grid-template-areas: "logo nav-list shoppingIcon login_logout";
-  height: 70px;
-  position: sticky;
-  top: 0;
-  box-shadow: 0 0 5px black;
-  z-index: 25;
+    background-color: #f2f2f7;
+    display: grid;
+    grid-template-areas: "logo nav-list shoppingIcon login_logout";
+    height: 75px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 0 5px black;
+    z-index: 25;
 }
 .nav-icon {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  display: none;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: none;
 }
 .fa-bars:before,
 .fa-times:before {
-  font-size: 2em;
+    font-size: 2em;
 }
 .logo img {
-  height: 60px;
+    height: auto;
+    width: 175px;
 }
 .logo {
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 .navbarContainer .nav-list ul {
-  height: 70px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .navbarContainer .nav-list ul li,
 .shoppingIcon ul li,
 .login_logout ul li {
-  list-style: none;
+    list-style: none;
 }
 .navbarContainer .nav-list ul li a {
-  text-decoration: none;
-  font-size: 1.2em;
-  color: #2e739e;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #2e739e;
 }
 
 /* .shoppingIcon {
@@ -51,64 +51,74 @@
   position: relative;
 } */
 .login_logout {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 .shoppingIcon span {
-  position: absolute;
-  right: 16px;
-  bottom: 10px;
+    position: absolute;
+    right: 16px;
+    bottom: 10px;
 }
 .shoppingIcon svg {
-  height: 40px;
+    height: 40px;
 }
 .login_logout button {
-  height: 35px;
-  width: 75px;
-  border: none;
-  background-color: #166fe5;
-  border-radius: 5px;
+    height: 50px;
+    /* width: 75px; */
+    border: none;
+    /* background-color: #166fe5; */
+    border-radius: 6px;
+    min-width: 85px;
+    border: solid 2px #1d6dc0;
+    background-color: transparent;
+    cursor: pointer;
+    color: #1d6dc0;
+    font-size: 1.2em;
 }
-.login_logout button a {
-  text-decoration: none;
-  font-size: 1.2em;
-  color: white;
+.login_logout button:hover {
+
+    background-color: white;
+
 }
+/* .login_logout a {
+    text-decoration: none;
+    font-size: 1.5em;
+    /* color: white; */
+
 @media screen and (max-width: 950px) {
+    .navbarContainer .nav-list ul {
+        height: 100px;
+        padding: 1em 0;
+    }
+    .nav-list ul,
+    .shoppingIcon,
+    .login_logout {
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+    }
+    .active {
+        display: none;
+    }
 
-  .navbarContainer .nav-list ul {
-    height: 100px;
-    padding: 1em 0;
-  }
-  .nav-list ul,
-  .shoppingIcon,
-  .login_logout {
-    background-color: #F5F5F5;
-    display: flex;
-    flex-direction: column;
-  }
-   .active {
-    display: none;
-  }
-
-  .navbarContainer {
-    display: flex;
-    flex-direction: column;
-  }
-  .logo {
-    margin: auto 0;
-    display: flex;
-    align-items: center;
-  }
-span{
-  text-align: center;
-}
-  .nav-icon {
-    display: block;
-  }
-  .login_logout button{
-    margin-bottom: 1em;
-  }
+    .navbarContainer {
+        display: flex;
+        flex-direction: column;
+    }
+    .logo {
+        margin: auto 0;
+        display: flex;
+        align-items: center;
+    }
+    span {
+        text-align: center;
+    }
+    .nav-icon {
+        display: block;
+    }
+    .login_logout button {
+        margin-bottom: 1em;
+    }
 }

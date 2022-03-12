@@ -5460,23 +5460,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ "./resources/js/src/App.css");
-/* harmony import */ var _Components_Checkout_Checkout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/Checkout/Checkout */ "./resources/js/src/Components/Checkout/Checkout.js");
-/* harmony import */ var _Components_footer_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/footer/footer */ "./resources/js/src/Components/footer/footer.js");
-/* harmony import */ var _Components_navbar_NavBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Components/navbar/NavBar */ "./resources/js/src/Components/navbar/NavBar.js");
-/* harmony import */ var _Page_Home__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Page/Home */ "./resources/js/src/Page/Home.js");
-/* harmony import */ var _Page_Services__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Page/Services */ "./resources/js/src/Page/Services.js");
-/* harmony import */ var _Page_Sign_In_Up__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Page/Sign-In-Up */ "./resources/js/src/Page/Sign-In-Up.js");
-/* harmony import */ var _src_Components_Services_Lecture_Lecture__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../src/Components/Services/Lecture/Lecture */ "./resources/js/src/Components/Services/Lecture/Lecture.js");
-/* harmony import */ var _Components_Services_Courses_Courses__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Components/Services/Courses/Courses */ "./resources/js/src/Components/Services/Courses/Courses.js");
-/* harmony import */ var _Components_Services_Courses_ConfirmBooking__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Components/Services/Courses/ConfirmBooking */ "./resources/js/src/Components/Services/Courses/ConfirmBooking.js");
-/* harmony import */ var _Components_Profile_Profile__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Components/Profile/Profile */ "./resources/js/src/Components/Profile/Profile.jsx");
-/* harmony import */ var _Components_About_About__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Components/About/About */ "./resources/js/src/Components/About/About.js");
-/* harmony import */ var _Components_Checkout_ItemCart__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Components/Checkout/ItemCart */ "./resources/js/src/Components/Checkout/ItemCart.js");
-/* harmony import */ var _Components_Admin_Home__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Components/Admin/Home */ "./resources/js/src/Components/Admin/Home.js");
-/* harmony import */ var _Components_404_404__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Components/404/404 */ "./resources/js/src/Components/404/404.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Components_footer_footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/footer/footer */ "./resources/js/src/Components/footer/footer.js");
+/* harmony import */ var _Components_navbar_NavBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/navbar/NavBar */ "./resources/js/src/Components/navbar/NavBar.js");
+/* harmony import */ var _Page_Home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Page/Home */ "./resources/js/src/Page/Home.js");
+/* harmony import */ var _Page_Services__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Page/Services */ "./resources/js/src/Page/Services.js");
+/* harmony import */ var _Page_Sign_In_Up__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Page/Sign-In-Up */ "./resources/js/src/Page/Sign-In-Up.js");
+/* harmony import */ var _Components_Services_Courses_Courses__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Components/Services/Courses/Courses */ "./resources/js/src/Components/Services/Courses/Courses.js");
+/* harmony import */ var _Components_Services_Courses_ConfirmBooking__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Components/Services/Courses/ConfirmBooking */ "./resources/js/src/Components/Services/Courses/ConfirmBooking.js");
+/* harmony import */ var _Components_Profile_Profile__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Components/Profile/Profile */ "./resources/js/src/Components/Profile/Profile.jsx");
+/* harmony import */ var _Components_About_About__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Components/About/About */ "./resources/js/src/Components/About/About.js");
+/* harmony import */ var _Components_Checkout_ItemCart__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Components/Checkout/ItemCart */ "./resources/js/src/Components/Checkout/ItemCart.js");
+/* harmony import */ var _Components_Admin_Home__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Components/Admin/Home */ "./resources/js/src/Components/Admin/Home.js");
+/* harmony import */ var _Components_404_404__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Components/404/404 */ "./resources/js/src/Components/404/404.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5507,68 +5505,57 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-
 var UserContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)();
 
 var App = function App() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState2 = _slicedToArray(_useState, 2),
       User = _useState2[0],
-      setUser = _useState2[1]; // const [myLecture, setmyLecture] = useState(0);
-
+      setUser = _useState2[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var myUser = localStorage.getItem('loggedUser') ? JSON.parse(localStorage.getItem('loggedUser')) : [];
     setUser(myUser.role);
   }); // <Route path="adminDashboard" element={<HomeAdmin />} />
 
-  return (
-    /*#__PURE__*/
-    // <BrowserRouter>
-    (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(UserContext.Provider, {
-      value: {
-        User: User,
-        setUser: setUser
-      },
-      children: User ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Components_Admin_Home__WEBPACK_IMPORTED_MODULE_14__["default"], {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.Fragment, {
-        children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Components_navbar_NavBar__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Routes, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
-            path: "/",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Page_Home__WEBPACK_IMPORTED_MODULE_5__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
-            path: "SignInUp",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Page_Sign_In_Up__WEBPACK_IMPORTED_MODULE_7__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
-            path: "Checkout",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Components_Checkout_ItemCart__WEBPACK_IMPORTED_MODULE_13__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
-            path: "Services",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Page_Services__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
-            path: "Lecture",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_src_Components_Services_Lecture_Lecture__WEBPACK_IMPORTED_MODULE_8__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
-            path: "Courses",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Components_Services_Courses_Courses__WEBPACK_IMPORTED_MODULE_9__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
-            path: "ConfirmBooking",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Components_Services_Courses_ConfirmBooking__WEBPACK_IMPORTED_MODULE_10__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
-            path: "Profile",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Components_Profile_Profile__WEBPACK_IMPORTED_MODULE_11__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
-            path: "About",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Components_About_About__WEBPACK_IMPORTED_MODULE_12__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Route, {
-            path: "*",
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Components_404_404__WEBPACK_IMPORTED_MODULE_15__["default"], {})
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_Components_footer_footer__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
-      })
-    }) // </BrowserRouter>
-
-  );
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(UserContext.Provider, {
+    value: {
+      User: User,
+      setUser: setUser
+    },
+    children: User ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_Admin_Home__WEBPACK_IMPORTED_MODULE_12__["default"], {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {
+      children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_navbar_NavBar__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Routes, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          path: "/",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Page_Home__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          path: "SignInUp",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Page_Sign_In_Up__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          path: "Checkout",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_Checkout_ItemCart__WEBPACK_IMPORTED_MODULE_11__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          path: "Services",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Page_Services__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          path: "Courses",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_Services_Courses_Courses__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          path: "ConfirmBooking",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_Services_Courses_ConfirmBooking__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          path: "Profile",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_Profile_Profile__WEBPACK_IMPORTED_MODULE_9__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          path: "About",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_About_About__WEBPACK_IMPORTED_MODULE_10__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          path: "*",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_404_404__WEBPACK_IMPORTED_MODULE_13__["default"], {})
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_footer_footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+    })
+  });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -8124,7 +8111,7 @@ var Hero = function Hero() {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "btnOne",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-          children: " Helping You On Your Journey To Become A Professional Engineer"
+          children: " Booking Farms Made Easy"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
           to: "/Services",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
@@ -8987,229 +8974,6 @@ var CoursesItem = [{
 
 /***/ }),
 
-/***/ "./resources/js/src/Components/Services/Lecture/CardInfo.js":
-/*!******************************************************************!*\
-  !*** ./resources/js/src/Components/Services/Lecture/CardInfo.js ***!
-  \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var CardInfo = [{
-  id: '0',
-  img: 'img/Lecture/steel.jpg',
-  alt: '600',
-  title: 'Steel Structure',
-  desc: 'Steel structure is a metal structure which is made of structural steel* components connect with each other to carry loads and provide full rigidity.',
-  price: 70
-}, {
-  id: '1',
-  img: 'img/Lecture/RC.jpg',
-  alt: '600',
-  title: 'Reinforced Concrete',
-  desc: 'The reinforced concrete structure refers to the members, such as beams, boards, columns, roof trusses, consisting of concrete and steel bars',
-  price: 80
-}, {
-  id: '2',
-  img: 'img/Lecture/Foundation.jpg',
-  alt: '600',
-  title: 'Structural Foundation',
-  desc: 'A structural foundation is the part of a building that fixes it into the soil provide support for the main structures appear above the soil level.',
-  price: 75
-}, {
-  id: '3',
-  img: 'img/Lecture/sofm.jpg',
-  alt: '600',
-  title: 'Strength of Material',
-  desc: 'n the mechanics of materials, the strength of a material is its ability to withstand an applied load without failure or plastic deformation.',
-  price: 100
-}, {
-  id: '4',
-  img: 'img/Lecture/ST.jpg',
-  alt: '600',
-  title: 'Structural Analysis',
-  desc: 'Structural analysis is the determination of the effects of loads on physical structures and their components..',
-  price: 50
-}, {
-  id: '5',
-  img: 'img/Lecture/pre.jpg',
-  alt: '600',
-  title: 'Prestressed Concrete',
-  desc: 'Prestressed Concrete is a form of concrete used in construction. It is substantially "prestressed" (compressed) during production.',
-  price: 120
-}];
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CardInfo);
-
-/***/ }),
-
-/***/ "./resources/js/src/Components/Services/Lecture/CardLecture.js":
-/*!*********************************************************************!*\
-  !*** ./resources/js/src/Components/Services/Lecture/CardLecture.js ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _CardLecture_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CardLecture.css */ "./resources/js/src/Components/Services/Lecture/CardLecture.css");
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../App */ "./resources/js/src/App.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-
-var CardLecture = function CardLecture(props) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
-      _useState2 = _slicedToArray(_useState, 2),
-      msg = _useState2[0],
-      setMsg = _useState2[1];
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState4 = _slicedToArray(_useState3, 2),
-      click = _useState4[0],
-      setClick = _useState4[1]; // **********************
-
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var myLecture = localStorage.getItem('Lecture') ? JSON.parse(localStorage.getItem('Lecture')) : [];
-    myLecture.forEach(function (element) {
-      if (element.id === Lecture.id) {
-        setClick(!click);
-        setMsg('This Course has been Added'); // setmyLecture(myLecture.length)
-      }
-    });
-  }, []); // **********************
-
-  var Lecture = props;
-
-  var _useContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_App__WEBPACK_IMPORTED_MODULE_2__.UserContext),
-      setmyLecture = _useContext.setmyLecture;
-
-  var handleClick = function handleClick(e) {
-    e.preventDefault();
-    localStorage.removeItem('fromDelete');
-    var myLecture = [];
-    var myAllLecture = localStorage.getItem('Lecture') ? JSON.parse(localStorage.getItem('Lecture')) : [];
-    myLecture = myAllLecture;
-    var exist = false;
-    myLecture.forEach(function (element) {
-      if (element.id === Lecture.id) {
-        exist = true;
-      }
-    });
-
-    if (!exist) {
-      myLecture.push(Lecture);
-      setmyLecture(myLecture.length);
-    }
-
-    localStorage.setItem('Lecture', JSON.stringify(myLecture));
-    setClick(!click);
-    setMsg('This Course has been Added');
-  };
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "cardContainer",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-      src: props.img,
-      alt: props.alt
-    }, props.id), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-      children: props.title
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
-      children: props.desc
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h4", {
-      children: [props.price, " $"]
-    }), click ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-      children: msg
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {}), click ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-      to: "/Checkout",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-        className: "CartBtn",
-        children: "Go to Cart"
-      })
-    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-      className: "AddBtn",
-      onClick: handleClick,
-      children: "Add to cart"
-    })]
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CardLecture);
-
-/***/ }),
-
-/***/ "./resources/js/src/Components/Services/Lecture/Lecture.js":
-/*!*****************************************************************!*\
-  !*** ./resources/js/src/Components/Services/Lecture/Lecture.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _CardInfo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CardInfo */ "./resources/js/src/Components/Services/Lecture/CardInfo.js");
-/* harmony import */ var _CardLecture__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CardLecture */ "./resources/js/src/Components/Services/Lecture/CardLecture.js");
-/* harmony import */ var _Lecture_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Lecture.css */ "./resources/js/src/Components/Services/Lecture/Lecture.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
-
-var Lecture = function Lecture() {
-  var Cards = _CardInfo__WEBPACK_IMPORTED_MODULE_1__["default"].map(function (Card) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_CardLecture__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      desc: Card.desc,
-      img: Card.img,
-      alt: Card.alt,
-      title: Card.title,
-      price: Card.price,
-      id: Card.id
-    }, Card.id);
-  });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-      className: "header",
-      children: "Civil Engineering Courses"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "Lecture",
-      children: Cards
-    })]
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Lecture);
-
-/***/ }),
-
 /***/ "./resources/js/src/Components/Slider/SliderImg.js":
 /*!*********************************************************!*\
   !*** ./resources/js/src/Components/Slider/SliderImg.js ***!
@@ -9443,10 +9207,13 @@ var NavBar = function NavBar(props) {
     className: "navbarContainer",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "logo",
-      onClick: handleClick,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-        src: "./img/logo.png",
-        alt: "logo"
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+        to: "/",
+        onClick: handleClick,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          src: "./img/logo.png",
+          alt: "logo"
+        })
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: click ? "nav-list active" : "nav-list",
@@ -9486,20 +9253,19 @@ var NavBar = function NavBar(props) {
       className: click ? "login_logout active" : "login_logout",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-          children: isLoggedIn ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            style: {
-              backgroundColor: "#FB6767"
-            },
-            onClick: logout,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
-              to: "/SignInUp",
-              onClick: handleClick,
-              children: "Log out"
+          children: isLoggedIn ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+            to: "/SignInUp",
+            onClick: handleClick,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", {
+              onClick: logout,
+              children: ["//   style=", {
+                backgroundColor: "#FB6767"
+              }, "Log out"]
             })
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
-              to: "/SignInUp",
-              onClick: handleClick,
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+            to: "/SignInUp",
+            onClick: handleClick,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
               children: "Log In"
             })
           })
@@ -14954,17 +14720,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _hero_jpeg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hero.jpeg */ "./resources/js/src/Components/Landing Page/hero.jpeg");
 // Imports
 
-
-
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_hero_jpeg__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".heroImage {\r\n  height: 100vh;\r\n  width: 100%;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n  background-position: center;\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n  position: relative;\r\n  /* z-index: -1; */\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n.heroImage::after{\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  background-color: rgba(0, 0, 0, 0.3);\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n.btnOne{\r\n  z-index: 3;\r\n  text-align: center;\r\n}\r\n.btnOne h1{\r\n  color: white;\r\n  font-size: 2rem;\r\n  font-weight: bolder;\r\n  margin-bottom: 2em;\r\n}\r\n.btnOne .btn{\r\n  width: 15rem;\r\n  color: white;\r\n  height: 3.5rem;\r\n  border: none;\r\n  background-size: 300% 100% ;\r\n  font-size: 1.7rem;\r\n  border-radius: 50px;\r\n  transition: all .4s ease-in-out;\r\n  cursor: pointer;\r\n}\r\n.btnOne .btn:hover{\r\n  background-position: 100% 0;\r\n  moz-transition: all .4s ease-in-out;\r\n  transition: all .4s ease-in-out;\r\n}\r\n.btnOne .btn:focus{\r\noutline: none;\r\n}\r\n.btnH{\r\n  background-image: linear-gradient(to right,#E8F1F8,#166FE5,#36A420,#485A6F);\r\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".heroImage {\n    height: 433px;\n    width: 100%;\n    background-image: url(\"https://hz-cdn.hagzi.com/imgs/wallpaper.webp\");\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n    position: relative;\n    /* z-index: -1; */\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n}\n.heroImage::after {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 0;\n    /* background-color: rgba(0, 0, 0, 0.3); */\n    width: 100%;\n    height: 100%;\n}\n.btnOne {\n    z-index: 3;\n    text-align: center;\n}\n.btnOne h1 {\n    color: white;\n    font-size: 2rem;\n    font-weight: bolder;\n    margin-bottom: 2em;\n}\n.btnOne .btn {\n    width: 15rem;\n    color: white;\n    height: 3.5rem;\n    border: none;\n    background-size: 300% 100%;\n    font-size: 1.7rem;\n    border-radius: 50px;\n    transition: all 0.4s ease-in-out;\n    cursor: pointer;\n}\n.btnOne .btn:hover {\n    background-position: 100% 0;\n    moz-transition: all 0.4s ease-in-out;\n    transition: all 0.4s ease-in-out;\n}\n.btnOne .btn:focus {\n    outline: none;\n}\n.btnH {\n    background-image: linear-gradient(\n        to right,\n        #e8f1f8,\n        #166fe5,\n        #36a420,\n        #485a6f\n    );\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -15163,54 +14923,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".Courses{\r\n    width: 80%;\r\n    di
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Lecture/CardLecture.css":
-/*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Lecture/CardLecture.css ***!
-  \********************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".cardContainer {\r\n  background-color: whitesmoke;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin: 2em;\r\n  border-radius: 10px;\r\n  box-shadow: black 0 0 10px;\r\n}\r\n.cardContainer img {\r\n  margin: 1em 0;\r\n  /* max-width: 250px; */\r\n  width: 300px;\r\n  height: 180px;\r\n}\r\n.cardContainer h5 {\r\n  width: 85%;\r\n  text-align: center;\r\n  margin: 1em 0;\r\n}\r\n.cardContainer h4 {\r\n  margin-bottom: 1em;\r\n  font-size: 1.5rem;\r\n}\r\n.cardContainer .AddBtn {\r\n  margin-bottom: 1.5em;\r\n  width: 175px;\r\n  height: 40px;\r\n  border-radius: 7px;\r\n  cursor: pointer;\r\n  font-size: 1rem;\r\n}\r\n.cardContainer .CartBtn {\r\n  margin-bottom: 1.5em;\r\n  width: 175px;\r\n  height: 40px;\r\n  border-radius: 7px;\r\n  cursor: pointer;\r\n  background-color: #36a420;\r\n  color: white;\r\n  font-size: 1rem;\r\n  border: #36a420;\r\n}\r\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Lecture/Lecture.css":
-/*!****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Lecture/Lecture.css ***!
-  \****************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Lecture{\r\n  width:80%;\r\n  display: grid;\r\n  grid-template-areas: \"cardContainer cardContainer cardContainer\";\r\n  justify-content: center;\r\n  margin: 0 auto;\r\n}\r\n@media screen and (max-width:1000px){\r\n  .Lecture{\r\n    \r\n      grid-template-areas: \" cardContainer cardContainer\";\r\n    \r\n  }\r\n}\r\n@media screen and (max-width:730px){\r\n  .Lecture{\r\n    \r\n      grid-template-areas: \"cardContainer\";\r\n    \r\n  }\r\n}", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Slider/SliderImg.css":
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Slider/SliderImg.css ***!
@@ -15276,7 +14988,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.navbarContainer {\n  background-color: white;\n  display: grid;\n  grid-template-areas: \"logo nav-list shoppingIcon login_logout\";\n  height: 70px;\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n  box-shadow: 0 0 5px black;\n  z-index: 25;\n}\n.nav-icon {\n  position: absolute;\n  top: 18px;\n  right: 18px;\n  display: none;\n}\n.fa-bars:before,\n.fa-times:before {\n  font-size: 2em;\n}\n.logo img {\n  height: 60px;\n}\n.logo {\n  margin: 0 auto;\n  display: flex;\n  align-items: center;\n}\n.navbarContainer .nav-list ul {\n  height: 70px;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n}\n.navbarContainer .nav-list ul li,\n.shoppingIcon ul li,\n.login_logout ul li {\n  list-style: none;\n}\n.navbarContainer .nav-list ul li a {\n  text-decoration: none;\n  font-size: 1.2em;\n  color: #2e739e;\n}\n\n/* .shoppingIcon {\n  display: flex;\n  justify-content: end;\n  align-items: center;\n  position: relative;\n} */\n.login_logout {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n}\n.shoppingIcon span {\n  position: absolute;\n  right: 16px;\n  bottom: 10px;\n}\n.shoppingIcon svg {\n  height: 40px;\n}\n.login_logout button {\n  height: 35px;\n  width: 75px;\n  border: none;\n  background-color: #166fe5;\n  border-radius: 5px;\n}\n.login_logout button a {\n  text-decoration: none;\n  font-size: 1.2em;\n  color: white;\n}\n@media screen and (max-width: 950px) {\n\n  .navbarContainer .nav-list ul {\n    height: 100px;\n    padding: 1em 0;\n  }\n  .nav-list ul,\n  .shoppingIcon,\n  .login_logout {\n    background-color: #F5F5F5;\n    display: flex;\n    flex-direction: column;\n  }\n   .active {\n    display: none;\n  }\n\n  .navbarContainer {\n    display: flex;\n    flex-direction: column;\n  }\n  .logo {\n    margin: auto 0;\n    display: flex;\n    align-items: center;\n  }\nspan{\n  text-align: center;\n}\n  .nav-icon {\n    display: block;\n  }\n  .login_logout button{\n    margin-bottom: 1em;\n  }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".navbarContainer {\n    background-color: #f2f2f7;\n    display: grid;\n    grid-template-areas: \"logo nav-list shoppingIcon login_logout\";\n    height: 75px;\n    position: -webkit-sticky;\n    position: sticky;\n    top: 0;\n    box-shadow: 0 0 5px black;\n    z-index: 25;\n}\n.nav-icon {\n    position: absolute;\n    top: 18px;\n    right: 18px;\n    display: none;\n}\n.fa-bars:before,\n.fa-times:before {\n    font-size: 2em;\n}\n.logo img {\n    height: auto;\n    width: 175px;\n}\n.logo {\n    margin: 0 auto;\n    display: flex;\n    align-items: center;\n}\n.navbarContainer .nav-list ul {\n    height: 70px;\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n}\n.navbarContainer .nav-list ul li,\n.shoppingIcon ul li,\n.login_logout ul li {\n    list-style: none;\n}\n.navbarContainer .nav-list ul li a {\n    text-decoration: none;\n    font-size: 1.2em;\n    color: #2e739e;\n}\n\n/* .shoppingIcon {\n  display: flex;\n  justify-content: end;\n  align-items: center;\n  position: relative;\n} */\n.login_logout {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: relative;\n}\n.shoppingIcon span {\n    position: absolute;\n    right: 16px;\n    bottom: 10px;\n}\n.shoppingIcon svg {\n    height: 40px;\n}\n.login_logout button {\n    height: 50px;\n    /* width: 75px; */\n    border: none;\n    /* background-color: #166fe5; */\n    border-radius: 6px;\n    min-width: 85px;\n    border: solid 2px #1d6dc0;\n    background-color: transparent;\n    cursor: pointer;\n    color: #1d6dc0;\n    font-size: 1.2em;\n}\n.login_logout button:hover {\n\n    background-color: white;\n\n}\n/* .login_logout a {\n    text-decoration: none;\n    font-size: 1.5em;\n    /* color: white; */\n\n@media screen and (max-width: 950px) {\n    .navbarContainer .nav-list ul {\n        height: 100px;\n        padding: 1em 0;\n    }\n    .nav-list ul,\n    .shoppingIcon,\n    .login_logout {\n        background-color: #f5f5f5;\n        display: flex;\n        flex-direction: column;\n    }\n    .active {\n        display: none;\n    }\n\n    .navbarContainer {\n        display: flex;\n        flex-direction: column;\n    }\n    .logo {\n        margin: auto 0;\n        display: flex;\n        align-items: center;\n    }\n    span {\n        text-align: center;\n    }\n    .nav-icon {\n        display: block;\n    }\n    .login_logout button {\n        margin-bottom: 1em;\n    }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -15404,65 +15116,6 @@ module.exports = function (cssWithMappingToString) {
 
   return list;
 };
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
-/*!********************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
-  \********************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-module.exports = function (url, options) {
-  if (!options) {
-    // eslint-disable-next-line no-param-reassign
-    options = {};
-  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
-
-
-  url = url && url.__esModule ? url.default : url;
-
-  if (typeof url !== "string") {
-    return url;
-  } // If url is already wrapped in quotes, remove them
-
-
-  if (/^['"].*['"]$/.test(url)) {
-    // eslint-disable-next-line no-param-reassign
-    url = url.slice(1, -1);
-  }
-
-  if (options.hash) {
-    // eslint-disable-next-line no-param-reassign
-    url += options.hash;
-  } // Should url be wrapped?
-  // See https://drafts.csswg.org/css-values-3/#urls
-
-
-  if (/["'() \t\n]/.test(url) || options.needQuotes) {
-    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
-  }
-
-  return url;
-};
-
-/***/ }),
-
-/***/ "./resources/js/src/Components/Landing Page/hero.jpeg":
-/*!************************************************************!*\
-  !*** ./resources/js/src/Components/Landing Page/hero.jpeg ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/hero.jpeg?6ca94b4e50bad3fac4d1d654658fcf89");
 
 /***/ }),
 
@@ -67510,66 +67163,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Courses_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ }),
-
-/***/ "./resources/js/src/Components/Services/Lecture/CardLecture.css":
-/*!**********************************************************************!*\
-  !*** ./resources/js/src/Components/Services/Lecture/CardLecture.css ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_CardLecture_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./CardLecture.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Lecture/CardLecture.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_CardLecture_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_CardLecture_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ }),
-
-/***/ "./resources/js/src/Components/Services/Lecture/Lecture.css":
-/*!******************************************************************!*\
-  !*** ./resources/js/src/Components/Services/Lecture/Lecture.css ***!
-  \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Lecture_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Lecture.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Lecture/Lecture.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Lecture_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Lecture_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
