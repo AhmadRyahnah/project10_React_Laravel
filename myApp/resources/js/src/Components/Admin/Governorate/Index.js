@@ -33,9 +33,9 @@ const Governorate = () => {
     // console.log(user);
 
 
-    const viewClick = (governorate) => {
-        localStorage.setItem('governorate', JSON.stringify(governorate))
-    }
+    // const viewClick = (governorate) => {
+    //     localStorage.setItem('governorate', JSON.stringify(governorate))
+    // }
     return (
         <div >
             <h1>Farms Details</h1>
@@ -71,8 +71,8 @@ const Governorate = () => {
                             <td><img src={'img/Governorate/' + governorate.Image} width='100' /></td>
 
                             <td>
-                                <Link to='/viewFarms'>
-                                    <button variant="danger" onClick={() => viewClick(governorate)}>
+                                <Link to={`/viewFarms/${governorate.id}`}>
+                                    <button variant="danger" >
                                         view
                                     </button>
                                 </Link>

@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
 import './Farm.css'
+
+
 const ViewFarm = () => {
+    let { id } = useParams();
+
+    console.log(id);
 
 
-
-
-
-    const governorate=JSON.parse(localStorage.getItem('governorate'));
-    const id=governorate.id
-    const name=governorate.governorateName
+    // const governorate = JSON.parse(localStorage.getItem('governorate'));
+    // const id=governorate.id
+    // const name = governorate.governorateName
     const [Farms, setFarms] = useState();
     const [deleted, setDeleted] = useState(0);
 
@@ -18,7 +20,7 @@ const ViewFarm = () => {
     let i = 1;
     useEffect(async () => {
 
-        await axios.get("http://127.0.0.1:8000/api/showFarm/"+id).then((response) => {
+        await axios.get("http://127.0.0.1:8000/api/showFarm/" + id).then((response) => {
             setFarms(response.data);
             // console.log(response.date);
         });
@@ -69,11 +71,13 @@ const ViewFarm = () => {
                         <tr>
                             <td>{i++}</td>
                             <td>{Farm.farmName}</td>
-                            <td>{name}</td>
+                            <td>
+                                {/* {name} */}
+                            </td>
                             <td>{Farm.description}</td>
                             <td>{Farm.phone}</td>
                             <td>{Farm.price}</td>
-                            <td><img src={'img/'+Farm.image} width='100' /></td>
+                            <td><img src={'img/' + Farm.image} width='100' /></td>
                             <td>{Farm.Time}</td>
 
                             <td><Link to='/editFarm'>

@@ -126,7 +126,7 @@ const logout = () => {
                         <Route path='Governorates' element={<Governorate />} />
                         <Route path='createGovernorate' element={<CreateGovernorate />} />
                         <Route path='editGovernorate' element={<EditGovernorate />} />
-                        <Route path='viewFarms' element={<ViewFarm />} />
+                        <Route path='viewFarms/:id' element={<ViewFarm />} />
 
 
                         <Route path='*' element={<ErrorPage />}/>
