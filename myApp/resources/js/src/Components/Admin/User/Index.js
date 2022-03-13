@@ -62,7 +62,7 @@ const User = () => {
                             <td>{user.phone}</td>
                             <td>{user.role !== 0 ? 'Admin' : 'User'}</td>
 
-                            <td><Link to='/editUser'>
+                            <td><Link to={`/editUser/${user.id}`}>
                                 <button variant="danger" onClick={() => EditClick(user)}>
                                     Edit
                                 </button></Link></td>

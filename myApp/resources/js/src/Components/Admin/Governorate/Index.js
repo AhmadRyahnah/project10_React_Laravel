@@ -77,7 +77,7 @@ const Governorate = () => {
                                     </button>
                                 </Link>
                             </td>
-                            <td><Link to='/editGovernorate'>
+                            <td><Link to={`/editGovernorate/${governorate.id}`}>
                                 <button variant="danger" onClick={() => EditClick(governorate)}>
                                     Edit
                                 </button></Link></td>

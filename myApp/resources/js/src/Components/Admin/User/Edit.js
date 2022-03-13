@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import swal from 'sweetalert';
 import './User.css'
 const EditUser = () => {
 
+    const { id } = useParams();
 
 
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('editUser')));
@@ -19,7 +20,7 @@ const EditUser = () => {
     const handleSubmit = (event) => {
 
         event.preventDefault();
-        axios.put('http://127.0.0.1:8000/api/editUser/' + user.id, user);
+        axios.put('http://127.0.0.1:8000/api/editUser/' + id, user);
         navigate('/Users')
     }
 

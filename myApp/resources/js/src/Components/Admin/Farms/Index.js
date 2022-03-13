@@ -26,9 +26,9 @@ const Farm = () => {
 
 
     const EditClick = (Farm) => {
-           // if (localStorage.getItem('governorate')) {
-            //     setFarm(JSON.parse(localStorage.getItem('governorate')))
-            // }
+        // if (localStorage.getItem('governorate')) {
+        //     setFarm(JSON.parse(localStorage.getItem('governorate')))
+        // }
         localStorage.setItem('editFarm', JSON.stringify(Farm))
     }
     // console.log(user);
@@ -67,10 +67,10 @@ const Farm = () => {
                             <td>{Farm.description}</td>
                             <td>{Farm.phone}</td>
                             <td>{Farm.price}</td>
-                            <td><img src={'img/Farms/'+Farm.image} width='100' /></td>
+                            <td><img src={'img/Farms/' + Farm.image} width='100' /></td>
                             <td>{Farm.Time}</td>
 
-                            <td><Link to='/editFarm'>
+                            <td><Link to={`/editFarm/${Farm.id}`}>
                                 <button variant="danger" onClick={() => EditClick(Farm)}>
                                     Edit
                                 </button></Link></td>

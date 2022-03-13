@@ -1,12 +1,12 @@
 import React, { useState, Fragment } from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useParams} from "react-router-dom";
 import swal from 'sweetalert';
 import '../User/User.css'
 
 const EditGovernorate = () => {
 
 
-
+    const { id } = useParams();
 
 
 
@@ -57,7 +57,7 @@ const EditGovernorate = () => {
     const handleSubmit = (event) => {
 
         event.preventDefault();
-        axios.put('http://127.0.0.1:8000/api/editGovernorate/' + Governorate.id, Governorate);
+        axios.put('http://127.0.0.1:8000/api/editGovernorate/' + id, Governorate);
         navigate('/Governorates')
     }
 

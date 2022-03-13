@@ -115,17 +115,17 @@ const logout = () => {
                         {/* users */}
                         <Route path='Users' element={<User />} />
                         <Route path='createUser' element={<CreateUser />} />
-                        <Route path='editUser' element={<EditUser />} />
+                        <Route path='editUser/:id' element={<EditUser />} />
 
                         {/* farms */}
                         <Route path='Farms' element={<Farm />} />
                         <Route path='createFarm' element={<CreateFarm />} />
-                        <Route path='editFarm' element={<EditFarm />} />
+                        <Route path='editFarm/:id' element={<EditFarm />} />
 
                         {/* Governorate */}
                         <Route path='Governorates' element={<Governorate />} />
                         <Route path='createGovernorate' element={<CreateGovernorate />} />
-                        <Route path='editGovernorate' element={<EditGovernorate />} />
+                        <Route path='editGovernorate/:id' element={<EditGovernorate />} />
                         <Route path='viewFarms/:id' element={<ViewFarm />} />
 
 

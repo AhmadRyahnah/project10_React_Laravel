@@ -1,9 +1,10 @@
 import React, { useState, useEffect, Fragment } from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useParams} from "react-router-dom";
 import swal from 'sweetalert';
 import '../User/User.css'
 
 const EditFarm = () => {
+    const { id } = useParams();
 
 
 
@@ -56,7 +57,7 @@ const EditFarm = () => {
     const handleSubmit = (event) => {
 
         event.preventDefault();
-        axios.put('http://127.0.0.1:8000/api/editFarm/' + Farm.id, Farm);
+        axios.put('http://127.0.0.1:8000/api/editFarm/' + id, Farm);
         navigate('/Farms')
     }
 

@@ -5917,6 +5917,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var EditFarm = function EditFarm() {
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useParams)(),
+      id = _useParams.id;
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(localStorage.getItem('editFarm') ? JSON.parse(localStorage.getItem('editFarm')) : []),
       _useState2 = _slicedToArray(_useState, 2),
       Farm = _useState2[0],
@@ -5986,7 +5989,7 @@ var EditFarm = function EditFarm() {
 
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
-    axios.put('http://127.0.0.1:8000/api/editFarm/' + Farm.id, Farm);
+    axios.put('http://127.0.0.1:8000/api/editFarm/' + id, Farm);
     navigate('/Farms');
   };
 
@@ -6266,7 +6269,7 @@ var Farm = function Farm() {
               children: Farm.Time
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
-                to: "/editFarm",
+                to: "/editFarm/".concat(Farm.id),
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
                   variant: "danger",
                   onClick: function onClick() {
@@ -6461,6 +6464,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var EditGovernorate = function EditGovernorate() {
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)(),
+      id = _useParams.id;
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(localStorage.getItem('editGovernorate') ? JSON.parse(localStorage.getItem('editGovernorate')) : []),
       _useState2 = _slicedToArray(_useState, 2),
       Governorate = _useState2[0],
@@ -6506,7 +6512,7 @@ var EditGovernorate = function EditGovernorate() {
 
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
-    axios.put('http://127.0.0.1:8000/api/editGovernorate/' + Governorate.id, Governorate);
+    axios.put('http://127.0.0.1:8000/api/editGovernorate/' + id, Governorate);
     navigate('/Governorates');
   };
 
@@ -6712,7 +6718,7 @@ var Governorate = function Governorate() {
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
-                to: "/editGovernorate",
+                to: "/editGovernorate/".concat(governorate.id),
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
                   variant: "danger",
                   onClick: function onClick() {
@@ -7121,7 +7127,7 @@ var HomeAdmin = function HomeAdmin() {
             path: "createUser",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_User_Create__WEBPACK_IMPORTED_MODULE_5__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
-            path: "editUser",
+            path: "editUser/:id",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_User_edit__WEBPACK_IMPORTED_MODULE_4__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
             path: "Farms",
@@ -7130,7 +7136,7 @@ var HomeAdmin = function HomeAdmin() {
             path: "createFarm",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Farms_Create__WEBPACK_IMPORTED_MODULE_6__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
-            path: "editFarm",
+            path: "editFarm/:id",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Farms_Edit__WEBPACK_IMPORTED_MODULE_7__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
             path: "Governorates",
@@ -7139,7 +7145,7 @@ var HomeAdmin = function HomeAdmin() {
             path: "createGovernorate",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Governorate_Create__WEBPACK_IMPORTED_MODULE_9__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
-            path: "editGovernorate",
+            path: "editGovernorate/:id",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Governorate_Edit__WEBPACK_IMPORTED_MODULE_10__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_16__.Route, {
             path: "viewFarms/:id",
@@ -7443,7 +7449,7 @@ var User = function User() {
               children: user.role !== 0 ? 'Admin' : 'User'
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                to: "/editUser",
+                to: "/editUser/".concat(user.id),
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
                   variant: "danger",
                   onClick: function onClick() {
@@ -7519,6 +7525,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var EditUser = function EditUser() {
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)(),
+      id = _useParams.id;
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(JSON.parse(localStorage.getItem('editUser'))),
       _useState2 = _slicedToArray(_useState, 2),
       user = _useState2[0],
@@ -7544,7 +7553,7 @@ var EditUser = function EditUser() {
 
   var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
-    axios.put('http://127.0.0.1:8000/api/editUser/' + user.id, user);
+    axios.put('http://127.0.0.1:8000/api/editUser/' + id, user);
     navigate('/Users');
   };
 
