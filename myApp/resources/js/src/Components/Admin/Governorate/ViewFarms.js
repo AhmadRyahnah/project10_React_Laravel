@@ -5,7 +5,7 @@ import './Farm.css'
 
 
 const ViewFarm = () => {
-    let { id } = useParams();
+    const { id } = useParams();
 
     console.log(id);
 
