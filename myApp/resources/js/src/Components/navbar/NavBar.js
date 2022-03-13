@@ -68,7 +68,6 @@ const NavBar = (props) => {
 
                             <Link to="/SignInUp" onClick={handleClick}>
                                 <button onClick={logout}>
-                                    //   style={{backgroundColor:"#FB6767" }}
                                    Log out</button></Link>
                             :
                             <Link to="/SignInUp" onClick={handleClick}>
