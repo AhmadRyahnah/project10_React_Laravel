@@ -813,6 +813,10 @@ function getContainingBlock(element) {
 
   var currentNode = (0,_getParentNode_js__WEBPACK_IMPORTED_MODULE_2__["default"])(element);
 
+  if ((0,_instanceOf_js__WEBPACK_IMPORTED_MODULE_0__.isShadowRoot)(currentNode)) {
+    currentNode = currentNode.host;
+  }
+
   while ((0,_instanceOf_js__WEBPACK_IMPORTED_MODULE_0__.isHTMLElement)(currentNode) && ['html', 'body'].indexOf((0,_getNodeName_js__WEBPACK_IMPORTED_MODULE_3__["default"])(currentNode)) < 0) {
     var css = (0,_getComputedStyle_js__WEBPACK_IMPORTED_MODULE_1__["default"])(currentNode); // This is non-exhaustive but covers the most common CSS properties that
     // create a containing block.
@@ -1643,7 +1647,7 @@ function mapToStyles(_ref2) {
 
     if (placement === _enums_js__WEBPACK_IMPORTED_MODULE_1__.top || (placement === _enums_js__WEBPACK_IMPORTED_MODULE_1__.left || placement === _enums_js__WEBPACK_IMPORTED_MODULE_1__.right) && variation === _enums_js__WEBPACK_IMPORTED_MODULE_1__.end) {
       sideY = _enums_js__WEBPACK_IMPORTED_MODULE_1__.bottom;
-      var offsetY = isFixed && win.visualViewport ? win.visualViewport.height : // $FlowFixMe[prop-missing]
+      var offsetY = isFixed && offsetParent === win && win.visualViewport ? win.visualViewport.height : // $FlowFixMe[prop-missing]
       offsetParent[heightProp];
       y -= offsetY - popperRect.height;
       y *= gpuAcceleration ? 1 : -1;
@@ -1651,7 +1655,7 @@ function mapToStyles(_ref2) {
 
     if (placement === _enums_js__WEBPACK_IMPORTED_MODULE_1__.left || (placement === _enums_js__WEBPACK_IMPORTED_MODULE_1__.top || placement === _enums_js__WEBPACK_IMPORTED_MODULE_1__.bottom) && variation === _enums_js__WEBPACK_IMPORTED_MODULE_1__.end) {
       sideX = _enums_js__WEBPACK_IMPORTED_MODULE_1__.right;
-      var offsetX = isFixed && win.visualViewport ? win.visualViewport.width : // $FlowFixMe[prop-missing]
+      var offsetX = isFixed && offsetParent === win && win.visualViewport ? win.visualViewport.width : // $FlowFixMe[prop-missing]
       offsetParent[widthProp];
       x -= offsetX - popperRect.width;
       x *= gpuAcceleration ? 1 : -1;
@@ -5918,19 +5922,20 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var EditFarm = function EditFarm() {
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useParams)(),
-      id = _useParams.id;
+      id = _useParams.id; // http://127.0.0.1:8000/api/editShow/1
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(localStorage.getItem('editFarm') ? JSON.parse(localStorage.getItem('editFarm')) : []),
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
       _useState2 = _slicedToArray(_useState, 2),
       Farm = _useState2[0],
       setFarm = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('img/Farms/' + Farm.image),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('1.jpg'),
       _useState4 = _slicedToArray(_useState3, 2),
       Image = _useState4[0],
       setImage = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
       _useState6 = _slicedToArray(_useState5, 2),
       Governorate = _useState6[0],
       setGovernorate = _useState6[1];
@@ -5941,8 +5946,11 @@ var EditFarm = function EditFarm() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return axios.get("http://127.0.0.1:8000/api/createFarm").then(function (response) {
-              setGovernorate(response.data);
+            return axios.get("http://127.0.0.1:8000/api/editShow/" + id).then(function (response) {
+              console.log(response.data);
+              setFarm(response.data.farm);
+              setImage(response.data.farm.image);
+              setGovernorate(response.data.Governorat);
             });
 
           case 2:
@@ -5951,18 +5959,25 @@ var EditFarm = function EditFarm() {
         }
       }
     }, _callee);
-  })), []); // console.log(Governorate);
+  })), [Image]);
+  if (Farm) console.log(Farm.farmName); // useEffect(async () => {
+  //     await axios.get("http://127.0.0.1:8000/api/createFarm").then((response) => {
+  //         setGovernorate(response.data);
+  //     });
+  // }, []);
+  // console.log(Governorate);
 
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)();
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState8 = _slicedToArray(_useState7, 2),
       inputs = _useState8[0],
-      setInputs = _useState8[1]; // if(inputs){
-  //    let img=inputs.image
-  // console.log(img);
-  // }
+      setInputs = _useState8[1];
 
+  if (inputs) {
+    var img = inputs.image;
+    console.log(img);
+  }
 
   var handleChange = function handleChange(event) {
     var name = event.target.name;
@@ -5977,7 +5992,7 @@ var EditFarm = function EditFarm() {
     // }
 
     if (event.target.name == 'image') {
-      setImage('img/Farms/' + event.target.files[0].name); // setfileImg(event.target.files[0])
+      setImage(event.target.files[0].name); // setfileImg(event.target.files[0])
 
       var dataImg = new FormData();
       dataImg.append('image', event.target.files[0]); // console.log(fileImg);
@@ -5993,107 +6008,112 @@ var EditFarm = function EditFarm() {
     navigate('/Farms');
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-      children: "Edit Farm"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
-        onSubmit: handleSubmit,
-        encType: "multipart/form-data",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-          htmlFor: "fname",
-          children: "Farm Name"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-          value: Farm.farmName,
-          onChange: handleChange,
-          type: "text",
-          name: "farmName",
-          placeholder: "Your name..",
-          required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-          htmlFor: "lname",
-          children: "Governorate Name"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
-          name: "governorate_id",
-          onChange: handleChange,
-          required: true,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-            value: Farm.governorate_id,
-            children: Farm.governorateName
-          }), Governorate ? Governorate.map(function (item) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-              value: item.id,
-              children: item.governorateName
-            });
-          }) : null]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-          htmlFor: "lname",
-          children: "Phone"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-          value: Farm.phone,
-          onChange: handleChange,
-          type: "text",
-          name: "phone",
-          placeholder: "Your last name..",
-          required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-          htmlFor: "country",
-          children: "Price"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-          value: Farm.price,
-          onChange: handleChange,
-          type: "text",
-          name: "price",
-          placeholder: "Your last name..",
-          required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-          htmlFor: "country",
-          children: "Time"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
-          name: "Time",
-          onChange: handleChange,
-          required: true,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-            value: Farm.Time === 'available' ? 'available' : 'unavailable',
-            children: Farm.Time === 'available' ? 'Available' : 'Unavailable'
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-            value: Farm.Time !== 'available' ? 'available' : 'unavailable',
-            children: Farm.Time !== 'available' ? 'Available' : 'Unavailable'
+  return (
+    /*#__PURE__*/
+    // <h1>ryahnah</h1>
+    (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+        children: "Edit Farm"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "container",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+          onSubmit: handleSubmit,
+          encType: "multipart/form-data",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "fname",
+            children: "Farm Name"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            value: Farm ? Farm.farmName : 0,
+            onChange: handleChange,
+            type: "text",
+            name: "farmName",
+            placeholder: "Your name..",
+            required: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "lname",
+            children: "Governorate Name"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+            name: "governorate_id",
+            onChange: handleChange,
+            required: true,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+              value: Farm ? Farm.governorate_id : 0,
+              children: Farm && Governorate ? Governorate.map(function (element) {
+                if (element.id === Farm.governorate_id) {
+                  return element.governorateName;
+                }
+              }) : 0
+            }), Governorate ? Governorate.map(function (item) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+                value: item.id,
+                children: item.governorateName
+              });
+            }) : null]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "lname",
+            children: "Phone"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            value: Farm ? Farm.phone : 0,
+            onChange: handleChange,
+            type: "text",
+            name: "phone",
+            placeholder: "Your last name..",
+            required: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "country",
+            children: "Price"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            value: Farm ? Farm.price : 0,
+            onChange: handleChange,
+            type: "text",
+            name: "price",
+            placeholder: "Your last name..",
+            required: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "country",
+            children: "Time"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+            name: "Time",
+            onChange: handleChange,
+            required: true,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+              value: Farm ? Farm.Time === 'available' ? 'available' : 'unavailable' : 0,
+              children: Farm ? Farm.Time === 'available' ? 'Available' : 'Unavailable' : 0
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+              value: Farm ? Farm.Time !== 'available' ? 'available' : 'unavailable' : 0,
+              children: Farm ? Farm.Time !== 'available' ? 'Available' : 'Unavailable' : 0
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "country",
+            children: "Description"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textarea", {
+            value: Farm ? Farm.description : 0,
+            onChange: handleChange,
+            name: "description",
+            cols: "30",
+            rows: "4",
+            placeholder: "Add description",
+            required: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "country",
+            children: "Image"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            accept: "image/*",
+            onChange: handleChange,
+            type: "file",
+            id: "fileinput",
+            name: "image"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+            width: 200,
+            src: Image
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            type: "submit",
+            value: "Submit"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-          htmlFor: "country",
-          children: "Description"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textarea", {
-          value: Farm.description,
-          onChange: handleChange,
-          name: "description",
-          cols: "30",
-          rows: "4",
-          placeholder: "Add description",
-          required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-          htmlFor: "country",
-          children: "Image"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-          accept: "image/*",
-          onChange: handleChange,
-          type: "file",
-          id: "fileinput",
-          name: "image"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-          width: 200,
-          src: Image
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-          onClick: function onClick() {
-            return moveFile();
-          },
-          type: "submit",
-          value: "Submit"
-        })]
-      })
-    })]
-  }, Farm.id);
+        })
+      })]
+    })
+  );
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EditFarm);
@@ -6145,6 +6165,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Farm = function Farm() {
+  // const { id } = useParams();
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
       _useState2 = _slicedToArray(_useState, 2),
       Farms = _useState2[0],
@@ -6198,14 +6219,13 @@ var Farm = function Farm() {
     return function deleteProduct(_x) {
       return _ref2.apply(this, arguments);
     };
-  }();
-
-  var EditClick = function EditClick(Farm) {
-    // if (localStorage.getItem('governorate')) {
-    //     setFarm(JSON.parse(localStorage.getItem('governorate')))
-    // }
-    localStorage.setItem('editFarm', JSON.stringify(Farm));
-  }; // console.log(user);
+  }(); // const EditClick = (Farm) => {
+  //     // if (localStorage.getItem('governorate')) {
+  //     //     setFarm(JSON.parse(localStorage.getItem('governorate')))
+  //     // }
+  //     localStorage.setItem('editFarm', JSON.stringify(Farm))
+  // }
+  // console.log(user);
 
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -6272,9 +6292,6 @@ var Farm = function Farm() {
                 to: "/editFarm/".concat(Farm.id),
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
                   variant: "danger",
-                  onClick: function onClick() {
-                    return EditClick(Farm);
-                  },
                   children: "Edit"
                 })
               })

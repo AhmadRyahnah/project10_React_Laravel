@@ -41,6 +41,7 @@ Route::post('/createUser', [UserController::class, 'store']);
 // farms
 Route::get('/farms', [FarmController::class, 'index']);
 Route::delete('/deleteFarm/{id}', [FarmController::class, 'destroy']);
+Route::get('/editShow/{id}', [FarmController::class, 'edit']);
 Route::put('/editFarm/{id}', [FarmController::class, 'update']);
 Route::get('/createFarm', [FarmController::class, 'create']);
 Route::post('/insertFarm', [FarmController::class, 'store']);

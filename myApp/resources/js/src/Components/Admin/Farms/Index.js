@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from "react-router-dom";
+import { Link ,useNavigate , useParams} from "react-router-dom";
 import axios from 'axios';
 import './Farm.css'
 const Farm = () => {
-
+    // const { id } = useParams();
     const [Farms, setFarms] = useState();
     const [deleted, setDeleted] = useState(0);
 
@@ -25,12 +25,12 @@ const Farm = () => {
     }
 
 
-    const EditClick = (Farm) => {
-        // if (localStorage.getItem('governorate')) {
-        //     setFarm(JSON.parse(localStorage.getItem('governorate')))
-        // }
-        localStorage.setItem('editFarm', JSON.stringify(Farm))
-    }
+    // const EditClick = (Farm) => {
+    //     // if (localStorage.getItem('governorate')) {
+    //     //     setFarm(JSON.parse(localStorage.getItem('governorate')))
+    //     // }
+    //     localStorage.setItem('editFarm', JSON.stringify(Farm))
+    // }
     // console.log(user);
     return (
         <div >
@@ -71,7 +71,7 @@ const Farm = () => {
                             <td>{Farm.Time}</td>
 
                             <td><Link to={`/editFarm/${Farm.id}`}>
-                                <button variant="danger" onClick={() => EditClick(Farm)}>
+                                <button variant="danger">
                                     Edit
                                 </button></Link></td>
 

@@ -112,9 +112,12 @@ class FarmController extends Controller
      * @param  \App\Models\Farm  $farm
      * @return \Illuminate\Http\Response
      */
-    public function edit(Farm $farm)
+    public function edit($id)
     {
-        //
+        $farm = Farm::find($id);
+        $Governorate = Governorate::all();
+        return response(['Governorat' => $Governorate, 'farm' => $farm,'status'=> 200]);
+
     }
 
     /**
