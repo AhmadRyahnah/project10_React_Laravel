@@ -23,9 +23,9 @@ const EditFarm = () => {
             setImage(response.data.farm.image)
             setGovernorate(response.data.Governorat)
         });
-    }, [Image]);
-    if (Farm)
-        console.log(Farm.farmName);
+    }, []);
+    // if (Farm)
+    //     console.log(Farm.farmName);
 
     // useEffect(async () => {
 
@@ -64,6 +64,9 @@ const EditFarm = () => {
                 // console.log(response);
 
             });
+
+
+            console.log(Farm);
         }
 
     }
@@ -132,7 +135,7 @@ const EditFarm = () => {
 
                     <input accept='image/*' onChange={handleChange} type="file" id="fileinput" name="image" />
 
-                    {/* <br /><br /><img width={200} src={Image} /><br /><br /> */}
+                    <br /><br /><img width={200} src={Image} /><br /><br />
 
 
                     <input type="submit" value="Submit" />

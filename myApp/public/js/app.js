@@ -5959,8 +5959,9 @@ var EditFarm = function EditFarm() {
         }
       }
     }, _callee);
-  })), [Image]);
-  if (Farm) console.log(Farm.farmName); // useEffect(async () => {
+  })), []); // if (Farm)
+  //     console.log(Farm.farmName);
+  // useEffect(async () => {
   //     await axios.get("http://127.0.0.1:8000/api/createFarm").then((response) => {
   //         setGovernorate(response.data);
   //     });
@@ -5999,6 +6000,7 @@ var EditFarm = function EditFarm() {
 
       axios.post('http://127.0.0.1:8000/api/insertImg', dataImg).then(function (response) {// console.log(response);
       });
+      console.log(Farm);
     }
   };
 
