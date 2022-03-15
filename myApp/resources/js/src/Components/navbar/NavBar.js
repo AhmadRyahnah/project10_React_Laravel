@@ -23,7 +23,7 @@ const NavBar = (props) => {
         localStorage.removeItem('Lecture')
         localStorage.removeItem('date')
         localStorage.removeItem('fromDelete')
-        localStorage.removeItem('Courses')
+        localStorage.removeItem('governorates')
 
         // setmyLecture(0)
         props.handleUseNavigate()

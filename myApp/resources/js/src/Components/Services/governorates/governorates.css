@@ -1,0 +1,14 @@
+.governorates{
+    width: 80%;
+    display: grid;
+    grid-template-areas: "governoratesContainer governoratesContainer governoratesContainer";
+    justify-content: center;
+    margin: 0 auto;
+}
+@media screen and (max-width:950px){
+    .governorates{
+
+        grid-template-areas: " governoratesContainer";
+
+    }
+}

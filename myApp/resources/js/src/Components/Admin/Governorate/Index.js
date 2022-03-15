@@ -25,11 +25,11 @@ const Governorate = () => {
     }
 
 
-    const EditClick = (governorate) => {
-        // e.preventDefault();
-        // console.log(props);
-        localStorage.setItem('editGovernorate', JSON.stringify(governorate))
-    }
+    // const EditClick = (governorate) => {
+    //     // e.preventDefault();
+    //     // console.log(props);
+    //     localStorage.setItem('editGovernorate', JSON.stringify(governorate))
+    // }
     // console.log(user);
 
 
@@ -41,7 +41,7 @@ const Governorate = () => {
             <h1>Farms Details</h1>
             <Link to="/createGovernorate">
                 <div className='addUser'>
-                    <button >Add Governorate</button>
+                    <button class="btn btn-success" >Add Governorate</button>
                 </div>
             </Link>
             <br /><br />
@@ -54,9 +54,10 @@ const Governorate = () => {
 
 
                         <th>Image</th>
-                        <th>view Farms</th>
+                        <th>Action</th>
+                        {/* <th>view Farms</th>
                         <th>Edit</th>
-                        <th>Delete</th>
+                        <th>Delete</th> */}
                     </tr>
                 </thead>
                 {governorates ? governorates.map(governorate =>
@@ -72,19 +73,22 @@ const Governorate = () => {
 
                             <td>
                                 <Link to={`/viewFarms/${governorate.id}`}>
-                                    <button variant="danger" >
+                                    <button class="btn btn-info" variant="danger" >
                                         view
                                     </button>
                                 </Link>
-                            </td>
-                            <td><Link to={`/editGovernorate/${governorate.id}`}>
-                                <button variant="danger" onClick={() => EditClick(governorate)}>
-                                    Edit
-                                </button></Link></td>
+                                {/* </td>
+                            <td> */}
+                                <Link to={`/editGovernorate/${governorate.id}`}>
+                                    <button class="btn btn-primary" variant="danger">
+                                        Edit
+                                    </button></Link>
+                                {/* </td>
 
-                            <td> <button variant="danger" onClick={() => deleteProduct(governorate.id)}>
-                                Delete
-                            </button></td>
+                            <td> */}
+                                <button class="btn btn-danger" variant="danger" onClick={() => deleteProduct(governorate.id)}>
+                                    Delete
+                                </button></td>
 
 
 

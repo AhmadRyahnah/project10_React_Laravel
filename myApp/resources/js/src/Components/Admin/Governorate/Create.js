@@ -63,7 +63,7 @@ const CreateGovernorate = () => {
                     <label htmlFor="country">Image</label><br /><br />
                     <input accept='image/*' onChange={handleChange} type="file" id="fileinput" name="image" placeholder="Your last name.." required />
 
-                    <br /><br /><img width={200} src={Image} /><br /><br />
+                    {/* <br /><br /><img width={200} src={Image} /><br /><br /> */}
 
 
                     <input type="submit" value="Submit" />

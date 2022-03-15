@@ -1,7 +1,7 @@
-const CoursesItem = [
+const governoratesItem = [
     {
        id:'0',
-       img:'img/Courses/ETABS.jpg',
+       img:'img/governorates/ETABS.jpg',
        title:'ETABS Software',
        desc:'ETABS is an engineering software product that caters to multi-story building analysis and design.',
        price:100,
@@ -9,7 +9,7 @@ const CoursesItem = [
     },
     {
         id:'1',
-        img:'img/Courses/Revit.jpg',
+        img:'img/governorates/Revit.jpg',
         title:'REVIT Software',
         desc:'Revit allows you to produce consistent, coordinated, and complete model-based building designs and documentation',
         price:100,
@@ -17,11 +17,11 @@ const CoursesItem = [
      },
      {
         id:'2',
-        img:'img/Courses/sap.jpg',
+        img:'img/governorates/sap.jpg',
         title:'SAP Software',
         desc:'SAP used for structural analysis. It is a general purpose software, we can use it for analyzing most of the structures',
         price:100,
-        alt:'SAP Courses'
+        alt:'SAP governorates'
      },
 ]
-export default CoursesItem;
+export default governoratesItem;

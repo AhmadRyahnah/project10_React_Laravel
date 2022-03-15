@@ -2,7 +2,7 @@
   text-align: center;
   margin: 2em auto 0;
 }
-.LectureAndCourses {
+.LectureAndgovernorates {
   display: grid;
   grid-template-columns: repeat(3,auto);
   width: 80%;
@@ -11,12 +11,12 @@
   /* grid-template-rows: minmax(100px,auto); */
 }
 
-.LectureAndCourses a {
+.LectureAndgovernorates a {
   text-decoration: none;
 }
 
-.LectureAndCourses .Lecture,
-.LectureAndCourses .Courses {
+.LectureAndgovernorates .Lecture,
+.LectureAndgovernorates .governorates {
   background-color: whitesmoke;
   border-radius: 7px;
   box-shadow: 0 0 10px #0000008c;
@@ -27,22 +27,22 @@
   margin: 2em auto;
 }
 
-.LectureAndCourses .Lecture img,
-.LectureAndCourses .Courses img {
+.LectureAndgovernorates .Lecture img,
+.LectureAndgovernorates .governorates img {
   width: 300px;
   height: 200px;
   margin: 2.5em 0 0 0.5em;
 }
-.LectureAndCourses .Lecture h2,
-.LectureAndCourses .Courses h2,
-.LectureAndCourses .Lecture h3,
-.LectureAndCourses .Courses h3 {
+.LectureAndgovernorates .Lecture h2,
+.LectureAndgovernorates .governorates h2,
+.LectureAndgovernorates .Lecture h3,
+.LectureAndgovernorates .governorates h3 {
   margin: 0 0 1.5em;
   text-align: center;
 }
 
-.LectureAndCourses .Lecture button,
-.LectureAndCourses .Courses button {
+.LectureAndgovernorates .Lecture button,
+.LectureAndgovernorates .governorates button {
   text-align: center;
   width: 175px;
   height: 40px;
@@ -54,7 +54,7 @@
   align-items: center;
 }
 @media screen and (max-width: 1200px) {
-  .LectureAndCourses {
+  .LectureAndgovernorates {
     display: grid;
     grid-template-columns: 1fr 5fr 5fr 1fr;
     /* grid-template-rows: minmax(100px,auto); */
@@ -62,7 +62,7 @@
 }
 
 @media screen and (max-width: 870px) {
-  .LectureAndCourses {
+  .LectureAndgovernorates {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -72,15 +72,15 @@
     grid-column: 1;
     grid-row: 1;
   }
-  .Courses {
+  .governorates {
     width: 70%;
     grid-column: 1;
     grid-row: 2;
   }
 }
 @media screen and (max-width: 440px) {
-  .LectureAndCourses .Lecture img,
-  .LectureAndCourses .Courses img {
+  .LectureAndgovernorates .Lecture img,
+  .LectureAndgovernorates .governorates img {
     width: 250px;
     height: 200px;
     /* margin: 2.5em auto 0.5em; */
@@ -88,7 +88,7 @@
   .Lecture {
     width: 95% !important;
   }
-  .Courses {
+  .governorates {
     width: 95% !important;
   }
 }

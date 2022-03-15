@@ -64,22 +64,14 @@ class GovernorateController extends Controller
     public function storeImg(Request $request)
     {
 
-        // $farm = new Farm();
-        // $farm->farmName = $request->input('farmName');
-        // $farm->governorate_id = $request->input('governorate_id');
-        // $farm->phone = $request->input('phone');
-        // $farm->price = $request->input('price');
-        // $farm->Time = $request->input('Time');
-        // $farm->description = $request->input('description');
 
-        // $farm->image = substr($request->input('image'),12);
         if($request->hasFile('image'))
         {
             $file = $request->file('image');
 
             $filename = $file->getClientOriginalName();;
             $file->move('img\Governorate',$filename);
-            // $farm->image = $filename;
+
         }
     }
     /**
@@ -101,9 +93,11 @@ class GovernorateController extends Controller
      * @param  \App\Models\Governorate  $governorate
      * @return \Illuminate\Http\Response
      */
-    public function edit(Governorate $governorate)
+    public function edit($id)
     {
-        //
+        $Governorate = Governorate::find($id);
+
+        return response(['Governorate' =>$Governorate ,'status'=> 200]);
     }
 
     /**

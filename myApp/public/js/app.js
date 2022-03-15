@@ -5471,8 +5471,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Page_Home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Page/Home */ "./resources/js/src/Page/Home.js");
 /* harmony import */ var _Page_Services__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Page/Services */ "./resources/js/src/Page/Services.js");
 /* harmony import */ var _Page_Sign_In_Up__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Page/Sign-In-Up */ "./resources/js/src/Page/Sign-In-Up.js");
-/* harmony import */ var _Components_Services_Courses_Courses__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Components/Services/Courses/Courses */ "./resources/js/src/Components/Services/Courses/Courses.js");
-/* harmony import */ var _Components_Services_Courses_ConfirmBooking__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Components/Services/Courses/ConfirmBooking */ "./resources/js/src/Components/Services/Courses/ConfirmBooking.js");
+/* harmony import */ var _Components_Services_governorates_governorates__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Components/Services/governorates/governorates */ "./resources/js/src/Components/Services/governorates/governorates.js");
+/* harmony import */ var _Components_Services_governorates_ConfirmBooking__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Components/Services/governorates/ConfirmBooking */ "./resources/js/src/Components/Services/governorates/ConfirmBooking.js");
 /* harmony import */ var _Components_Profile_Profile__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Components/Profile/Profile */ "./resources/js/src/Components/Profile/Profile.jsx");
 /* harmony import */ var _Components_About_About__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Components/About/About */ "./resources/js/src/Components/About/About.js");
 /* harmony import */ var _Components_Checkout_ItemCart__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Components/Checkout/ItemCart */ "./resources/js/src/Components/Checkout/ItemCart.js");
@@ -5542,11 +5542,11 @@ var App = function App() {
           path: "Services",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Page_Services__WEBPACK_IMPORTED_MODULE_5__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
-          path: "Courses",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_Services_Courses_Courses__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+          path: "governorates",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("governorates", {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
           path: "ConfirmBooking",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_Services_Courses_ConfirmBooking__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_Services_governorates_ConfirmBooking__WEBPACK_IMPORTED_MODULE_8__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
           path: "Profile",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_Components_Profile_Profile__WEBPACK_IMPORTED_MODULE_9__["default"], {})
@@ -5633,7 +5633,7 @@ var About = function About() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
           children: "Our Mission"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
-          children: ["At Civil Engineering Academy it is our mission to help aspiring Civil Engineers pass their exams and develop the skills to be successful in their careers and in life. We are obsessed with helping you become a professional engineer and find a fulfilling career!", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "  ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "We are excited to help you by providing you with the best resources and material to ace your exams. We work hard to make sure our exams meet the current specifications and are life-like to the real exam. Our courses were built from the ground up to give you just what you need to ace your exams, and our support is the best you can find. We also provide coaching to further help you with your career including polishing up your resume, creating the perfect cover letter, or standing out with your LinkedIn profile."]
+          children: ["At Civil Engineering Academy it is our mission to help aspiring Civil Engineers pass their exams and develop the skills to be successful in their careers and in life. We are obsessed with helping you become a professional engineer and find a fulfilling career!", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "  ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), "We are excited to help you by providing you with the best resources and material to ace your exams. We work hard to make sure our exams meet the current specifications and are life-like to the real exam. Our governorates were built from the ground up to give you just what you need to ace your exams, and our support is the best you can find. We also provide coaching to further help you with your career including polishing up your resume, creating the perfect cover letter, or standing out with your LinkedIn profile."]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "imgAbout",
@@ -6424,10 +6424,7 @@ var CreateGovernorate = function CreateGovernorate() {
           name: "image",
           placeholder: "Your last name..",
           required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-          width: 200,
-          src: Image
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
           type: "submit",
           value: "Submit"
         })]
@@ -6451,17 +6448,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _User_User_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../User/User.css */ "./resources/js/src/Components/Admin/User/User.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _User_User_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../User/User.css */ "./resources/js/src/Components/Admin/User/User.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -6483,26 +6488,40 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var EditGovernorate = function EditGovernorate() {
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)(),
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useParams)(),
       id = _useParams.id;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(localStorage.getItem('editGovernorate') ? JSON.parse(localStorage.getItem('editGovernorate')) : []),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
       _useState2 = _slicedToArray(_useState, 2),
       Governorate = _useState2[0],
-      setGovernorate = _useState2[1];
+      setGovernorate = _useState2[1]; // const [Image, setImage] = useState('img/Governorate/' + Governorate.Image)
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('img/Governorate/' + Governorate.Image),
-      _useState4 = _slicedToArray(_useState3, 2),
-      Image = _useState4[0],
-      setImage = _useState4[1]; // useEffect(async () => {
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return axios.get("http://127.0.0.1:8000/api/editShowGovernorate/" + id).then(function (response) {
+              console.log(response.data);
+              setGovernorate(response.data.Governorate);
+            });
+
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  })), []); // useEffect(async () => {
   //     await axios.get("http://127.0.0.1:8000/api/createFarm").then((response) => {
   //         setGovernorate(response.data);
   //     });
   // }, []);
   // console.log(Governorate);
 
-
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)(); // const [inputs, setInputs] = useState([]);
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)(); // const [inputs, setInputs] = useState([]);
   // if(inputs){
   //    let img=inputs.image
   // console.log(img);
@@ -6519,8 +6538,8 @@ var EditGovernorate = function EditGovernorate() {
     // }
 
     if (event.target.name == 'image') {
-      setImage('img/Governorate/' + event.target.files[0].name); // setfileImg(event.target.files[0])
-
+      // setImage('img/Governorate/' + event.target.files[0].name);
+      // setfileImg(event.target.files[0])
       var dataImg = new FormData();
       dataImg.append('image', event.target.files[0]); // console.log(fileImg);
 
@@ -6535,40 +6554,37 @@ var EditGovernorate = function EditGovernorate() {
     navigate('/Governorates');
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
       children: "Edit Governorate"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
         onSubmit: handleSubmit,
         encType: "multipart/form-data",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
           htmlFor: "fname",
           children: "Governorate Name"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-          value: Governorate.governorateName,
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          value: Governorate ? Governorate.governorateName : null,
           onChange: handleChange,
           type: "text",
           name: "governorateName",
           placeholder: "Your name..",
           required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
           accept: "image/*",
           onChange: handleChange,
           type: "file",
           id: "fileinput",
           name: "image"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-          width: 200,
-          src: Image
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
           type: "submit",
           value: "Submit"
         })]
       })
     })]
-  }, Governorate.id);
+  }, Governorate ? Governorate.id : null);
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EditGovernorate);
@@ -6674,13 +6690,12 @@ var Governorate = function Governorate() {
     return function deleteProduct(_x) {
       return _ref2.apply(this, arguments);
     };
-  }();
-
-  var EditClick = function EditClick(governorate) {
-    // e.preventDefault();
-    // console.log(props);
-    localStorage.setItem('editGovernorate', JSON.stringify(governorate));
-  }; // console.log(user);
+  }(); // const EditClick = (governorate) => {
+  //     // e.preventDefault();
+  //     // console.log(props);
+  //     localStorage.setItem('editGovernorate', JSON.stringify(governorate))
+  // }
+  // console.log(user);
   // const viewClick = (governorate) => {
   //     localStorage.setItem('governorate', JSON.stringify(governorate))
   // }
@@ -6694,6 +6709,7 @@ var Governorate = function Governorate() {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "addUser",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+          "class": "btn btn-success",
           children: "Add Governorate"
         })
       })
@@ -6708,11 +6724,7 @@ var Governorate = function Governorate() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
             children: "Image"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
-            children: "view Farms"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
-            children: "Edit"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
-            children: "Delete"
+            children: "Action"
           })]
         })
       }), governorates ? governorates.map(function (governorate) {
@@ -6727,27 +6739,23 @@ var Governorate = function Governorate() {
                 src: 'img/Governorate/' + governorate.Image,
                 width: "100"
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("td", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
                 to: "/viewFarms/".concat(governorate.id),
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                  "class": "btn btn-info",
                   variant: "danger",
                   children: "view"
                 })
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
                 to: "/editGovernorate/".concat(governorate.id),
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                  "class": "btn btn-primary",
                   variant: "danger",
-                  onClick: function onClick() {
-                    return EditClick(governorate);
-                  },
                   children: "Edit"
                 })
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("td", {
-              children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                "class": "btn btn-danger",
                 variant: "danger",
                 onClick: function onClick() {
                   return deleteProduct(governorate.id);
@@ -7024,7 +7032,7 @@ var HomeAdmin = function HomeAdmin() {
     localStorage.removeItem('Lecture');
     localStorage.removeItem('date');
     localStorage.removeItem('fromDelete');
-    localStorage.removeItem('Courses');
+    localStorage.removeItem('governorates');
     setUser(false);
   };
 
@@ -7413,13 +7421,12 @@ var User = function User() {
     return function deleteProduct(_x) {
       return _ref2.apply(this, arguments);
     };
-  }();
-
-  var EditClick = function EditClick(user) {
-    // e.preventDefault();
-    // console.log(props);
-    localStorage.setItem('editUser', JSON.stringify(user));
-  }; // console.log(user);
+  }(); // const EditClick = (user) => {
+  //     // e.preventDefault();
+  //     // console.log(props);
+  //     localStorage.setItem('editUser', JSON.stringify(user))
+  // }
+  // console.log(user);
 
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -7471,9 +7478,6 @@ var User = function User() {
                 to: "/editUser/".concat(user.id),
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
                   variant: "danger",
-                  onClick: function onClick() {
-                    return EditClick(user);
-                  },
                   children: "Edit"
                 })
               })
@@ -7512,17 +7516,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _User_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./User.css */ "./resources/js/src/Components/Admin/User/User.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _User_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./User.css */ "./resources/js/src/Components/Admin/User/User.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -7544,17 +7556,36 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var EditUser = function EditUser() {
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)(),
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useParams)(),
       id = _useParams.id;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(JSON.parse(localStorage.getItem('editUser'))),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(),
       _useState2 = _slicedToArray(_useState, 2),
       user = _useState2[0],
       setUser = _useState2[1];
 
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return axios.get("http://127.0.0.1:8000/api/editShowUser/" + id).then(function (response) {
+              console.log(response.data);
+              setUser(response.data.user);
+            });
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  })), []);
+  if (user) console.log(user);
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)();
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
       _useState4 = _slicedToArray(_useState3, 2),
       inputs = _useState4[0],
       setInputs = _useState4[1];
@@ -7576,58 +7607,58 @@ var EditUser = function EditUser() {
     navigate('/Users');
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
       children: "Edit User"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
         onSubmit: handleSubmit,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
           htmlFor: "fname",
           children: "Name"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-          value: user.name,
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          value: user ? user.name : null,
           onChange: handleChange,
           type: "text",
           id: "fname",
           name: "name",
           placeholder: "Your name.."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
           htmlFor: "lname",
           children: "Email"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-          value: user.email,
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          value: user ? user.email : null,
           onChange: handleChange,
           type: "text",
           id: "lname",
           name: "email",
           placeholder: "Your last name.."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
           htmlFor: "country",
           children: "Phone"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
-          value: user.phone,
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+          value: user ? user.phone : null,
           onChange: handleChange,
           type: "text",
           id: "lname",
           name: "phone",
           placeholder: "Your last name.."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
           htmlFor: "country",
           children: "Role"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
           id: "country",
           name: "role",
           onChange: handleChange,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
-            value: user.role !== 0 ? '1' : '0',
-            children: user.role !== 0 ? 'Admin' : 'User'
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
-            value: user.role === 0 ? '1' : '0',
-            children: user.role === 0 ? 'Admin' : 'User'
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+            value: user ? user.role !== 0 ? '1' : '0' : null,
+            children: user ? user.role !== 0 ? 'Admin' : 'User' : null
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+            value: user ? user.role === 0 ? '1' : '0' : null,
+            children: user ? user.role === 0 ? 'Admin' : 'User' : null
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
           type: "submit",
           value: "Submit"
         })]
@@ -8755,10 +8786,10 @@ var Register = function Register() {
 
 /***/ }),
 
-/***/ "./resources/js/src/Components/Services/Courses/CardCourses.js":
-/*!*********************************************************************!*\
-  !*** ./resources/js/src/Components/Services/Courses/CardCourses.js ***!
-  \*********************************************************************/
+/***/ "./resources/js/src/Components/Services/governorates/Cardgovernorates.js":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/src/Components/Services/governorates/Cardgovernorates.js ***!
+  \*******************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -8768,7 +8799,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var _CardCourses_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CardCourses.css */ "./resources/js/src/Components/Services/Courses/CardCourses.css");
+/* harmony import */ var _Cardgovernorates_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cardgovernorates.css */ "./resources/js/src/Components/Services/governorates/Cardgovernorates.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -8776,15 +8807,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var CardCourses = function CardCourses(props) {
+var Cardgovernorates = function Cardgovernorates(props) {
   var handleClick = function handleClick(e) {
     e.preventDefault();
     console.log(props);
-    localStorage.setItem('Courses', JSON.stringify(props));
+    localStorage.setItem('governorates', JSON.stringify(props));
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "CoursesContainer",
+    className: "governoratesContainer",
     onClick: handleClick,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
       src: 'img/' + props.img,
@@ -8804,14 +8835,14 @@ var CardCourses = function CardCourses(props) {
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CardCourses);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Cardgovernorates);
 
 /***/ }),
 
-/***/ "./resources/js/src/Components/Services/Courses/ConfirmBooking.js":
-/*!************************************************************************!*\
-  !*** ./resources/js/src/Components/Services/Courses/ConfirmBooking.js ***!
-  \************************************************************************/
+/***/ "./resources/js/src/Components/Services/governorates/ConfirmBooking.js":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/src/Components/Services/governorates/ConfirmBooking.js ***!
+  \*****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -8820,9 +8851,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Confirmbooking_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Confirmbooking.css */ "./resources/js/src/Components/Services/Courses/Confirmbooking.css");
+/* harmony import */ var _Confirmbooking_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Confirmbooking.css */ "./resources/js/src/Components/Services/governorates/Confirmbooking.css");
 /* harmony import */ var _Calender_Calender__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Calender/Calender */ "./resources/js/src/Components/Calender/Calender.js");
-/* harmony import */ var _CardCourses_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CardCourses.css */ "./resources/js/src/Components/Services/Courses/CardCourses.css");
+/* harmony import */ var _Cardgovernorates_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Cardgovernorates.css */ "./resources/js/src/Components/Services/governorates/Cardgovernorates.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -8832,7 +8863,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ConfirmBooking = function ConfirmBooking() {
-  var Course = JSON.parse(localStorage.getItem('Courses'));
+  var Course = JSON.parse(localStorage.getItem('governorates'));
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "ConfirmBooking",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -8860,10 +8891,10 @@ var ConfirmBooking = function ConfirmBooking() {
 
 /***/ }),
 
-/***/ "./resources/js/src/Components/Services/Courses/Courses.js":
-/*!*****************************************************************!*\
-  !*** ./resources/js/src/Components/Services/Courses/Courses.js ***!
-  \*****************************************************************/
+/***/ "./resources/js/src/Components/Services/governorates/governorates.js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/src/Components/Services/governorates/governorates.js ***!
+  \***************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -8874,13 +8905,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _CardCourses__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CardCourses */ "./resources/js/src/Components/Services/Courses/CardCourses.js");
-/* harmony import */ var _CoursesItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CoursesItem */ "./resources/js/src/Components/Services/Courses/CoursesItem.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Courses_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Courses.css */ "./resources/js/src/Components/Services/Courses/Courses.css");
-/* harmony import */ var _Slider_SliderImg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Slider/SliderImg */ "./resources/js/src/Components/Slider/SliderImg.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Cardgovernorates__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Cardgovernorates */ "./resources/js/src/Components/Services/governorates/Cardgovernorates.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _governorates_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./governorates.css */ "./resources/js/src/Components/Services/governorates/governorates.css");
+/* harmony import */ var _Slider_SliderImg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Slider/SliderImg */ "./resources/js/src/Components/Slider/SliderImg.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -8900,6 +8930,7 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
+ // import governoratesItem from './governoratesItem'
 
 
 
@@ -8907,8 +8938,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-var Courses = function Courses() {
+var governorates = function governorates() {
   var governorate = JSON.parse(localStorage.getItem('governorate'));
   var id = governorate.id; // const name=governorate.governorateName
 
@@ -8925,7 +8955,7 @@ var Courses = function Courses() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_4___default().get("http://127.0.0.1:8000/api/showFarm/" + id).then(function (response) {
+            return axios__WEBPACK_IMPORTED_MODULE_3___default().get("http://127.0.0.1:8000/api/showFarm/" + id).then(function (response) {
               setFarms(response.data); // console.log(response.date);
             });
 
@@ -8938,7 +8968,7 @@ var Courses = function Courses() {
   })), []);
   var FarmsItems = null;
   if (Farms) FarmsItems = Farms.map(function (CardItem) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_CardCourses__WEBPACK_IMPORTED_MODULE_2__["default"] // Card={CardItem}
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Cardgovernorates__WEBPACK_IMPORTED_MODULE_2__["default"] // Card={CardItem}
     , {
       img: CardItem.image,
       title: CardItem.farmName,
@@ -8948,55 +8978,18 @@ var Courses = function Courses() {
       id: CardItem.id
     }, CardItem.id);
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
       className: "header",
       children: "Civil Engineering Software"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-      className: "Courses",
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      className: "governorates",
       children: FarmsItems
     })]
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Courses);
-
-/***/ }),
-
-/***/ "./resources/js/src/Components/Services/Courses/CoursesItem.js":
-/*!*********************************************************************!*\
-  !*** ./resources/js/src/Components/Services/Courses/CoursesItem.js ***!
-  \*********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-var CoursesItem = [{
-  id: '0',
-  img: 'img/Courses/ETABS.jpg',
-  title: 'ETABS Software',
-  desc: 'ETABS is an engineering software product that caters to multi-story building analysis and design.',
-  price: 100,
-  alt: 'ETABS Course'
-}, {
-  id: '1',
-  img: 'img/Courses/Revit.jpg',
-  title: 'REVIT Software',
-  desc: 'Revit allows you to produce consistent, coordinated, and complete model-based building designs and documentation',
-  price: 100,
-  alt: 'REVIT Course'
-}, {
-  id: '2',
-  img: 'img/Courses/sap.jpg',
-  title: 'SAP Software',
-  desc: 'SAP used for structural analysis. It is a general purpose software, we can use it for analyzing most of the structures',
-  price: 100,
-  alt: 'SAP Courses'
-}];
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CoursesItem);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (governorates);
 
 /***/ }),
 
@@ -9033,7 +9026,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Slider() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('img/Courses/Revit.jpg'),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('img/governorates/Revit.jpg'),
       _useState2 = _slicedToArray(_useState, 2),
       img = _useState2[0],
       setImg = _useState2[1];
@@ -9043,7 +9036,7 @@ function Slider() {
       counter = _useState4[0],
       setCounter = _useState4[1];
 
-  var images = ['img/Courses/Revit.jpg', 'img/Courses/sap.jpg', 'img/Courses/ETABS.jpg', 'img/Courses/Revit.jpg', 'img/Courses/sap.jpg', 'img/Courses/ETABS.jpg'];
+  var images = ['img/governorates/Revit.jpg', 'img/governorates/sap.jpg', 'img/governorates/ETABS.jpg', 'img/governorates/Revit.jpg', 'img/governorates/sap.jpg', 'img/governorates/ETABS.jpg'];
 
   var next = function next() {
     setCounter(counter + 1);
@@ -9214,7 +9207,7 @@ var NavBar = function NavBar(props) {
     localStorage.removeItem('Lecture');
     localStorage.removeItem('date');
     localStorage.removeItem('fromDelete');
-    localStorage.removeItem('Courses'); // setmyLecture(0)
+    localStorage.removeItem('governorates'); // setmyLecture(0)
 
     props.handleUseNavigate();
   };
@@ -9410,6 +9403,7 @@ var Services = function Services() {
       }
     }, _callee);
   })), []);
+  if (governorates) console.log(governorates);
 
   var viewClick = function viewClick(governorate) {
     localStorage.setItem('governorate', JSON.stringify(governorate));
@@ -9420,15 +9414,15 @@ var Services = function Services() {
       className: "header",
       children: "Services"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "LectureAndCourses",
+      className: "LectureAndgovernorates",
       children: governorates ? governorates.map(function (governorate) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "Courses",
+          className: "governorates",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
-            to: "/Courses",
+            to: "/governorates",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-              src: 'img/' + governorate.Image,
-              alt: "Courses"
+              src: 'img/Governorate/' + governorate.Image,
+              alt: "governorates"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
               children: governorate.governorateName
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
@@ -14875,10 +14869,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".registerContainer {\n  margin-left: 8
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Courses/CardCourses.css":
-/*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Courses/CardCourses.css ***!
-  \********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/governorates/Cardgovernorates.css":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/governorates/Cardgovernorates.css ***!
+  \******************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -14892,17 +14886,17 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".CoursesContainer{\r\n    background-color: whitesmoke;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    margin: 2em;\r\n    border-radius: 10px;\r\n    box-shadow: black 0 0 10px;\r\n}\r\n.CoursesContainer img{\r\n    margin: 1em 0;\r\n    max-width: 250px;\r\n}\r\n.CoursesContainer h5{\r\n    width: 80%;\r\n    text-align: center;\r\n    margin: 1em 0;\r\n}\r\n.CoursesContainer h4{\r\n    margin-bottom: 1em;\r\n    font-size: 1.5rem;\r\n}\r\n.CoursesContainer button{\r\n    margin-bottom: 1.5em;\r\n    width: 175px;\r\n    height: 40px;\r\n    border-radius: 7px;\r\n    cursor: pointer;\r\n}\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".governoratesContainer{\n    background-color: whitesmoke;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    margin: 2em;\n    border-radius: 10px;\n    box-shadow: black 0 0 10px;\n}\n.governoratesContainer img{\n    margin: 1em 0;\n    max-width: 250px;\n}\n.governoratesContainer h5{\n    width: 80%;\n    text-align: center;\n    margin: 1em 0;\n}\n.governoratesContainer h4{\n    margin-bottom: 1em;\n    font-size: 1.5rem;\n}\n.governoratesContainer button{\n    margin-bottom: 1.5em;\n    width: 175px;\n    height: 40px;\n    border-radius: 7px;\n    cursor: pointer;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Courses/Confirmbooking.css":
-/*!***********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Courses/Confirmbooking.css ***!
-  \***********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/governorates/Confirmbooking.css":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/governorates/Confirmbooking.css ***!
+  \****************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -14923,10 +14917,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".ConfirmBooking {\r\n  width: 100%;\r\
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Courses/Courses.css":
-/*!****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Courses/Courses.css ***!
-  \****************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/governorates/governorates.css":
+/*!**************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/governorates/governorates.css ***!
+  \**************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -14940,7 +14934,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Courses{\r\n    width: 80%;\r\n    display: grid;\r\n    grid-template-areas: \"CoursesContainer CoursesContainer CoursesContainer\";\r\n    justify-content: center;\r\n    margin: 0 auto;\r\n}\r\n@media screen and (max-width:950px){\r\n    .Courses{\r\n      \r\n        grid-template-areas: \" CoursesContainer\";\r\n      \r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".governorates{\n    width: 80%;\n    display: grid;\n    grid-template-areas: \"governoratesContainer governoratesContainer governoratesContainer\";\n    justify-content: center;\n    margin: 0 auto;\n}\n@media screen and (max-width:950px){\n    .governorates{\n\n        grid-template-areas: \" governoratesContainer\";\n\n    }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -15036,7 +15030,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".header {\n  text-align: center;\n  margin: 2em auto 0;\n}\n.LectureAndCourses {\n  display: grid;\n  grid-template-columns: repeat(3,auto);\n  width: 80%;\n  margin: 0 auto;\n  /* grid-template-rows: repeat(3,auto); */\n  /* grid-template-rows: minmax(100px,auto); */\n}\n\n.LectureAndCourses a {\n  text-decoration: none;\n}\n\n.LectureAndCourses .Lecture,\n.LectureAndCourses .Courses {\n  background-color: whitesmoke;\n  border-radius: 7px;\n  box-shadow: 0 0 10px #0000008c;\n  display: flex;\n  /* flex-direction: column;\n  justify-content: center; */\n  align-items: center;\n  margin: 2em auto;\n}\n\n.LectureAndCourses .Lecture img,\n.LectureAndCourses .Courses img {\n  width: 300px;\n  height: 200px;\n  margin: 2.5em 0 0 0.5em;\n}\n.LectureAndCourses .Lecture h2,\n.LectureAndCourses .Courses h2,\n.LectureAndCourses .Lecture h3,\n.LectureAndCourses .Courses h3 {\n  margin: 0 0 1.5em;\n  text-align: center;\n}\n\n.LectureAndCourses .Lecture button,\n.LectureAndCourses .Courses button {\n  text-align: center;\n  width: 175px;\n  height: 40px;\n  border-radius: 7px;\n  cursor: pointer;\n  margin: 0 auto 1.5em;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media screen and (max-width: 1200px) {\n  .LectureAndCourses {\n    display: grid;\n    grid-template-columns: 1fr 5fr 5fr 1fr;\n    /* grid-template-rows: minmax(100px,auto); */\n  }\n}\n\n@media screen and (max-width: 870px) {\n  .LectureAndCourses {\n    display: grid;\n    grid-template-columns: 1fr;\n    grid-template-rows: 1fr 1fr;\n  }\n  .Lecture {\n    width: 70%;\n    grid-column: 1;\n    grid-row: 1;\n  }\n  .Courses {\n    width: 70%;\n    grid-column: 1;\n    grid-row: 2;\n  }\n}\n@media screen and (max-width: 440px) {\n  .LectureAndCourses .Lecture img,\n  .LectureAndCourses .Courses img {\n    width: 250px;\n    height: 200px;\n    /* margin: 2.5em auto 0.5em; */\n  }\n  .Lecture {\n    width: 95% !important;\n  }\n  .Courses {\n    width: 95% !important;\n  }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".header {\n  text-align: center;\n  margin: 2em auto 0;\n}\n.LectureAndgovernorates {\n  display: grid;\n  grid-template-columns: repeat(3,auto);\n  width: 80%;\n  margin: 0 auto;\n  /* grid-template-rows: repeat(3,auto); */\n  /* grid-template-rows: minmax(100px,auto); */\n}\n\n.LectureAndgovernorates a {\n  text-decoration: none;\n}\n\n.LectureAndgovernorates .Lecture,\n.LectureAndgovernorates .governorates {\n  background-color: whitesmoke;\n  border-radius: 7px;\n  box-shadow: 0 0 10px #0000008c;\n  display: flex;\n  /* flex-direction: column;\n  justify-content: center; */\n  align-items: center;\n  margin: 2em auto;\n}\n\n.LectureAndgovernorates .Lecture img,\n.LectureAndgovernorates .governorates img {\n  width: 300px;\n  height: 200px;\n  margin: 2.5em 0 0 0.5em;\n}\n.LectureAndgovernorates .Lecture h2,\n.LectureAndgovernorates .governorates h2,\n.LectureAndgovernorates .Lecture h3,\n.LectureAndgovernorates .governorates h3 {\n  margin: 0 0 1.5em;\n  text-align: center;\n}\n\n.LectureAndgovernorates .Lecture button,\n.LectureAndgovernorates .governorates button {\n  text-align: center;\n  width: 175px;\n  height: 40px;\n  border-radius: 7px;\n  cursor: pointer;\n  margin: 0 auto 1.5em;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media screen and (max-width: 1200px) {\n  .LectureAndgovernorates {\n    display: grid;\n    grid-template-columns: 1fr 5fr 5fr 1fr;\n    /* grid-template-rows: minmax(100px,auto); */\n  }\n}\n\n@media screen and (max-width: 870px) {\n  .LectureAndgovernorates {\n    display: grid;\n    grid-template-columns: 1fr;\n    grid-template-rows: 1fr 1fr;\n  }\n  .Lecture {\n    width: 70%;\n    grid-column: 1;\n    grid-row: 1;\n  }\n  .governorates {\n    width: 70%;\n    grid-column: 1;\n    grid-row: 2;\n  }\n}\n@media screen and (max-width: 440px) {\n  .LectureAndgovernorates .Lecture img,\n  .LectureAndgovernorates .governorates img {\n    width: 250px;\n    height: 200px;\n    /* margin: 2.5em auto 0.5em; */\n  }\n  .Lecture {\n    width: 95% !important;\n  }\n  .governorates {\n    width: 95% !important;\n  }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -67100,10 +67094,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./resources/js/src/Components/Services/Courses/CardCourses.css":
-/*!**********************************************************************!*\
-  !*** ./resources/js/src/Components/Services/Courses/CardCourses.css ***!
-  \**********************************************************************/
+/***/ "./resources/js/src/Components/Services/governorates/Cardgovernorates.css":
+/*!********************************************************************************!*\
+  !*** ./resources/js/src/Components/Services/governorates/Cardgovernorates.css ***!
+  \********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -67113,7 +67107,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_CardCourses_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./CardCourses.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Courses/CardCourses.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Cardgovernorates_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Cardgovernorates.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/governorates/Cardgovernorates.css");
 
             
 
@@ -67122,18 +67116,18 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_CardCourses_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Cardgovernorates_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_CardCourses_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Cardgovernorates_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
-/***/ "./resources/js/src/Components/Services/Courses/Confirmbooking.css":
-/*!*************************************************************************!*\
-  !*** ./resources/js/src/Components/Services/Courses/Confirmbooking.css ***!
-  \*************************************************************************/
+/***/ "./resources/js/src/Components/Services/governorates/Confirmbooking.css":
+/*!******************************************************************************!*\
+  !*** ./resources/js/src/Components/Services/governorates/Confirmbooking.css ***!
+  \******************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -67143,7 +67137,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Confirmbooking_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Confirmbooking.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Courses/Confirmbooking.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Confirmbooking_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Confirmbooking.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/governorates/Confirmbooking.css");
 
             
 
@@ -67160,10 +67154,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./resources/js/src/Components/Services/Courses/Courses.css":
-/*!******************************************************************!*\
-  !*** ./resources/js/src/Components/Services/Courses/Courses.css ***!
-  \******************************************************************/
+/***/ "./resources/js/src/Components/Services/governorates/governorates.css":
+/*!****************************************************************************!*\
+  !*** ./resources/js/src/Components/Services/governorates/governorates.css ***!
+  \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -67173,7 +67167,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Courses_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Courses.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/Courses/Courses.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_governorates_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./governorates.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/src/Components/Services/governorates/governorates.css");
 
             
 
@@ -67182,11 +67176,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Courses_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_governorates_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Courses_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_governorates_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

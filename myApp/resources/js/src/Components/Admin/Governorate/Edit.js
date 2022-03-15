@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, Fragment ,useEffect} from 'react'
 import { useNavigate , useParams} from "react-router-dom";
 import swal from 'sweetalert';
 import '../User/User.css'
@@ -10,9 +10,16 @@ const EditGovernorate = () => {
 
 
 
-    const [Governorate, setGovernorate] = useState(localStorage.getItem('editGovernorate') ? JSON.parse(localStorage.getItem('editGovernorate')) : []);
-    const [Image, setImage] = useState('img/Governorate/' + Governorate.Image)
+    const [Governorate, setGovernorate] = useState();
+    // const [Image, setImage] = useState('img/Governorate/' + Governorate.Image)
+    useEffect(async () => {
 
+        await axios.get("http://127.0.0.1:8000/api/editShowGovernorate/" + id).then((response) => {
+            console.log(response.data);
+            setGovernorate(response.data.Governorate)
+
+        });
+    }, []);
 
     // useEffect(async () => {
 
@@ -42,7 +49,7 @@ const EditGovernorate = () => {
         //     setImage('img/' + event.target.files[0].name);
         // }
         if (event.target.name == 'image') {
-            setImage('img/Governorate/' + event.target.files[0].name);
+            // setImage('img/Governorate/' + event.target.files[0].name);
             // setfileImg(event.target.files[0])
             let dataImg = new FormData()
             dataImg.append('image', event.target.files[0])
@@ -67,20 +74,20 @@ const EditGovernorate = () => {
 
 
     return (
-        <Fragment key={Governorate.id}>
+        <Fragment key={Governorate?Governorate.id:null}>
 
             <h1>Edit Governorate</h1>
             <div className="container">
 
                 <form onSubmit={handleSubmit} encType="multipart/form-data" >
                     <label htmlFor="fname">Governorate Name</label>
-                    <input value={Governorate.governorateName} onChange={handleChange} type="text" name="governorateName" placeholder="Your name.." required />
+                    <input value={Governorate?Governorate.governorateName:null} onChange={handleChange} type="text" name="governorateName" placeholder="Your name.." required />
 
 
 
                     <input accept='image/*' onChange={handleChange} type="file" id="fileinput" name="image"  />
 
-                    <br /><br /><img width={200} src={Image} /><br /><br />
+                    {/* <br /><br /><img width={200} src={Image} /><br /><br /> */}
 
 
                     <input type="submit" value="Submit" />

@@ -72,15 +72,7 @@ class FarmController extends Controller
     public function storeImg(Request $request)
     {
 
-        // $farm = new Farm();
-        // $farm->farmName = $request->input('farmName');
-        // $farm->governorate_id = $request->input('governorate_id');
-        // $farm->phone = $request->input('phone');
-        // $farm->price = $request->input('price');
-        // $farm->Time = $request->input('Time');
-        // $farm->description = $request->input('description');
 
-        // $farm->image = substr($request->input('image'),12);
         if($request->hasFile('image'))
         {
             $file = $request->file('image');
@@ -90,10 +82,6 @@ class FarmController extends Controller
             // $farm->image = $filename;
         }
 
-        // $response["status"] = "successs";
-        // $response["message"] = "Success! image(s) uploaded";
-        // $farm->save();
-        // return response()->json($request);
     }
     /**
      * Display the specified resource.

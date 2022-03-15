@@ -24,11 +24,11 @@ const User = () => {
     }
 
 
-    const EditClick = (user) => {
-        // e.preventDefault();
-        // console.log(props);
-        localStorage.setItem('editUser', JSON.stringify(user))
-    }
+    // const EditClick = (user) => {
+    //     // e.preventDefault();
+    //     // console.log(props);
+    //     localStorage.setItem('editUser', JSON.stringify(user))
+    // }
     // console.log(user);
     return (
         <div >
@@ -63,7 +63,7 @@ const User = () => {
                             <td>{user.role !== 0 ? 'Admin' : 'User'}</td>
 
                             <td><Link to={`/editUser/${user.id}`}>
-                                <button variant="danger" onClick={() => EditClick(user)}>
+                                <button variant="danger" >
                                     Edit
                                 </button></Link></td>
                             {user.role === 0 ? <>

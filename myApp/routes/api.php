@@ -34,6 +34,7 @@ Route::post('/login', [AuthController::class, 'login']);
 // users
 Route::get('/users', [UserController::class, 'index']);
 Route::delete('/deleteusers/{id}', [UserController::class, 'destroy']);
+Route::get('/editShowUser/{id}', [UserController::class, 'edit']);
 Route::put('/editUser/{id}', [UserController::class, 'update']);
 Route::post('/createUser', [UserController::class, 'store']);
 
@@ -50,6 +51,7 @@ Route::post('/insertImg', [FarmController::class, 'storeImg']);
 
 Route::get('/Governorates', [GovernorateController::class, 'index']);
 Route::delete('/deleteGovernorate/{id}', [GovernorateController::class, 'destroy']);
+Route::get('/editShowGovernorate/{id}', [GovernorateController::class, 'edit']);
 Route::put('/editGovernorate/{id}', [GovernorateController::class, 'update']);
 Route::get('/createGovernorate', [GovernorateController::class, 'create']);
 Route::post('/insertGovernorate', [GovernorateController::class, 'store']);

@@ -24,7 +24,7 @@ const logout = () => {
     localStorage.removeItem('Lecture')
     localStorage.removeItem('date')
     localStorage.removeItem('fromDelete')
-    localStorage.removeItem('Courses')
+    localStorage.removeItem('governorates')
     setUser(false)
 
   }

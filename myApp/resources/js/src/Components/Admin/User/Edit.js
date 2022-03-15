@@ -7,7 +7,19 @@ const EditUser = () => {
     const { id } = useParams();
 
 
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem('editUser')));
+    const [user, setUser] = useState();
+
+    useEffect(async () => {
+
+        await axios.get("http://127.0.0.1:8000/api/editShowUser/" + id).then((response) => {
+            console.log(response.data);
+            setUser(response.data.user)
+
+        });
+    }, []);
+
+if(user)
+console.log(user);
 
     let navigate = useNavigate()
     const [inputs, setInputs] = useState([]);
@@ -32,19 +44,19 @@ const EditUser = () => {
 
                 <form onSubmit={handleSubmit} >
                     <label htmlFor="fname">Name</label>
-                    <input value={user.name} onChange={handleChange} type="text" id="fname" name="name" placeholder="Your name.." />
+                    <input value={user?user.name:null} onChange={handleChange} type="text" id="fname" name="name" placeholder="Your name.." />
 
                     <label htmlFor="lname">Email</label>
-                    <input value={user.email} onChange={handleChange} type="text" id="lname" name="email" placeholder="Your last name.." />
+                    <input value={user?user.email:null} onChange={handleChange} type="text" id="lname" name="email" placeholder="Your last name.." />
 
                     <label htmlFor="country">Phone</label>
-                    <input value={user.phone} onChange={handleChange} type="text" id="lname" name="phone" placeholder="Your last name.." />
+                    <input value={user?user.phone:null} onChange={handleChange} type="text" id="lname" name="phone" placeholder="Your last name.." />
 
                     <label htmlFor="country">Role</label>
 
                     <select id="country" name="role" onChange={handleChange}>
-                        <option value={user.role !== 0 ? '1' : '0'}>{user.role !== 0 ? 'Admin' : 'User'}</option>
-                        <option value={user.role === 0 ? '1' : '0'}>{user.role === 0 ? 'Admin' : 'User'}</option>
+                        <option value={user?user.role !== 0 ? '1' : '0':null}>{user?user.role !== 0 ? 'Admin' : 'User':null}</option>
+                        <option value={user?user.role === 0 ? '1' : '0':null}>{user?user.role === 0 ? 'Admin' : 'User':null}</option>
 
                     </select>
 

@@ -9,8 +9,8 @@ import Home from "./Page/Home";
 import Services from "./Page/Services";
 import SignInUp from './Page/Sign-In-Up'
 
-import Courses from "./Components/Services/Courses/Courses";
-import ConfirmBooking from "./Components/Services/Courses/ConfirmBooking";
+import governorates from "./Components/Services/governorates/governorates";
+import ConfirmBooking from "./Components/Services/governorates/ConfirmBooking";
 import Profile from './Components/Profile/Profile'
 import About from "./Components/About/About";
 import ItemCart from "./Components/Checkout/ItemCart";
@@ -45,7 +45,7 @@ const App = () => {
                         <Route path='SignInUp' element={<SignInUp />} />
                         <Route path='Checkout' element={<ItemCart />} />
                         <Route path='Services' element={<Services />} />
-                        <Route path='Courses' element={<Courses />} />
+                        <Route path='governorates' element={<governorates />} />
                         <Route path='ConfirmBooking' element={<ConfirmBooking />} />
                         <Route path='Profile' element={<Profile />} />
                         <Route path='About' element={<About />} />

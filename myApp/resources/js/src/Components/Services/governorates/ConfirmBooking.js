@@ -2,10 +2,10 @@ import React from 'react'
 import './Confirmbooking.css'
 
 import BookingForm from '../../Calender/Calender'
-import './CardCourses.css'
+import './Cardgovernorates.css'
 const ConfirmBooking = () => {
 
-    let Course = JSON.parse(localStorage.getItem('Courses'))
+    let Course = JSON.parse(localStorage.getItem('governorates'))
     return (
         <div className='ConfirmBooking'>
             <div className='ConfirmCard' >

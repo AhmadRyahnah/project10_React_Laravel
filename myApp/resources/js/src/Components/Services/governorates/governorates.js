@@ -1,12 +1,12 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import CardCourses from './CardCourses'
-import CoursesItem from './CoursesItem'
+import Cardgovernorates from './Cardgovernorates'
+// import governoratesItem from './governoratesItem'
 import axios from 'axios';
 
-import './Courses.css'
+import './governorates.css'
 import Slider from '../../Slider/SliderImg'
 
-const Courses = () => {
+const governorates = () => {
 
 
 
@@ -35,7 +35,7 @@ const Courses = () => {
 
         FarmsItems = Farms.map((CardItem) => {
             return (
-                <CardCourses
+                <Cardgovernorates
                     // Card={CardItem}
                     key={CardItem.id}
                     img={CardItem.image}
@@ -51,11 +51,11 @@ const Courses = () => {
         <Fragment>
             <h1 className='header'>Civil Engineering Software</h1>
             {/* <Slider /> */}
-            <div className='Courses'>
+            <div className='governorates'>
                 {FarmsItems}
             </div>
         </Fragment>
     )
 }
 
-export default Courses
+export default governorates

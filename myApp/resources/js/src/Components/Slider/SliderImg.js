@@ -4,15 +4,15 @@ import "./SliderImg.css";
 
 function Slider() {
 
-  const [img, setImg] = useState('img/Courses/Revit.jpg');
+  const [img, setImg] = useState('img/governorates/Revit.jpg');
   const [counter, setCounter] = useState(0)
   const images = [
-    'img/Courses/Revit.jpg',
-    'img/Courses/sap.jpg',
-    'img/Courses/ETABS.jpg',
-     'img/Courses/Revit.jpg',
-    'img/Courses/sap.jpg',
-    'img/Courses/ETABS.jpg',
+    'img/governorates/Revit.jpg',
+    'img/governorates/sap.jpg',
+    'img/governorates/ETABS.jpg',
+     'img/governorates/Revit.jpg',
+    'img/governorates/sap.jpg',
+    'img/governorates/ETABS.jpg',
 
   ];
 

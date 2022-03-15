@@ -17,7 +17,8 @@ const Services = () => {
         });
     }, []);
 
-
+if(governorates)
+console.log(governorates);
 
 
 
@@ -33,11 +34,11 @@ const Services = () => {
         <Fragment >
             <h1 className='header'>Services</h1>
 
-            <div className='LectureAndCourses'>
+            <div className='LectureAndgovernorates'>
                 {governorates ? governorates.map(governorate =>
-                    <div className='Courses'>
-                        <Link to='/Courses'>
-                            <img src={'img/' + governorate.Image} alt='Courses' />
+                    <div className='governorates'>
+                        <Link to='/governorates'>
+                            <img src={'img/Governorate/' + governorate.Image} alt='governorates' />
                             {/* <div className='slider'><Slider /></div> */}
                             <h2>{governorate.governorateName}</h2>
                             {/* <h3>Starting at : 150.00 $</h3> */}
