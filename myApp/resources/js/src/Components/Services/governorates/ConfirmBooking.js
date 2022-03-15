@@ -1,22 +1,36 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Confirmbooking.css'
+import {  useParams} from "react-router-dom";
 
 import BookingForm from '../../Calender/Calender'
-import './Cardgovernorates.css'
+import './CardFarms.css'
 const ConfirmBooking = () => {
+    const { id } = useParams();
 
-    let Course = JSON.parse(localStorage.getItem('governorates'))
+    const [Farms, setFarms] = useState();
+    const [Image, setImage] = useState();
+
+    useEffect(async () => {
+
+        await axios.get("http://127.0.0.1:8000/api/showConfirmBooking/"+id).then((response) => {
+            setFarms(response.data.farm);
+            setImage(response.data.farm.image)
+            console.log(response.data.farm);
+        });
+    }, []);
+    // let Course = JSON.parse(localStorage.getItem('governorates'))
     return (
+        // <h1>ryahnah</h1>
         <div className='ConfirmBooking'>
             <div className='ConfirmCard' >
-                <img src={'img/'+Course.img} alt={Course.alt} />
-                <h2>{Course.title}</h2>
-                <h5>{Course.desc}</h5>
-                <h4>{Course.price} $</h4>
+                <img src={require('/img/Farms/'+Image?Image:null).default} alt={Farms?Farms.farmName:null} />
+                <h2>{Farms?Farms.farmName:null}</h2>
+                <h5>{Farms?Farms.description:null}</h5>
+                <h4>{Farms?Farms.price:null} $</h4>
             </div>
             <div className='ConfirmCalender'>
                 {/* <Calender /> */}
-                <BookingForm  Title={Course.title}/>
+                <BookingForm  Farms={Farms?Farms:null}/>
             </div>
         </div>
     )

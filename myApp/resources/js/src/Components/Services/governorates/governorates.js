@@ -1,17 +1,20 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import Cardgovernorates from './Cardgovernorates'
+import Cardgovernorates from './CardFarms'
+import { useNavigate, useParams } from "react-router-dom";
+
 // import governoratesItem from './governoratesItem'
 import axios from 'axios';
 
 import './governorates.css'
 import Slider from '../../Slider/SliderImg'
 
-const governorates = () => {
+const Governorates = () => {
+    const { id } = useParams();
 
 
 
-    const governorate = JSON.parse(localStorage.getItem('governorate'));
-    const id = governorate.id
+    // const governorate = JSON.parse(localStorage.getItem('governorate'));
+    // const id = governorate.id
     // const name=governorate.governorateName
     const [Farms, setFarms] = useState();
 
@@ -58,4 +61,4 @@ const governorates = () => {
     )
 }
 
-export default governorates
+export default Governorates

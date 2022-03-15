@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Admin\AuthController;
+use App\Http\Controllers\Api\Admin\BookingController;
 use App\Http\Controllers\Api\Admin\FarmController;
 use App\Http\Controllers\Api\Admin\GovernorateController;
 use App\Http\Controllers\Api\Admin\UserController;
@@ -57,3 +58,8 @@ Route::get('/createGovernorate', [GovernorateController::class, 'create']);
 Route::post('/insertGovernorate', [GovernorateController::class, 'store']);
 Route::get('/showFarm/{governorate_id}', [GovernorateController::class, 'show']);
 Route::post('/insertImgGover', [GovernorateController::class, 'storeImg']);
+
+/// booking
+
+// ConfirmBooking
+Route::get('/showConfirmBooking/{id}', [BookingController::class, 'index']);

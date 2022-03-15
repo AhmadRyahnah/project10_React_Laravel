@@ -17,14 +17,10 @@ const Services = () => {
         });
     }, []);
 
-if(governorates)
-console.log(governorates);
+    if (governorates)
+        console.log(governorates);
 
 
-
-    const viewClick = (governorate) => {
-        localStorage.setItem('governorate', JSON.stringify(governorate))
-    }
 
 
 
@@ -37,12 +33,12 @@ console.log(governorates);
             <div className='LectureAndgovernorates'>
                 {governorates ? governorates.map(governorate =>
                     <div className='governorates'>
-                        <Link to='/governorates'>
+                        <Link to={'/governorates/' + governorate.id}>
                             <img src={'img/Governorate/' + governorate.Image} alt='governorates' />
                             {/* <div className='slider'><Slider /></div> */}
                             <h2>{governorate.governorateName}</h2>
                             {/* <h3>Starting at : 150.00 $</h3> */}
-                            <button onClick={() => viewClick(governorate)}>See Farms</button>
+                            <button >See Farms</button>
                         </Link>
                     </div>
 

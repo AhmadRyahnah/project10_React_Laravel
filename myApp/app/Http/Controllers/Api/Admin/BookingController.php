@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Admin;
 use App\Http\Controllers\Controller;
 
 use App\Models\Booking;
+use App\Models\Farm;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -14,9 +15,11 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $farm = Farm::find($id);
+
+        return response(['farm' => $farm, 'status' => 200]);
     }
 
     /**

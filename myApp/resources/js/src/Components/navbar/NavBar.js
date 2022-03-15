@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import "./NavBar.css";
+import logo from './logo.png'
 import { Link, useNavigate } from "react-router-dom";
 // import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
 import { UserContext } from '../../App'
-
 export default function Navpath() {
     const navigate = useNavigate();
     const handleUseNavigate = () => {
@@ -40,7 +40,7 @@ const NavBar = (props) => {
 
             <div className="logo" >
                 <Link to="/" onClick={handleClick}>
-                    <img src='./img/logo.png' alt="logo" />
+                    <img src={logo} alt="logo" />
                 </Link>
             </div>
             <div className={click ? "nav-list active" : "nav-list"}>

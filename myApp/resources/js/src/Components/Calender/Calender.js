@@ -40,29 +40,7 @@ const BookingForm = (props) => {
             navigate('/SignInUp')
         } else {
 
-        //     let myArray = localStorage.getItem("date")
-        //         ? JSON.parse(localStorage.getItem("date"))
-        //         : [];
 
-        //     let exist = false;
-        //     myArray.forEach((element, id) => {
-        //         if (element.date === date && element.time === time) {
-        //             exist = true;
-        //             swal({
-        //                 title: `Please Choose Another Time`,
-        //             });
-        //         }
-        //     })
-        //     if (!exist) {
-        //         setId(id + 1)
-        //         setTime(time)
-        //         swal({
-        //             title: ` Successfully Booked ${Title} on ${date} at ${time} `,
-        //             text: 'Check Your Profile'
-        //         });
-        //         myArray.push({ date, time, id, Title, today })
-        //     }
-        //     localStorage.setItem('date', JSON.stringify(myArray))
          }
     }
     return (
