@@ -18,13 +18,14 @@ const Governorates = () => {
     // const name=governorate.governorateName
     const [Farms, setFarms] = useState();
 
-
+    const [Governorate, setGovernorate] = useState();
     // console.log(Farms);
     let i = 1;
     useEffect(async () => {
 
         await axios.get("http://127.0.0.1:8000/api/showFarm/" + id).then((response) => {
-            setFarms(response.data);
+            setFarms(response.data.farm);
+            setGovernorate(response.data.Governorat.governorateName)
             // console.log(response.date);
         });
     }, []);
@@ -52,11 +53,19 @@ const Governorates = () => {
         })
     return (
         <Fragment>
-            <h1 className='header'>Civil Engineering Software</h1>
-            {/* <Slider /> */}
-            <div className='governorates'>
-                {FarmsItems}
-            </div>
+
+            {/* <div className='ryahnah'>
+                <div className='sidebars'>
+
+                </div> */}
+                <h1 className='header'>Farms in {Governorate?Governorate:null}</h1>
+                {/* <Slider /> */}
+                <div className='governorates'>
+                    {FarmsItems}
+                </div>
+
+            {/* </div> */}
+
         </Fragment>
     )
 }

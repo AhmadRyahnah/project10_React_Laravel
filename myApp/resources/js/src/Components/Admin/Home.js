@@ -14,20 +14,21 @@ import EditGovernorate from "./Governorate/Edit";
 import ViewFarm from "./Governorate/ViewFarms";
 import ErrorPage from "../404/404";
 import { UserContext } from '../../App'
+import Admin from "./Admin";
 
 
 const HomeAdmin = () => {
 
     const { setUser } = useContext(UserContext)
-const logout = () => {
-    localStorage.removeItem('loggedUser')
-    localStorage.removeItem('Lecture')
-    localStorage.removeItem('date')
-    localStorage.removeItem('fromDelete')
-    localStorage.removeItem('governorates')
-    setUser(false)
+    const logout = () => {
+        localStorage.removeItem('loggedUser')
+        localStorage.removeItem('Lecture')
+        localStorage.removeItem('date')
+        localStorage.removeItem('fromDelete')
+        localStorage.removeItem('governorates')
+        setUser(false)
 
-  }
+    }
 
     return (
 
@@ -107,12 +108,13 @@ const logout = () => {
             </nav>
             {/* sidebar-wrapper   */}
             <main className="page-content">
-                <div className="container-fluid">
+                <div className="container-fluid" >
                     {/* <h1>ryahnah</h1> */}
                     {/* editUser */}
                     <Routes>
-
+                        <Route path='/Admin' element={<Admin />} />
                         {/* users */}
+
                         <Route path='Users' element={<User />} />
                         <Route path='createUser' element={<CreateUser />} />
                         <Route path='editUser/:id' element={<EditUser />} />
@@ -129,7 +131,7 @@ const logout = () => {
                         <Route path='viewFarms/:id' element={<ViewFarm />} />
 
 
-                        <Route path='*' element={<ErrorPage />}/>
+                        <Route path='*' element={<ErrorPage />} />
                     </Routes>
                 </div>
             </main>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Profile.css';
-
+import { AiOutlineSetting } from 'react-icons/ai';
 const Profile = () => {
 
     // fetch user's data from local
@@ -43,6 +43,8 @@ const Profile = () => {
         <div className='profileCont'>
 
             <h1 className='header'>Profile</h1>
+            <AiOutlineSetting />
+
             <div className='profileContainer'>
                 <div className="userContainer">
                     <div className="detailsUser">

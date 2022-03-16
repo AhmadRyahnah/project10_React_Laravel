@@ -5,12 +5,15 @@
     justify-content: center;
     align-items: center;
     margin: 2em;
-    border-radius: 10px;
-    box-shadow: black 0 0 10px;
+    border-radius: 4px;
+    /* box-shadow: black 0 0 10px; */
 }
 .governoratesContainer img{
+    /* margin: 0 0 1em; */
     margin: 1em 0;
-    max-width: 250px;
+    /* width: 100%; */
+    width: 285px;
+    /* max-width: 356px; */
 }
 .governoratesContainer h5{
     width: 80%;

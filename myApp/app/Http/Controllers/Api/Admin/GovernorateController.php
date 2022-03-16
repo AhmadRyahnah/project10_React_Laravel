@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Farm;
 use App\Models\Governorate;
+use Database\Seeders\GovernorateSeeder;
 use Illuminate\Http\Request;
 
 class GovernorateController extends Controller
@@ -83,8 +84,11 @@ class GovernorateController extends Controller
     public function show($governorate_id)
     {
         //governorate_id
+        $governorate=Governorate::find($governorate_id);
         $farms = governorate::find($governorate_id)->farms;
-        return $farms;
+        // return $farms;
+        return response(['Governorat' => $governorate, 'farm' => $farms,'status'=> 200]);
+
     }
 
     /**

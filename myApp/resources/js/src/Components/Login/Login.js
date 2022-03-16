@@ -53,7 +53,7 @@ const Login = () => {
             } else {
                 setUser(response.data.user.role)
                 localStorage.setItem('loggedUser', JSON.stringify(response.data.user))
-                response.data.user.role !== 0 ? navigate('/') : navigate('/Services')
+                response.data.user.role !== 0 ? navigate('/Admin') : navigate('/Services')
 
             }
         }).catch(error=> {
