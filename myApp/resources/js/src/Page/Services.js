@@ -30,20 +30,34 @@ const Services = () => {
         <Fragment >
             <h1 className='header'>Services</h1>
 
-            <div className='LectureAndgovernorates'>
+            {/* <div className='LectureAndgovernorates'>
                 {governorates ? governorates.map(governorate =>
                     <div className='governorates'>
                         <Link to={'/governorates/' + governorate.id}>
                             <img src={'img/Governorate/' + governorate.Image} alt='governorates' />
-                            {/* <div className='slider'><Slider /></div> */}
                             <h2>{governorate.governorateName}</h2>
-                            {/* <h3>Starting at : 150.00 $</h3> */}
                             <button >See Farms</button>
                         </Link>
                     </div>
 
                 ) : null}
+            </div > */}
+            <div className='governorates'>
+                {governorates ? governorates.map(governorate =>
+
+                    <Link to={'/governorates/' + governorate.id}>
+                        <div className='imgGovernorates'>
+
+                            <img height={225} width={320} src={'img/Governorate/' + governorate.Image} alt='governorates' />
+                            <strong>{governorate.governorateName}</strong>
+                            {/* <button >See Farms</button> */}
+                        </div>
+                    </Link>
+
+
+                ) : null}
             </div >
+
         </Fragment>
     )
 }

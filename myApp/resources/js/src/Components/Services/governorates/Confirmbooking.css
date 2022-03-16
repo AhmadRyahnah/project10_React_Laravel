@@ -1,10 +1,11 @@
 .ConfirmBooking {
-  width: 100%;
-  display: grid;
-  grid-template-areas: " ConfirmCard  Calender Calender";
+  width: 90%;
+ display: flex;
+ margin: 0 auto;
+ gap: 2em;
 }
 .ConfirmCard {
-  width: 70%;
+  width: 50%;
   background-color: whitesmoke;
   display: flex;
   flex-direction: column;
@@ -26,7 +27,7 @@
   width: 80%;
 }
 .ConfirmBooking .ConfirmCalender {
-  width: 100%;
+  width: 30%;
   margin: auto;
 }
 @media screen and (max-width: 600px) {

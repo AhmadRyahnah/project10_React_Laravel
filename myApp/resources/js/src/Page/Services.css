@@ -2,93 +2,32 @@
   text-align: center;
   margin: 2em auto 0;
 }
-.LectureAndgovernorates {
+.governorates {
   display: grid;
   grid-template-columns: repeat(3,auto);
   width: 80%;
-  margin: 0 auto;
+  margin: 2em auto !important;
+  text-align: center;
+  /* position: relative; */
   /* grid-template-rows: repeat(3,auto); */
   /* grid-template-rows: minmax(100px,auto); */
 }
-
-.LectureAndgovernorates a {
-  text-decoration: none;
+.governorates a{
+    /* position: absolute; */
+    text-decoration: none;
+    color: white;
 }
 
-.LectureAndgovernorates .Lecture,
-.LectureAndgovernorates .governorates {
-  background-color: whitesmoke;
-  border-radius: 7px;
-  box-shadow: 0 0 10px #0000008c;
-  display: flex;
-  /* flex-direction: column;
-  justify-content: center; */
-  align-items: center;
-  margin: 2em auto;
-}
 
-.LectureAndgovernorates .Lecture img,
-.LectureAndgovernorates .governorates img {
-  width: 300px;
-  height: 200px;
-  margin: 2.5em 0 0 0.5em;
+.governorates .imgGovernorates{
+    position: relative;
+    margin: 2em auto;
 }
-.LectureAndgovernorates .Lecture h2,
-.LectureAndgovernorates .governorates h2,
-.LectureAndgovernorates .Lecture h3,
-.LectureAndgovernorates .governorates h3 {
-  margin: 0 0 1.5em;
-  text-align: center;
-}
-
-.LectureAndgovernorates .Lecture button,
-.LectureAndgovernorates .governorates button {
-  text-align: center;
-  width: 175px;
-  height: 40px;
-  border-radius: 7px;
-  cursor: pointer;
-  margin: 0 auto 1.5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (max-width: 1200px) {
-  .LectureAndgovernorates {
-    display: grid;
-    grid-template-columns: 1fr 5fr 5fr 1fr;
-    /* grid-template-rows: minmax(100px,auto); */
-  }
-}
-
-@media screen and (max-width: 870px) {
-  .LectureAndgovernorates {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-  .Lecture {
-    width: 70%;
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .governorates {
-    width: 70%;
-    grid-column: 1;
-    grid-row: 2;
-  }
-}
-@media screen and (max-width: 440px) {
-  .LectureAndgovernorates .Lecture img,
-  .LectureAndgovernorates .governorates img {
-    width: 250px;
-    height: 200px;
-    /* margin: 2.5em auto 0.5em; */
-  }
-  .Lecture {
-    width: 95% !important;
-  }
-  .governorates {
-    width: 95% !important;
-  }
+.governorates strong{
+    position: absolute;
+    top: 40%;
+    left: 37%;
+    font-size: 2.5em;
+    /* text-decoration: none; */
+    /* color: white; */
 }

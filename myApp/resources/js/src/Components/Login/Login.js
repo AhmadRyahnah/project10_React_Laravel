@@ -45,7 +45,7 @@ const Login = () => {
             if (response.data[0] === 'Not Matched') {
                 swal({
 
-                    title: "You Have an Account ",
+                    title: "You entered the wrong email or password",
                     text: "Welcome!",
                     icon: "error",
                     button: "ok ",

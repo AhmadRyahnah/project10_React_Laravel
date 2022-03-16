@@ -13,7 +13,6 @@ import Governorates from "./Components/Services/governorates/governorates";
 import ConfirmBooking from "./Components/Services/governorates/ConfirmBooking";
 import Profile from './Components/Profile/Profile'
 import About from "./Components/About/About";
-import ItemCart from "./Components/Checkout/ItemCart";
 import HomeAdmin from "./Components/Admin/Home";
 import ErrorPage from './Components/404/404';
 
@@ -43,7 +42,6 @@ const App = () => {
 
                         <Route path="/" element={<Home />} />
                         <Route path='SignInUp' element={<SignInUp />} />
-                        <Route path='Checkout' element={<ItemCart />} />
                         <Route path='Services' element={<Services />} />
                         <Route path='governorates/:id' element={<Governorates />} />
                         <Route path='ConfirmBooking/:id' element={<ConfirmBooking />} />
