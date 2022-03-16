@@ -15,7 +15,7 @@ const ConfirmBooking = () => {
         await axios.get("http://127.0.0.1:8000/api/showConfirmBooking/"+id).then((response) => {
             setFarms(response.data.farm);
             setImage(response.data.farm.image)
-            console.log(response.data.farm);
+            // console.log(response.data.farm);
         });
     }, []);
     // let Course = JSON.parse(localStorage.getItem('governorates'))
@@ -23,7 +23,9 @@ const ConfirmBooking = () => {
         // <h1>ryahnah</h1>
         <div className='ConfirmBooking'>
             <div className='ConfirmCard' >
-                <img src={require('/img/Farms/'+Image?Image:null).default} alt={Farms?Farms.farmName:null} />
+{Image?
+                <img src={require('/img/Farms/'+Image).default} alt={Farms?Farms.farmName:null} />
+                :null}
                 <h2>{Farms?Farms.farmName:null}</h2>
                 <h5>{Farms?Farms.description:null}</h5>
                 <h4>{Farms?Farms.price:null} $</h4>

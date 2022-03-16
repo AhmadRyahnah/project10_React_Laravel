@@ -3,10 +3,22 @@ import './Calender.css'
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
 const BookingForm = (props) => {
+
+    console.log(props.Farms);
+
+    let booking=props.Farms
+    // const [5, ...props] = numbers;
+    console.log(booking);
     let navigate = useNavigate()
-    const Title = props.Title
+
     const [date, setdate] = useState()
-    //   const [time, setTime] = useState()
+//       const [booking, setBooking] = useState({
+
+//    ...props,
+//    date:'aaa'
+
+//       })
+    //   console.log(booking);
     const [id, setId] = useState(0)
     //   const TimeSlot = [
     //     { text: "Please Select", value: "" },
@@ -40,7 +52,29 @@ const BookingForm = (props) => {
             navigate('/SignInUp')
         } else {
 
+        //     let myArray = localStorage.getItem("date")
+        //         ? JSON.parse(localStorage.getItem("date"))
+        //         : [];
 
+        //     let exist = false;
+        //     myArray.forEach((element, id) => {
+        //         if (element.date === date && element.time === time) {
+        //             exist = true;
+        //             swal({
+        //                 title: `Please Choose Another Time`,
+        //             });
+        //         }
+        //     })
+        //     if (!exist) {
+        //         setId(id + 1)
+        //         setTime(time)
+        //         swal({
+        //             title: ` Successfully Booked ${Title} on ${date} at ${time} `,
+        //             text: 'Check Your Profile'
+        //         });
+        //         myArray.push({ date, time, id, Title, today })
+        //     }
+        //     localStorage.setItem('date', JSON.stringify(myArray))
          }
     }
     return (

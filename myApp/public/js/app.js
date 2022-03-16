@@ -7738,13 +7738,20 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var BookingForm = function BookingForm(props) {
+  console.log(props.Farms);
+  var booking = props.Farms; // const [5, ...props] = numbers;
+
+  console.log(booking);
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
-  var Title = props.Title;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
       _useState2 = _slicedToArray(_useState, 2),
       date = _useState2[0],
-      setdate = _useState2[1]; //   const [time, setTime] = useState()
+      setdate = _useState2[1]; //       const [booking, setBooking] = useState({
+  //    ...props,
+  //    date:'aaa'
+  //       })
+  //   console.log(booking);
 
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
@@ -7785,7 +7792,29 @@ var BookingForm = function BookingForm(props) {
         button: "ok "
       });
       navigate('/SignInUp');
-    } else {}
+    } else {//     let myArray = localStorage.getItem("date")
+      //         ? JSON.parse(localStorage.getItem("date"))
+      //         : [];
+      //     let exist = false;
+      //     myArray.forEach((element, id) => {
+      //         if (element.date === date && element.time === time) {
+      //             exist = true;
+      //             swal({
+      //                 title: `Please Choose Another Time`,
+      //             });
+      //         }
+      //     })
+      //     if (!exist) {
+      //         setId(id + 1)
+      //         setTime(time)
+      //         swal({
+      //             title: ` Successfully Booked ${Title} on ${date} at ${time} `,
+      //             text: 'Check Your Profile'
+      //         });
+      //         myArray.push({ date, time, id, Title, today })
+      //     }
+      //     localStorage.setItem('date', JSON.stringify(myArray))
+    }
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -8882,8 +8911,7 @@ var ConfirmBooking = function ConfirmBooking() {
             _context.next = 2;
             return axios.get("http://127.0.0.1:8000/api/showConfirmBooking/" + id).then(function (response) {
               setFarms(response.data.farm);
-              setImage(response.data.farm.image);
-              console.log(response.data.farm);
+              setImage(response.data.farm.image); // console.log(response.data.farm);
             });
 
           case 2:
@@ -8901,10 +8929,10 @@ var ConfirmBooking = function ConfirmBooking() {
       className: "ConfirmBooking",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "ConfirmCard",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-          src: __webpack_require__("./resources/js/src/Components/Services/governorates sync recursive")('/img/Farms/' + Image ? Image : 0)["default"],
+        children: [Image ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+          src: __webpack_require__("./public/img/Farms sync recursive ^\\.\\/.*$")("./" + Image)["default"],
           alt: Farms ? Farms.farmName : null
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+        }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
           children: Farms ? Farms.farmName : null
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h5", {
           children: Farms ? Farms.description : null
@@ -15167,6 +15195,51 @@ module.exports = function (cssWithMappingToString) {
 
   return list;
 };
+
+/***/ }),
+
+/***/ "./public/img/Farms/1.jpg":
+/*!********************************!*\
+  !*** ./public/img/Farms/1.jpg ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/1.jpg?dc5cd9dddb4a70e05048889f7f80edd0");
+
+/***/ }),
+
+/***/ "./public/img/Farms/iStock-1157290024-e1631516431691.jpg":
+/*!***************************************************************!*\
+  !*** ./public/img/Farms/iStock-1157290024-e1631516431691.jpg ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/iStock-1157290024-e1631516431691.jpg?dbcaef0c2223732b0f80418360a9f966");
+
+/***/ }),
+
+/***/ "./public/img/Farms/wwwwww.png":
+/*!*************************************!*\
+  !*** ./public/img/Farms/wwwwww.png ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/wwwwww.png?9443097867ec290c628bf29df33a337f");
 
 /***/ }),
 
@@ -67671,21 +67744,37 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ "./resources/js/src/Components/Services/governorates sync recursive":
-/*!*****************************************************************!*\
-  !*** ./resources/js/src/Components/Services/governorates/ sync ***!
-  \*****************************************************************/
-/***/ ((module) => {
+/***/ "./public/img/Farms sync recursive ^\\.\\/.*$":
+/*!*****************************************!*\
+  !*** ./public/img/Farms/ sync ^\.\/.*$ ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
+var map = {
+	"./1.jpg": "./public/img/Farms/1.jpg",
+	"./iStock-1157290024-e1631516431691.jpg": "./public/img/Farms/iStock-1157290024-e1631516431691.jpg",
+	"./wwwwww.png": "./public/img/Farms/wwwwww.png"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
 }
-webpackEmptyContext.keys = () => ([]);
-webpackEmptyContext.resolve = webpackEmptyContext;
-webpackEmptyContext.id = "./resources/js/src/Components/Services/governorates sync recursive";
-module.exports = webpackEmptyContext;
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./public/img/Farms sync recursive ^\\.\\/.*$";
 
 /***/ }),
 
