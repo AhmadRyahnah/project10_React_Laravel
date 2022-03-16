@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\Farm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
@@ -41,13 +42,13 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         //
-        $user = new Booking();
-        // $user->name = $request->input('name');
-        // $user->email = $request->input('email');
-        // $user->phone = $request->input('phone');
-        // $user->password = Hash::make($request->input('password'));
-        // $user->role = $request->input('role') == True ? '1' : '0';
-        // $user->save();
+        $book = new Booking();
+        // $book->user_id = Auth::user()->id;
+        $book->user_id = $request->input('user_id');
+        $book->governorate_id = $request->input('governorate_id');
+        $book->farmName = $request->input('farmName');
+        $book->date = $request->input('date');
+        $book->save();
     }
 
     /**

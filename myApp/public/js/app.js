@@ -7718,6 +7718,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -7738,31 +7744,26 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var BookingForm = function BookingForm(props) {
-  console.log(props.Farms);
-  var booking = props.Farms; // const [5, ...props] = numbers;
+  // console.log(props.Farms);
+  var bookings = props.Farms; // const [5, ...props] = numbers;
+  // console.log({...booking,...5});
 
-  console.log(booking);
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(localStorage.getItem('loggedUser') ? JSON.parse(localStorage.getItem('loggedUser')) : []),
       _useState2 = _slicedToArray(_useState, 2),
-      date = _useState2[0],
-      setdate = _useState2[1]; //       const [booking, setBooking] = useState({
-  //    ...props,
-  //    date:'aaa'
-  //       })
-  //   console.log(booking);
+      User = _useState2[0],
+      setUser = _useState2[1];
 
-
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
       _useState4 = _slicedToArray(_useState3, 2),
-      id = _useState4[0],
-      setId = _useState4[1]; //   const TimeSlot = [
-  //     { text: "Please Select", value: "" },
-  //     { text: "09:00-11:00", value: "09:00-11:00" },
-  //     { text: "12:00-02:00", value: "12:00-02:00" },
-  //     { text: "03:00-05:00", value: "03:00-05:00" },
-  //   ];
+      date = _useState4[0],
+      setdate = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+      _useState6 = _slicedToArray(_useState5, 2),
+      booking = _useState6[0],
+      setBooking = _useState6[1]; // const [id, setId] = useState(0)
 
 
   var today = new Date();
@@ -7780,8 +7781,18 @@ var BookingForm = function BookingForm(props) {
 
   today = day + '-' + month + '-' + year;
   var startbook = year + '-' + month + '-' + (new Date().getDate() + 7); // let startbook = year + '-' + month + '-' + day;
+  // console.log(startbook);
 
-  console.log(startbook);
+  var handleChange = function handleChange(e) {
+    var _objectSpread2;
+
+    e.preventDefault();
+    var name = e.target.name;
+    var value = e.target.value;
+    setBooking(_objectSpread(_objectSpread({}, bookings), {}, (_objectSpread2 = {}, _defineProperty(_objectSpread2, name, value), _defineProperty(_objectSpread2, "user_id", User.id), _objectSpread2)));
+  };
+
+  console.log(booking);
 
   var handleSubmit = function handleSubmit(e) {
     e.preventDefault();
@@ -7792,28 +7803,9 @@ var BookingForm = function BookingForm(props) {
         button: "ok "
       });
       navigate('/SignInUp');
-    } else {//     let myArray = localStorage.getItem("date")
-      //         ? JSON.parse(localStorage.getItem("date"))
-      //         : [];
-      //     let exist = false;
-      //     myArray.forEach((element, id) => {
-      //         if (element.date === date && element.time === time) {
-      //             exist = true;
-      //             swal({
-      //                 title: `Please Choose Another Time`,
-      //             });
-      //         }
-      //     })
-      //     if (!exist) {
-      //         setId(id + 1)
-      //         setTime(time)
-      //         swal({
-      //             title: ` Successfully Booked ${Title} on ${date} at ${time} `,
-      //             text: 'Check Your Profile'
-      //         });
-      //         myArray.push({ date, time, id, Title, today })
-      //     }
-      //     localStorage.setItem('date', JSON.stringify(myArray))
+    } else {
+      axios.post('http://127.0.0.1:8000/api/insertBooking', booking).then(function (response) {// console.log(response);
+      });
     }
   };
 
@@ -7828,14 +7820,13 @@ var BookingForm = function BookingForm(props) {
         className: "booking",
         children: "Start Booking"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+        name: "date",
         className: "inputDate",
         type: "date",
         required: true,
         min: startbook,
         value: date,
-        onChange: function onChange(e) {
-          setdate(e.target.value);
-        }
+        onChange: handleChange
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
         className: "btnCalender",
         type: "submit"

@@ -4,28 +4,19 @@ import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
 const BookingForm = (props) => {
 
-    console.log(props.Farms);
+    // console.log(props.Farms);
 
-    let booking=props.Farms
+    let bookings = props.Farms
     // const [5, ...props] = numbers;
-    console.log(booking);
+    // console.log({...booking,...5});
+
     let navigate = useNavigate()
-
+    const [User, setUser] = useState(localStorage.getItem('loggedUser')?JSON.parse(localStorage.getItem('loggedUser')) : [])
     const [date, setdate] = useState()
-//       const [booking, setBooking] = useState({
+    const [booking, setBooking] = useState()
 
-//    ...props,
-//    date:'aaa'
+    // const [id, setId] = useState(0)
 
-//       })
-    //   console.log(booking);
-    const [id, setId] = useState(0)
-    //   const TimeSlot = [
-    //     { text: "Please Select", value: "" },
-    //     { text: "09:00-11:00", value: "09:00-11:00" },
-    //     { text: "12:00-02:00", value: "12:00-02:00" },
-    //     { text: "03:00-05:00", value: "03:00-05:00" },
-    //   ];
     let today = new Date();
     let day = today.getDate();
     let month = today.getMonth() + 1;
@@ -39,8 +30,16 @@ const BookingForm = (props) => {
     today = day + '-' + month + '-' + year;
     let startbook = year + '-' + month + '-' + ((new Date().getDate()) + 7);
     // let startbook = year + '-' + month + '-' + day;
-    console.log(startbook);
+    // console.log(startbook);
+    const handleChange = (e) => {
+        e.preventDefault();
+        const name = e.target.name;
+        const value = e.target.value;
+        setBooking({ ...bookings, [name]: value, "user_id": User.id });
 
+    }
+
+    console.log(booking);
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -51,45 +50,26 @@ const BookingForm = (props) => {
             });
             navigate('/SignInUp')
         } else {
+            axios.post('http://127.0.0.1:8000/api/insertBooking', booking).then((response) => {
+                // console.log(response);
 
-        //     let myArray = localStorage.getItem("date")
-        //         ? JSON.parse(localStorage.getItem("date"))
-        //         : [];
+            });
 
-        //     let exist = false;
-        //     myArray.forEach((element, id) => {
-        //         if (element.date === date && element.time === time) {
-        //             exist = true;
-        //             swal({
-        //                 title: `Please Choose Another Time`,
-        //             });
-        //         }
-        //     })
-        //     if (!exist) {
-        //         setId(id + 1)
-        //         setTime(time)
-        //         swal({
-        //             title: ` Successfully Booked ${Title} on ${date} at ${time} `,
-        //             text: 'Check Your Profile'
-        //         });
-        //         myArray.push({ date, time, id, Title, today })
-        //     }
-        //     localStorage.setItem('date', JSON.stringify(myArray))
-         }
+        }
     }
     return (
-        <div className='ContainerCalender'>
+        <div className='ContainerCalender' >
             <form onSubmit={handleSubmit}>
                 <label className='today'>Today {today}</label>
                 <label className='booking'>Start Booking</label>
-                <input className='inputDate' type='date' required min={startbook} value={date} onChange={(e) => { setdate(e.target.value) }} />
+                <input name='date' className='inputDate' type='date' required min={startbook} value={date} onChange={handleChange} />
                 {/* <label className='booking'> Select Time</label> */}
                 {/* <select className='inputDate' required onChange={(e) => { setTime(e.target.value) }}>
           {TimeSlot.map((item) => { return <option value={item.value}>{item.text}</option> })}
         </select> */}
                 <input className='btnCalender' type="submit" />
             </form>
-        </div>
+        </div >
     )
 }
 export default BookingForm
