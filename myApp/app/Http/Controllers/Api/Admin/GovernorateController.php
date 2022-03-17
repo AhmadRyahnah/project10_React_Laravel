@@ -45,7 +45,7 @@ class GovernorateController extends Controller
         $Governorate->governorateName = $request->input('governorateName');
 
 
-        $Governorate->Image = substr($request->input('image'),12);
+        $Governorate->Image = substr($request->input('image'), 12);
         // if($request->hasFile('image'))
         // {
         //     $file = $request->file('image');
@@ -66,13 +66,11 @@ class GovernorateController extends Controller
     {
 
 
-        if($request->hasFile('image'))
-        {
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
 
             $filename = $file->getClientOriginalName();;
-            $file->move('img\Governorate',$filename);
-
+            $file->move('img\Governorate', $filename);
         }
     }
     /**
@@ -84,11 +82,15 @@ class GovernorateController extends Controller
     public function show($governorate_id)
     {
         //governorate_id
-        $governorate=Governorate::find($governorate_id);
-        $farms = governorate::find($governorate_id)->farms;
-        // return $farms;
-        return response(['Governorat' => $governorate, 'farm' => $farms,'status'=> 200]);
+        $governorate = Governorate::find($governorate_id);
+        if ($governorate_id === 'all') {
+            $farms = Farm::all();
+        } else {
 
+            $farms = governorate::find($governorate_id)->farms;
+        }
+        // return $farms;
+        return response(['Governorat' => $governorate, 'farm' => $farms, 'status' => 200]);
     }
 
     /**
@@ -101,7 +103,7 @@ class GovernorateController extends Controller
     {
         $Governorate = Governorate::find($id);
 
-        return response(['Governorate' =>$Governorate ,'status'=> 200]);
+        return response(['Governorate' => $Governorate, 'status' => 200]);
     }
 
     /**
@@ -116,9 +118,9 @@ class GovernorateController extends Controller
         $Governorate = Governorate::findOrFail($id);
 
         $Governorate->governorateName = $request->input('governorateName');
-        if($request->input('image')[0]==='C' && $request->input('image')[1]===':'){
-            $Governorate->Image = substr($request->input('image'),12);
-        }else{
+        if ($request->input('image')[0] === 'C' && $request->input('image')[1] === ':') {
+            $Governorate->Image = substr($request->input('image'), 12);
+        } else {
 
             $Governorate->Image = $request->input('image');
         }

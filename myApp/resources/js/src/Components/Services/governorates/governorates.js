@@ -4,13 +4,14 @@ import { useNavigate, useParams } from "react-router-dom";
 
 // import governoratesItem from './governoratesItem'
 import axios from 'axios';
-
-import './governorates.css'
+import styles from './governorates.module.css'
+// import './governorates.css'
 import Slider from '../../Slider/SliderImg'
 
 const Governorates = () => {
     const { id } = useParams();
 
+    const [IdG, setIdG] = useState(id);
 
 
     // const governorate = JSON.parse(localStorage.getItem('governorate'));
@@ -19,16 +20,46 @@ const Governorates = () => {
     const [Farms, setFarms] = useState();
 
     const [Governorate, setGovernorate] = useState();
+    const [GovernoratesAll, setGovernoratesAll] = useState();
     // console.log(Farms);
     let i = 1;
+
+
+
+    // **************************
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        console.log(name)
+        console.log(value);;
+        setIdG(value)
+        // setInputs(values => ({ ...values, [name]: value }));
+
+
+
+    }
+
+
+
+
     useEffect(async () => {
 
-        await axios.get("http://127.0.0.1:8000/api/showFarm/" + id).then((response) => {
+        await axios.get("http://127.0.0.1:8000/api/Governorates").then((response) => {
+            setGovernoratesAll(response.data);
+            console.log(response.date);
+        });
+    }, []);
+    if (GovernoratesAll)
+        console.log(GovernoratesAll);
+    // ***************************
+    useEffect(async () => {
+
+        await axios.get("http://127.0.0.1:8000/api/showFarm/" + IdG).then((response) => {
             setFarms(response.data.farm);
             setGovernorate(response.data.Governorat.governorateName)
             // console.log(response.date);
         });
-    }, []);
+    }, [IdG]);
 
 
 
@@ -54,17 +85,40 @@ const Governorates = () => {
     return (
         <Fragment>
 
-            {/* <div className='ryahnah'>
-                <div className='sidebars'>
+            <div className={styles.ryahnah}>
+                <div className={styles.sidebars}>
 
-                </div> */}
-                <h1 className='header'>Farms in {Governorate?Governorate:null}</h1>
-                {/* <Slider /> */}
-                <div className='governorates'>
-                    {FarmsItems}
+
+                    <h1>Display Radio Buttons</h1>
+
+
+                    <p>Please select your favorite Web language:</p>
+                    <input onChange={handleChange} type="radio" id="html" name="fav_language" value={'all'} />
+                            <label htmlFor="html">All</label><br />
+                    {GovernoratesAll ? GovernoratesAll.map(item =>
+                        <>
+                            <input onChange={handleChange} type="radio" id="html" name="fav_language" value={item.id} />
+                            <label htmlFor="html">{item.governorateName}</label>
+                            <br />   </>
+
+                    )
+
+                        : null}
+
+
+
                 </div>
+                {/* <Slider /> */}
 
-            {/* </div> */}
+                <div className={styles.governoratesCont}>
+
+                    <h1 className={styles.header}>Farms in {Governorate ? Governorate : null}</h1>
+                    <div className={styles.governorates}>
+                        {FarmsItems}
+                    </div>
+
+                </div>
+            </div>
 
         </Fragment>
     )
