@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext  } from "react";
 import './Register.css';
 import { useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 import { login } from "../Auth/Auth";
 import axios from "axios";
-
+import { UserContext } from '../../App'
 
 
 const Register = () => {
+    const { User, setUser } = useContext(UserContext)
 
 
     let navigate = useNavigate()
@@ -21,6 +22,11 @@ const Register = () => {
         event.preventDefault();
         axios.post('http://127.0.0.1:8000/api/register', inputs).then( response =>{
             console.log(response.data.status);
+            localStorage.setItem('loggedUser', JSON.stringify(inputs))
+            setUser(inputs)
+
+
+
             if (response.data.status == "created") {
                 login()
                 swal({
@@ -30,6 +36,9 @@ const Register = () => {
                     icon: "success",
                     button: "ok ",
                 });
+                setTimeout(() => {
+                    navigate('/Services')
+                }, 3000);
 
             } else {
                 swal({
