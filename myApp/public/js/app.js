@@ -5540,6 +5540,9 @@ var App = function App() {
           path: "governorates/:id",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Components_Services_governorates_governorates__WEBPACK_IMPORTED_MODULE_7__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+          path: "Farms",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Components_Services_governorates_governorates__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
           path: "ConfirmBooking/:id",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_Components_Services_governorates_ConfirmBooking__WEBPACK_IMPORTED_MODULE_8__["default"], {})
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
@@ -9086,7 +9089,7 @@ var Governorates = function Governorates() {
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useParams)(),
       id = _useParams.id;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(id),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(id ? id : 'all'),
       _useState2 = _slicedToArray(_useState, 2),
       IdG = _useState2[0],
       setIdG = _useState2[1]; // const governorate = JSON.parse(localStorage.getItem('governorate'));
@@ -9150,6 +9153,8 @@ var Governorates = function Governorates() {
             return axios__WEBPACK_IMPORTED_MODULE_3___default().get("http://127.0.0.1:8000/api/showFarm/" + IdG).then(function (response) {
               setFarms(response.data.farm);
               setGovernorate(response.data.Governorat.governorateName); // console.log(response.date);
+            })["catch"](function (error) {
+              setGovernorate(false);
             });
 
           case 2:
@@ -9158,7 +9163,7 @@ var Governorates = function Governorates() {
         }
       }
     }, _callee2);
-  })), [IdG]);
+  })), [IdG, Governorate]);
   var FarmsItems = null;
   if (Farms) FarmsItems = Farms.map(function (CardItem) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_CardFarms__WEBPACK_IMPORTED_MODULE_2__["default"] // Card={CardItem}
@@ -9177,10 +9182,11 @@ var Governorates = function Governorates() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: _governorates_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].sidebars,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
-          children: "Display Radio Buttons"
+          children: "Filter by:"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
-          children: "Please select your favorite Web language:"
+          children: "Please select your favorite Governorates:"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+          checked: IdG === 'all' ? 'checked' : null,
           onChange: handleChange,
           type: "radio",
           id: "html",
@@ -9192,6 +9198,7 @@ var Governorates = function Governorates() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), GovernoratesAll ? GovernoratesAll.map(function (item) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
+              checked: IdG == item.id ? 'checked' : null,
               onChange: handleChange,
               type: "radio",
               id: "html",
@@ -9207,7 +9214,7 @@ var Governorates = function Governorates() {
         className: _governorates_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].governoratesCont,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("h1", {
           className: _governorates_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].header,
-          children: ["Farms in ", Governorate ? Governorate : null]
+          children: [" ", Governorate ? 'Farms in' + ' ' + Governorate : 'All Farms']
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: _governorates_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].governorates,
           children: FarmsItems
@@ -9475,9 +9482,9 @@ var NavBar = function NavBar(props) {
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-            to: "/Services",
+            to: "/Farms",
             onClick: handleClick,
-            children: "Services"
+            children: "Farms"
           })
         }), isLoggedIn ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {

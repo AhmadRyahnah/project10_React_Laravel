@@ -46,7 +46,7 @@ const NavBar = (props) => {
             <div className={click ? "nav-list active" : "nav-list"}>
                 <ul >
                     <li><Link to="/" onClick={handleClick}>Home</Link></li>
-                    <li><Link to="/Services" onClick={handleClick}>Services</Link></li>
+                    <li><Link to="/Farms" onClick={handleClick}>Farms</Link></li>
                     {isLoggedIn ? <li><Link to="/Profile" onClick={handleClick}>Profile</Link></li> : null}
                     <li><Link to="/About" onClick={handleClick}>About us</Link></li>
 

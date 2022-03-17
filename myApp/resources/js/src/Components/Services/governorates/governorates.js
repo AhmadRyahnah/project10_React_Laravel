@@ -11,7 +11,7 @@ import Slider from '../../Slider/SliderImg'
 const Governorates = () => {
     const { id } = useParams();
 
-    const [IdG, setIdG] = useState(id);
+    const [IdG, setIdG] = useState(id ? id : 'all');
 
 
     // const governorate = JSON.parse(localStorage.getItem('governorate'));
@@ -58,8 +58,10 @@ const Governorates = () => {
             setFarms(response.data.farm);
             setGovernorate(response.data.Governorat.governorateName)
             // console.log(response.date);
-        });
-    }, [IdG]);
+        }).catch(error => {
+            setGovernorate(false)
+        })
+    }, [IdG, Governorate]);
 
 
 
@@ -89,15 +91,15 @@ const Governorates = () => {
                 <div className={styles.sidebars}>
 
 
-                    <h1>Display Radio Buttons</h1>
+                    <h1>Filter by:</h1>
 
 
-                    <p>Please select your favorite Web language:</p>
-                    <input onChange={handleChange} type="radio" id="html" name="fav_language" value={'all'} />
-                            <label htmlFor="html">All</label><br />
+                    <p>Please select your favorite Governorates:</p>
+                    <input checked={IdG === 'all' ? 'checked' : null} onChange={handleChange} type="radio" id="html" name="fav_language" value={'all'} />
+                    <label htmlFor="html">All</label><br />
                     {GovernoratesAll ? GovernoratesAll.map(item =>
                         <>
-                            <input onChange={handleChange} type="radio" id="html" name="fav_language" value={item.id} />
+                            <input checked={IdG == item.id ? 'checked' : null} onChange={handleChange} type="radio" id="html" name="fav_language" value={item.id} />
                             <label htmlFor="html">{item.governorateName}</label>
                             <br />   </>
 
@@ -112,7 +114,7 @@ const Governorates = () => {
 
                 <div className={styles.governoratesCont}>
 
-                    <h1 className={styles.header}>Farms in {Governorate ? Governorate : null}</h1>
+                    <h1 className={styles.header}> {Governorate ? 'Farms in' + ' ' + Governorate : 'All Farms'}</h1>
                     <div className={styles.governorates}>
                         {FarmsItems}
                     </div>
