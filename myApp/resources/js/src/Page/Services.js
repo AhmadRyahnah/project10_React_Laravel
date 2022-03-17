@@ -1,7 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import Slider from '../Components/Slider/SliderImg';
-import './Services.css'
+// import './Services.css'
+import styles from './Services.module.css'
 
 const Services = () => {
 
@@ -42,14 +43,14 @@ const Services = () => {
 
                 ) : null}
             </div > */}
-            <div className='governorates'>
+            <div className={styles.governorates}>
                 {governorates ? governorates.map(governorate =>
 
                     <Link to={'/governorates/' + governorate.id}>
-                        <div className='imgGovernorates'>
+                        <div className={styles.imgGovernorates}>
 
                             <img height={225} width={320} src={'img/Governorate/' + governorate.Image} alt='governorates' />
-                            <strong>{governorate.governorateName}</strong>
+                            <strong className={styles.nameGovernorate}>{governorate.governorateName}</strong>
                             {/* <button >See Farms</button> */}
                         </div>
                     </Link>

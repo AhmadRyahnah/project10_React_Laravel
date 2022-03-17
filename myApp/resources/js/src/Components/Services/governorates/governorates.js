@@ -89,12 +89,11 @@ const Governorates = () => {
 
             <div className={styles.ryahnah}>
                 <div className={styles.sidebars}>
-
-
                     <h1>Filter by:</h1>
 
 
-                    <p>Please select your favorite Governorates:</p>
+                   <div className={styles.customSideBackground}>
+                   <p>Trending Neighbourhoods</p>
                     <input checked={IdG === 'all' ? 'checked' : null} onChange={handleChange} type="radio" id="html" name="fav_language" value={'all'} />
                     <label htmlFor="html">All</label><br />
                     {GovernoratesAll ? GovernoratesAll.map(item =>
@@ -106,7 +105,7 @@ const Governorates = () => {
                     )
 
                         : null}
-
+                   </div>
 
 
                 </div>

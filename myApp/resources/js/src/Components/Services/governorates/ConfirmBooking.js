@@ -3,7 +3,7 @@ import './Confirmbooking.css'
 import { useParams } from "react-router-dom";
 
 import BookingForm from '../../Calender/Calender'
-import './CardFarms.css'
+import styles from './CardFarms.module.css'
 const ConfirmBooking = () => {
     const { id } = useParams();
 

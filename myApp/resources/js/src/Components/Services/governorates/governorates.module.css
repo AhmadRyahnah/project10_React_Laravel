@@ -7,6 +7,7 @@
     column-gap: 5em;
     justify-content: center;
      margin: 2em auto;
+     position: relative;
 }
 .ryahnah .governoratesCont{
     text-align: center;
@@ -15,11 +16,37 @@
 }
 .sidebars{
     position: sticky;
-    top: 225px;
-    width: 270px;
-    height: 50vh;
+    top: 76px !important;
+    height: 70vh !important;
+    width: 17vw;
     background-color: #F5F5F9;
+    border-radius: 5px !important;
+    padding: 0 10px 10px !important;
+    border: 1px solid rgb(228, 228, 228);
 }
+
+.sidebars h1 {
+    width: 100%;
+    font-size: 23px !important;
+    padding: 10px 10px 10px;
+    margin-bottom: 10px;
+}
+
+.sidebars .customSideBackground p{
+    font-weight: 600;
+    font-size: 16px !important;
+}
+
+.sidebars .customSideBackground{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 18px !important;
+    border: 1px solid rgb(212, 212, 212);
+    box-shadow: #000#000 -9px -8px 25px -28px;;
+}
+
+
 .governoratesCont .governorates{
      width: 70%;
     display: grid;

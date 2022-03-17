@@ -7,7 +7,7 @@ import './Farm.css'
 const ViewFarm = () => {
     const { id } = useParams();
 
-    console.log(id);
+    // console.log(id);
 
 
     // const governorate = JSON.parse(localStorage.getItem('governorate'));
@@ -28,17 +28,17 @@ const ViewFarm = () => {
 
 
 
-    const deleteProduct = async (id) => {
-        await axios.delete(`http://127.0.0.1:8000/api/deleteFarm/${id}`);
+    const deleteProduct = async (idD) => {
+        await axios.delete(`http://127.0.0.1:8000/api/deleteFarm/${idD}`);
         setDeleted(deleted + 1)
     }
 
 
-    const EditClick = (Farm) => {
-        // e.preventDefault();
-        // console.log(props);
-        localStorage.setItem('editFarm', JSON.stringify(Farm))
-    }
+    // const EditClick = (Farm) => {
+    //     // e.preventDefault();
+    //     // console.log(props);
+    //     localStorage.setItem('editFarm', JSON.stringify(Farm))
+    // }
     // console.log(user);
     return (
         <div >
@@ -81,7 +81,7 @@ const ViewFarm = () => {
                             <td>{Farm.Time}</td>
 
                             <td><Link to='/editFarm'>
-                                <button variant="danger" onClick={() => EditClick(Farm)}>
+                                <button variant="danger" >
                                     Edit
                                 </button></Link></td>
 
