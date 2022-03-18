@@ -1,25 +1,24 @@
-
-.ryahnah{
+.ryahnah {
     /* height: 70vh; */
     display: grid;
     grid-template-columns: 20% 80%;
     width: 80%;
-    column-gap: 5em;
+    column-gap: 2em;
     justify-content: center;
-     margin: 2em auto;
-     position: relative;
+    margin: 5em auto;
+    position: relative;
 }
-.ryahnah .governoratesCont{
+.ryahnah .governoratesCont {
     text-align: center;
     display: flex;
     flex-direction: column;
 }
-.sidebars{
+.sidebars {
     position: sticky;
     top: 76px !important;
     height: 70vh !important;
     width: 17vw;
-    background-color: #F5F5F9;
+    background-color: #f5f5f9;
     border-radius: 5px !important;
     padding: 0 10px 10px !important;
     border: 1px solid rgb(228, 228, 228);
@@ -31,33 +30,79 @@
     padding: 10px 10px 10px;
     margin-bottom: 10px;
 }
-
-.sidebars .customSideBackground p{
+.navMobile {
+    display: none;
+}
+.sidebars .customSideBackground p {
     font-weight: 600;
     font-size: 16px !important;
 }
 
-.sidebars .customSideBackground{
+.sidebars .customSideBackground {
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     padding: 5px 10px;
     font-size: 18px !important;
     border: 1px solid rgb(212, 212, 212);
-    box-shadow: #000#000 -9px -8px 25px -28px;;
+    box-shadow: #000#000 -9px -8px 25px -28px;
 }
 
-
-.governoratesCont .governorates{
-     width: 70%;
+.governoratesCont .governorates {
+    width: 50%;
     display: grid;
-    grid-template-columns: repeat(3,auto);
+    grid-template-columns: repeat(3, auto);
     justify-content: center;
-     margin: 0 auto;
+    margin: 0 auto;
 }
-/* @media screen and (max-width:950px){
-    .governorates{
-
-        grid-template-areas: " governoratesContainer";
-
+/* @media screen and (max-width: 768px) {
+    .governoratesCont .governorates {
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        justify-content: center;
+        margin: 0 auto;
     }
 } */
+
+
+
+@media screen and (max-width: 768px) {
+    .ryahnah{
+        display: flex;
+        flex-direction: column;
+        /* display: grid;
+        grid-template-columns: auto auto; */
+    }
+    .sidebars {
+        display: none;
+    }
+    .navMobile {
+        display: block;
+    }
+    .governoratesCont .governorates {
+        width: 90%;
+        /* display: flex;
+        flex-direction: column; */
+        margin: 0 auto;
+          display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+@media screen and (max-width: 450px) {
+    .ryahnah{
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebars {
+        display: none;
+    }
+    .navMobile {
+        display: block;
+    }
+    .governoratesCont .governorates {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+}

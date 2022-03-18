@@ -13,15 +13,11 @@ const Governorates = () => {
 
     const [IdG, setIdG] = useState(id ? id : 'all');
 
-
-    // const governorate = JSON.parse(localStorage.getItem('governorate'));
-    // const id = governorate.id
-    // const name=governorate.governorateName
     const [Farms, setFarms] = useState();
-
+    const [Price, setPrice] = useState('')
     const [Governorate, setGovernorate] = useState();
     const [GovernoratesAll, setGovernoratesAll] = useState();
-    // console.log(Farms);
+
     let i = 1;
 
 
@@ -30,8 +26,8 @@ const Governorates = () => {
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        console.log(name)
-        console.log(value);;
+        // console.log(name)
+        // console.log(value);;
         setIdG(value)
         // setInputs(values => ({ ...values, [name]: value }));
 
@@ -46,11 +42,10 @@ const Governorates = () => {
 
         await axios.get("http://127.0.0.1:8000/api/Governorates").then((response) => {
             setGovernoratesAll(response.data);
-            console.log(response.date);
+            // console.log(response.date);
         });
     }, []);
-    if (GovernoratesAll)
-        console.log(GovernoratesAll);
+
     // ***************************
     useEffect(async () => {
 
@@ -61,15 +56,25 @@ const Governorates = () => {
         }).catch(error => {
             setGovernorate(false)
         })
-    }, [IdG, Governorate]);
+    }, [IdG]);
+
+    useEffect(() => {
+
+        if (Price == 'Ascending') {
+            setFarms(Farms ? Farms.sort((a, b) => (a.price > b.price) ? -1 : ((b.price > a.price) ? 1 : 0)) : null)
+
+        } else if (Price == 'Descending') {
+            setFarms(Farms ? Farms.sort((a, b) => (a.price > b.price) ? 1 : ((b.price > a.price) ? -1 : 0)) : null)
+
+        }
 
 
-
-
+    }, [Price]);
 
     let FarmsItems = null;
-    if (Farms)
 
+
+    if (Farms)
         FarmsItems = Farms.map((CardItem) => {
             return (
                 <Cardgovernorates
@@ -84,31 +89,69 @@ const Governorates = () => {
                 />
             )
         })
+
+
+
+
     return (
         <Fragment>
 
             <div className={styles.ryahnah}>
                 <div className={styles.sidebars}>
                     <h1>Filter by:</h1>
+                    <div className={styles.customSideBackground}>
+                        <p>Price:</p>
+                        <form>
+                            <input checked={Price == 'Descending' ? 'checked' : null} onChange={(e) => { setPrice(e.target.value) }} type="radio" id="price" name="fav_language" value={'Descending'} />
+                            <label htmlFor="price">Price Descending</label><br />
+                            <input checked={Price !== 'Descending' ? 'checked' : null} onChange={(e) => { setPrice(e.target.value) }} type="radio" id="price" name="fav_language" value={'Ascending'} />
+                            <label htmlFor="price">Price Ascending</label><br />
+                        </form>
+                    </div>
+                    <br /><br />
+                    <div className={styles.customSideBackground}>
+                        <p>Trending Neighbourhoods</p>
+                        <input checked={IdG === 'all' ? 'checked' : null} onChange={handleChange} type="radio" id="html" name="fav_language" value={'all'} />
+                        <label htmlFor="html">All</label><br />
+                        {GovernoratesAll ? GovernoratesAll.map(item =>
+                            <>
+                                <input checked={IdG == item.id ? 'checked' : null} onChange={handleChange} type="radio" id="html" name="fav_language" value={item.id} />
+                                <label htmlFor="html">{item.governorateName}</label>
+                                <br />   </>
 
+                        )
 
-                   <div className={styles.customSideBackground}>
-                   <p>Trending Neighbourhoods</p>
-                    <input checked={IdG === 'all' ? 'checked' : null} onChange={handleChange} type="radio" id="html" name="fav_language" value={'all'} />
-                    <label htmlFor="html">All</label><br />
-                    {GovernoratesAll ? GovernoratesAll.map(item =>
-                        <>
-                            <input checked={IdG == item.id ? 'checked' : null} onChange={handleChange} type="radio" id="html" name="fav_language" value={item.id} />
-                            <label htmlFor="html">{item.governorateName}</label>
-                            <br />   </>
-
-                    )
-
-                        : null}
-                   </div>
+                            : null}
+                    </div>
 
 
                 </div>
+                <div className={styles.navMobile}>
+                    <h1>Filter by:</h1>
+
+
+                    {/* <div className={styles.customSideBackground}> */}
+                    <p>Trending Neighbourhoods</p>
+                    <select onChange={handleChange} name="fav_language">
+                        <option value={'all'} >All</option>
+                        {GovernoratesAll ? GovernoratesAll.map(item =>
+                            <>
+
+                                <option value={item.id} >{item.governorateName}</option>
+
+
+
+
+                            </>
+
+                        )
+
+                            : null}</select>
+                    {/* </div> */}
+
+
+                </div>
+
                 {/* <Slider /> */}
 
                 <div className={styles.governoratesCont}>

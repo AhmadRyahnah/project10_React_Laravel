@@ -4,6 +4,9 @@ import logo from './logo.png'
 import { Link, useNavigate } from "react-router-dom";
 // import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
 import { UserContext } from '../../App'
+import { GiHamburgerMenu } from "react-icons/gi";
+import { FaTimes } from "react-icons/fa";
+// GiHamburgerMenu
 export default function Navpath() {
     const navigate = useNavigate();
     const handleUseNavigate = () => {
@@ -68,7 +71,7 @@ const NavBar = (props) => {
 
                             <Link to="/SignInUp" onClick={handleClick}>
                                 <button onClick={logout}>
-                                   Log out</button></Link>
+                                    Log out</button></Link>
                             :
                             <Link to="/SignInUp" onClick={handleClick}>
                                 <button>Log In
@@ -80,7 +83,8 @@ const NavBar = (props) => {
                 </ul>
             </div>
             <div className="nav-icon" onClick={handleClick}>
-                <i className={!click ? 'fas fa-times' : 'fas fa-bars'}></i>
+                {click ? <GiHamburgerMenu /> : <FaTimes />}
+                {/* <i className={!click ? <GiHamburgerMenu/> : 'fas fa-bars'}></i> */}
             </div>
 
 

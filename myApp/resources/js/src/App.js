@@ -15,6 +15,7 @@ import Profile from './Components/Profile/Profile'
 import About from "./Components/About/About";
 import HomeAdmin from "./Components/Admin/Home";
 import ErrorPage from './Components/404/404';
+// import LoginRegister from "./Components/RegisterLogin/LoginRegister";
 
 export const UserContext = createContext();
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
                         <Route path='ConfirmBooking/:id' element={<ConfirmBooking />} />
                         <Route path='Profile' element={<Profile />} />
                         <Route path='About' element={<About />} />
+                        {/* <Route path='LoginRegister' element={<LoginRegister />} /> */}
                         <Route path='*' element={<ErrorPage />} />
                     </Routes>
                     <Footer />

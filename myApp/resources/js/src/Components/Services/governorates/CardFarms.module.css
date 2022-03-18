@@ -1,52 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cairo&display=swap");
 
-*{
-    font-family: 'Cairo', sans-serif !important;
+* {
+    font-family: "Cairo", sans-serif !important;
 }
-.link{
+.link {
     text-decoration: none !important;
     color: black;
 }
-.governoratesContainer{
+.governoratesContainer {
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2em;
+    margin: 1em;
     border-radius: 4px;
     box-shadow: black 0px 0px 15px -10px;
     border: 1px solid whitesmoke;
 }
-.governoratesContainer img{
+.governoratesContainer img {
     /* margin: 0 0 1em; */
     margin: 0 0 1em 0;
     /* width: 100%; */
-    width: 285px;
+    width: 275px;
     border-radius: 3px;
     /* max-width: 356px; */
 }
-.governoratesContainer h5{
+.governoratesContainer h5 {
     width: 80%;
     text-align: center;
-    margin-bottom: .2em !important;
+    margin-bottom: 0.2em !important;
     font-size: 1.25rem !important;
 }
-.governoratesContainer h4{
-    margin-bottom: .2em;
+.governoratesContainer h4 {
+    margin-bottom: 0.2em;
     font-size: 2rem;
     font-weight: 700;
     align-self: baseline !important;
     margin-left: 10px !important;
 }
 
-.governoratesContainer h4::after{
+.governoratesContainer h4::after {
     content: "JD/Day";
     font-size: 1.25rem !important;
     margin-left: 5px;
 }
 
-.governoratesContainer button{
+.governoratesContainer button {
     margin-bottom: 1.5em;
     width: 175px;
     height: 40px;
@@ -54,3 +54,40 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 450px) {
+    .governoratesContainer {
+        display: flex;
+        flex-direction: column;
+        width: 275px;
+        margin: 1em auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .governoratesContainer img {
+        /* margin: 0 0 1em; */
+        margin: 0 0 1em 0;
+        /* width: 100%; */
+        width: 275px;
+        border-radius: 3px;
+        /* max-width: 356px; */
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .governoratesContainer {
+        display: flex;
+        flex-direction: column;
+        width: 275px;
+        margin: 1em auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .governoratesContainer img {
+        /* margin: 0 0 1em; */
+        margin: 0 0 1em 0;
+        /* width: 100%; */
+        width: 275px;
+        border-radius: 3px;
+        /* max-width: 356px; */
+    }
+}

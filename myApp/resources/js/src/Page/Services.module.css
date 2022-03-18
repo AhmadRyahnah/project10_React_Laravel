@@ -51,8 +51,8 @@
 
 .governorates .nameGovernorate{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 41%;
+    left: 37%;
     font-size: 2.5em;
     z-index: 1000 !important;
     letter-spacing: 2px;
@@ -61,3 +61,21 @@
     /* text-decoration: none; */
     /* color: white; */
 }
+@media screen and (max-width: 768px) {
+    .governorates {
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+        width: 80%;
+
+
+      }
+  }
+  @media screen and (max-width: 450px) {
+    .governorates {
+        display: grid;
+        grid-template-columns: repeat(1,auto);
+        width: 90%;
+
+
+      }
+  }

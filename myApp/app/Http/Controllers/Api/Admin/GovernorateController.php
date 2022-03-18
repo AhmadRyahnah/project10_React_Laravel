@@ -19,6 +19,7 @@ class GovernorateController extends Controller
     {
         //
         $Governorates = Governorate::all();
+        // $Governorates = Governorate::inRandomOrder()->limit(3)->get();
 
         return $Governorates;
     }
