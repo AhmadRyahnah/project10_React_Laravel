@@ -93,7 +93,11 @@ class FarmController extends Controller
     {
         //
     }
-
+    public function MostPopular()
+    {
+        $farms = Farm::inRandomOrder()->limit(3)->get();
+        return $farms;
+    }
     /**
      * Show the form for editing the specified resource.
      *

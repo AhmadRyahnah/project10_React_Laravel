@@ -54,24 +54,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 450px) {
-    .governoratesContainer {
-        display: flex;
-        flex-direction: column;
-        width: 275px;
-        margin: 1em auto;
-        justify-content: center;
-        align-items: center;
-    }
-    .governoratesContainer img {
-        /* margin: 0 0 1em; */
-        margin: 0 0 1em 0;
-        /* width: 100%; */
-        width: 275px;
-        border-radius: 3px;
-        /* max-width: 356px; */
-    }
-}
+
 
 @media screen and (max-width: 450px) {
     .governoratesContainer {

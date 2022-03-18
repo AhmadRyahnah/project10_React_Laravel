@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react'
-import styles from './LoginRegister.module.css'
+import  './LoginRegister.css'
 const LoginRegister = () => {
     return (
         <Fragment>
             <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
-            <div className={styles.container} id="container">
-                <div className={styles.form - container + styles.sign - up - container}>
+            <div className='container' id="container">
+                <div className='formcontainer sign-up-container'>
                     <form action="#">
                         <h1>Create Account</h1>
                         <div className="social-container">

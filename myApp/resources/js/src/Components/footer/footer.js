@@ -1,29 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./footer.css";
+import { ImFacebook } from "react-icons/im";
+//
+import { BsInstagram,BsTwitter } from "react-icons/bs";
 
 const Footer = () => {
 
   return (
     <footer>
       <div className="about contact">
-        <h2>Civil Engineering Academy</h2>
+        <h2 style={{ letterSpacing:5 }}>Mzr3ti.com</h2>
         <p className="aboutPara">
-          At Civil Engineering Academy it is our mission to help aspiring Civil Engineers
-          pass their exams and develop the skills to be successful in their careers and in life.
-        </p>
+        <strong>Mzr3ti.com </strong>
+         designed to help supplier, owners of farm, owners or furnished apartment to reach the right clientele in the time time.        </p>
       </div>
       <div className="about ">
         <h2>Contact US</h2>
         <p className="contatUsPara">Amman/Jordan</p>
-        <p className="contatUsPara">+96277745108/+962777685139</p>
+        <p className="contatUsPara">+96277745108/+962790327749</p>
       </div>
       <div className="about">
         <h2>Follow Us </h2>
-        <p>civil.academy.com</p>
-        <Link to="https://www.facebook.com/"><i className="Icon fab fa-facebook"> </i></Link>
-        <Link to="https://www.instagram.com/"><i className="Icon fab fa-instagram"> </i></Link>
-        <Link to="https://twitter.com/?lang=ar"><i className="Icon fab fa-twitter"> </i></Link>
+        <p>Mzr3ti.com</p>
+        <Link to="https://www.facebook.com/"><i className="Icon"><ImFacebook/></i></Link>
+        <Link to="https://www.instagram.com/"><i className="Icon"><BsInstagram/> </i></Link>
+        <Link  to="https://twitter.com/?lang=ar"><i className="Icon"> <BsTwitter/></i></Link>
       </div>
 
     </footer>

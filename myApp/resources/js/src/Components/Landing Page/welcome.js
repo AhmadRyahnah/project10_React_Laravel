@@ -5,13 +5,16 @@ const Welcome = () => {
         <div className='bodywelc'>
             <div className='welcomContainer'>
                 <div className='paraWelcom'>
-                    <h1>Welcome To<br/> Civil Engineering<br/> Academy!</h1>
+                    <h1>Welcome To<br /> Mzr3ti.com !</h1>
                     <p>
-                        Our mission at CEA is to help you on your journey to becoming a professional engineer. In doing this, our main goal is to help you prepare, take, and pass the National Council of Examiners for Engineering and Surveying (NCEES) Civil FE and PE exams. We’ll even help you afterward by providing tips, tools, and resources to launch your civil engineering career!
-                    </p>
+                        <strong>Mzr3ti.com </strong> is designed to help suppliers and owners of farms, owners or furnished apartments reach the right customers at the time.
+
+                        At the same time, making it easier for customers to find all the information in one place instead of spending hours searching on the Internet.
+
+                        If you own a farm, or if you own a furnished apartment and want to rent it, and you don't know how you are in the right place to list your product and start offering/rent.                    </p>
                 </div>
                 <div className='imgWelcome'>
-                    <img src='img/wlc.jpg' alt='civil Engineer' />
+                    <img src='img/wlc.jpg' alt='Mzr3ti.com ' />
                 </div>
             </div></div>
     )

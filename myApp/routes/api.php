@@ -48,6 +48,9 @@ Route::put('/editFarm/{id}', [FarmController::class, 'update']);
 Route::get('/createFarm', [FarmController::class, 'create']);
 Route::post('/insertFarm', [FarmController::class, 'store']);
 Route::post('/insertImg', [FarmController::class, 'storeImg']);
+
+Route::get('/MostPopular', [FarmController::class, 'MostPopular']);
+// MostPopular
 // Governorates
 
 Route::get('/Governorates', [GovernorateController::class, 'index']);

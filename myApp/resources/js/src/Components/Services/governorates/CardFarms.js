@@ -13,16 +13,19 @@ const CardFarms = (props) => {
     //     localStorage.setItem('governorates', JSON.stringify(props))
     // }
     return (
-        <Link className={styles.link} to={'/ConfirmBooking/' + props.id}>
-            <div className={styles.governoratesContainer} >
-                <img height={190} src={require('/img/Farms/' + props.img).default} alt={props.alt} />
-                <h4>{props.price}</h4>
-                {/* <h5>{props.desc}</h5> */}
-                <h2>{props.title}</h2>
-                <h5><MdLocationOn /> location</h5>
-                {/* <button >Book Now</button> */}
-            </div>
-        </Link>
+
+
+            <Link className={styles.link} to={'/ConfirmBooking/' + props.id}>
+                <div className={styles.governoratesContainer} >
+                    <img height={190} src={require('/img/Farms/' + props.img).default} alt={props.alt} />
+                    <h4>{props.price}</h4>
+                    {/* <h5>{props.desc}</h5> */}
+                    <h2>{props.title}</h2>
+                    <h5><MdLocationOn /> location</h5>
+                    {/* <button >Book Now</button> */}
+                </div>
+            </Link>
+
     )
 }
 
