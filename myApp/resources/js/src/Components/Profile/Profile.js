@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 
 import styles from './Profile.module.css'
 import { AiOutlineSetting, AiOutlineMail, AiOutlineUser } from 'react-icons/ai';
@@ -6,18 +6,17 @@ import { BsTelephone } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import Avatar from 'react-avatar';
 import EditProfile from './editProfile'
+import { UserContext } from '../../App'
+
 const Profile = () => {
 
+    const { User, setUser } = useContext(UserContext)
 
-    const [user, setUser] = useState();
+
 
     const [click, setClick] = useState(false)
 
-    useEffect(() => {
 
-        const myUser = localStorage.getItem('loggedUser') ? JSON.parse(localStorage.getItem('loggedUser')) : []
-        setUser(myUser)
-    },[])
 
     const Settings = () => {
         setClick(true)
@@ -44,10 +43,10 @@ const Profile = () => {
                 <div className={styles.information}>
                     {/* <h1>My Information</h1> */}
                     <div className={styles.detailes}>
-                        <Avatar round="50%" name={user ? user.name : null} />
-                        <h4><AiOutlineUser /> {user ? user.name : null}</h4>
-                        <h4><i className={styles.icon} >< AiOutlineMail /></i>{user ? user.email : null}</h4>
-                        <h4><i className={styles.icon} >< BsTelephone /></i> 07777777777</h4>
+                        <Avatar round="50%" name={User ? User.name : null} />
+                        <h4><AiOutlineUser /> {User ? User.name : null}</h4>
+                        <h4><i className={styles.icon} >< AiOutlineMail /></i>{User ? User.email : null}</h4>
+                        <h4><i className={styles.icon} >< BsTelephone /></i> {User ? User.phone : null}</h4>
                     </div>
                 </div>
                 <br />

@@ -23,7 +23,7 @@ const Footer = () => {
       <div className="about">
         <h2>Follow Us </h2>
         <p>Mzr3ti.com</p>
-        <Link to="https://www.facebook.com/"><i className="Icon"><ImFacebook/></i></Link>
+        <Link target={'_blank'} to="/https://www.facebook.com/"><i className="Icon"><ImFacebook/></i></Link>
         <Link to="https://www.instagram.com/"><i className="Icon"><BsInstagram/> </i></Link>
         <Link  to="https://twitter.com/?lang=ar"><i className="Icon"> <BsTwitter/></i></Link>
       </div>

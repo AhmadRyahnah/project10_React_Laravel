@@ -26,8 +26,8 @@ const App = () => {
     useEffect(() => {
         const myUser = (localStorage.getItem('loggedUser'))
             ? JSON.parse(localStorage.getItem('loggedUser')) : [];
-        setUser(myUser.role)
-    })
+        setUser(myUser)
+    },[])
 
     // <Route path="adminDashboard" element={<HomeAdmin />} />
 
@@ -36,7 +36,7 @@ const App = () => {
         <UserContext.Provider value={{ User, setUser }} >
 
 
-            {User ? <HomeAdmin /> :
+            {User.role ? <HomeAdmin /> :
                 <> <NavBar />
                     <Routes>
 
