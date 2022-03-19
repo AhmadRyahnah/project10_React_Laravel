@@ -15,6 +15,7 @@ import Profile from './Components/Profile/Profile'
 import About from "./Components/About/About";
 import HomeAdmin from "./Components/Admin/Home";
 import ErrorPage from './Components/404/404';
+import SingleFarmPage from "./Components/Services/SingleFarm";
 
 export const UserContext = createContext();
 const App = () => {
@@ -46,6 +47,7 @@ const App = () => {
                         <Route path='governorates/:id' element={<Governorates />} />
                         <Route path='Farms' element={<Governorates />} />
                         <Route path='ConfirmBooking/:id' element={<ConfirmBooking />} />
+                        <Route path="SingleFarmPage" element={<SingleFarmPage/>}/>
                         <Route path='Profile' element={<Profile />} />
                         <Route path='About' element={<About />} />
                         <Route path='*' element={<ErrorPage />} />
