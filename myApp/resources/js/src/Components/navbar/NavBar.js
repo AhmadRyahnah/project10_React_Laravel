@@ -21,16 +21,16 @@ const NavBar = (props) => {
     //   const { myLecture ,setmyLecture } = useContext(UserContext)
 
     let isLoggedIn = localStorage.getItem('loggedUser');
-    const logout = () => {
-        localStorage.removeItem('loggedUser')
-        localStorage.removeItem('Lecture')
-        localStorage.removeItem('date')
-        localStorage.removeItem('fromDelete')
-        localStorage.removeItem('governorates')
+    // const logout = () => {
+    //     localStorage.removeItem('loggedUser')
+    //     localStorage.removeItem('Lecture')
+    //     localStorage.removeItem('date')
+    //     localStorage.removeItem('fromDelete')
+    //     localStorage.removeItem('governorates')
 
-        // setmyLecture(0)
-        props.handleUseNavigate()
-    }
+    //     // setmyLecture(0)
+    //     props.handleUseNavigate()
+    // }
 
     const [click, setClick] = useState(true);
     const handleClick = () => setClick(!click)
@@ -68,10 +68,10 @@ const NavBar = (props) => {
                     <li>
 
                         {isLoggedIn ?
-
-                            <Link to="/SignInUp" onClick={handleClick}>
-                                <button onClick={logout}>
-                                    Log out</button></Link>
+null
+                            // <Link to="/SignInUp" onClick={handleClick}>
+                            //     <button onClick={logout}>
+                            //         Log out</button></Link>
                             :
                             <Link to="/SignInUp" onClick={handleClick}>
                                 <button>Log In
