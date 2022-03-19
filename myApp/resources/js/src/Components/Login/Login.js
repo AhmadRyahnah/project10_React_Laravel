@@ -51,7 +51,7 @@ const Login = () => {
                     button: "ok ",
                 });
             } else {
-                setUser(response.data.user.role)
+                setUser(response.data.user)
                 localStorage.setItem('loggedUser', JSON.stringify(response.data.user))
                 response.data.user.role !== 0 ? navigate('/Admin') : navigate('/Services')
 

@@ -1,6 +1,6 @@
 
 import React, { createContext, useState, useEffect } from "react";
-import {  Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import './App.css'
 
 import Footer from "./Components/footer/footer";
@@ -27,7 +27,7 @@ const App = () => {
         const myUser = (localStorage.getItem('loggedUser'))
             ? JSON.parse(localStorage.getItem('loggedUser')) : [];
         setUser(myUser)
-    },[])
+    }, [])
 
     // <Route path="adminDashboard" element={<HomeAdmin />} />
 
@@ -36,7 +36,7 @@ const App = () => {
         <UserContext.Provider value={{ User, setUser }} >
 
 
-            {User.role ? <HomeAdmin /> :
+            {User ? User.role ? <HomeAdmin /> :
                 <> <NavBar />
                     <Routes>
 
@@ -51,7 +51,7 @@ const App = () => {
                         <Route path='*' element={<ErrorPage />} />
                     </Routes>
                     <Footer />
-                </>}
+                </> : null}
         </UserContext.Provider>
 
     )

@@ -15,10 +15,13 @@ import ViewFarm from "./Governorate/ViewFarms";
 import ErrorPage from "../404/404";
 import { UserContext } from '../../App'
 import Admin from "./Admin";
+import { useNavigate } from "react-router-dom";
+
 
 
 const HomeAdmin = () => {
 
+    let navigate = useNavigate()
     const { setUser } = useContext(UserContext)
     const logout = () => {
         localStorage.removeItem('loggedUser')
@@ -26,9 +29,10 @@ const HomeAdmin = () => {
         localStorage.removeItem('date')
         localStorage.removeItem('fromDelete')
         localStorage.removeItem('governorates')
-        setUser(false)
+        setUser([])
 
-    }
+navigate('/')
+ }
 
     return (
 

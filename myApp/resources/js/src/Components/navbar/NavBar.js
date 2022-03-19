@@ -20,7 +20,7 @@ const NavBar = (props) => {
 
     //   const { myLecture ,setmyLecture } = useContext(UserContext)
 
-    let isLoggedIn = localStorage.getItem('loggedUser')?JSON.parse(localStorage.getItem('loggedUser')):[];
+    let isLoggedIn = localStorage.getItem('loggedUser') ? JSON.parse(localStorage.getItem('loggedUser')) : 0;
     // const logout = () => {
     //     localStorage.removeItem('loggedUser')
     //     localStorage.removeItem('Lecture')
@@ -68,7 +68,7 @@ const NavBar = (props) => {
                     <li>
 
                         {isLoggedIn ?
-                        null
+                            null
                             // <p> welcome ,{isLoggedIn.name}</p>
                             // <Link to="/SignInUp" onClick={handleClick}>
                             //     <button onClick={logout}>
