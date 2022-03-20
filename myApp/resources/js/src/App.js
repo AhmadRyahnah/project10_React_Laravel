@@ -47,7 +47,7 @@ const App = () => {
                         <Route path='governorates/:id' element={<Governorates />} />
                         <Route path='Farms' element={<Governorates />} />
                         <Route path='ConfirmBooking/:id' element={<ConfirmBooking />} />
-                        <Route path="SingleFarmPage" element={<SingleFarmPage/>}/>
+                        <Route path="SingleFarmPage/:id" element={<SingleFarmPage/>}/>
                         <Route path='Profile' element={<Profile />} />
                         <Route path='About' element={<About />} />
                         <Route path='*' element={<ErrorPage />} />

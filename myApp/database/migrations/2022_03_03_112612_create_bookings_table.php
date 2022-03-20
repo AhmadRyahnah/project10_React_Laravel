@@ -21,7 +21,8 @@ return new class extends Migration
             $table->foreign('governorate_id')->references('id')->on('governorates')->onDelete('cascade');
             $table->string('farmName');
             $table->string('date');
-            $table->string('status')->default('pending');
+            $table->enum('status', ['pending', 'accepted'])->default('pending');
+            // $table->string('status')->default('pending');
             $table->timestamps();
 
         });

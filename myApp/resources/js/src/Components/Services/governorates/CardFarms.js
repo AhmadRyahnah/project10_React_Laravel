@@ -15,7 +15,7 @@ const CardFarms = (props) => {
     return (
 
 
-            <Link className={styles.link} to={'/ConfirmBooking/' + props.id}>
+            <Link className={styles.link} to={'/SingleFarmPage/' + props.id}>
                 <div className={styles.governoratesContainer} >
                     <img height={190} src={require('/img/Farms/' + props.img).default} alt={props.alt} />
                     <h4>{props.price}</h4>

@@ -10,7 +10,7 @@
 }
 .aboutContainer h1{
     margin-bottom: 4em;
-  
+
 }
 .textAbout{
     width: 90%;
@@ -19,11 +19,11 @@
 }
 .textAbout h2{
     margin-bottom: 1.5em;
- 
+
 }
 .imgAbout img{
    width: 100%;
-    
+
 }
 
 @media screen and (max-width:900px) {

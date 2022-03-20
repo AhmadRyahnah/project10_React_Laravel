@@ -37,7 +37,7 @@ const Register = () => {
                     button: "ok ",
                 });
                 setTimeout(() => {
-                    navigate('/Services')
+                    navigate('/Farms')
                 }, 3000);
 
             } else {

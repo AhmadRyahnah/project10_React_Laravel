@@ -67,3 +67,4 @@ Route::post('/insertImgGover', [GovernorateController::class, 'storeImg']);
 // ConfirmBooking
 Route::get('/showConfirmBooking/{id}', [BookingController::class, 'index']);
 Route::post('/insertBooking', [BookingController::class, 'store']);
+Route::get('/profileOrder/{id}', [BookingController::class, 'show']);

@@ -18,42 +18,42 @@ class GovernorateSeeder extends Seeder
         DB::table('governorates')->insert(
             [
                 'governorateName' => 'Amman',
-                'Image' => 'wwwww',
+                'Image' => '1.jpg',
 
             ]
         );
         DB::table('governorates')->insert(
             [
                 'governorateName' => 'Irbid',
-                'Image' => 'wwwww',
+                'Image' => '1.jpg',
 
             ]
         );
         DB::table('governorates')->insert(
             [
                 'governorateName' => 'Ajlon',
-                'Image' => 'wwwww',
+                'Image' => '1.jpg',
 
             ]
         );
         DB::table('governorates')->insert(
             [
                 'governorateName' => 'Aqapa',
-                'Image' => 'wwwww',
+                'Image' => '1.jpg',
 
             ]
         );
         DB::table('governorates')->insert(
             [
                 'governorateName' => 'Madaba',
-                'Image' => 'wwwww',
+                'Image' => '1.jpg',
 
             ]
         );
         DB::table('governorates')->insert(
             [
                 'governorateName' => 'Ablqaa',
-                'Image' => 'wwwww',
+                'Image' => '1.jpg',
 
             ]
         );

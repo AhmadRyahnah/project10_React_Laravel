@@ -22,7 +22,7 @@ class FarmSeeder extends Seeder
                 'description' => '5555',
                 'phone' => '5555',
                 'price' => '5555',
-                'image' => '5555',
+                'image' => '1.jpg',
                 'Time' => 'available',
                 'governorate_id' => '1'
 
@@ -34,7 +34,7 @@ class FarmSeeder extends Seeder
                 'description' => '5555',
                 'phone' => '5555',
                 'price' => '5555',
-                'image' => '5555',
+                'image' => '1.jpg',
                 'Time' => 'available',
                 'governorate_id' => '2'
 
@@ -46,7 +46,7 @@ class FarmSeeder extends Seeder
                 'description' => '5555',
                 'phone' => '5555',
                 'price' => '5555',
-                'image' => '5555',
+                'image' => '1.jpg',
                 'Time' => 'available',
                 'governorate_id' => '3'
 
@@ -58,7 +58,7 @@ class FarmSeeder extends Seeder
                 'description' => '5555',
                 'phone' => '5555',
                 'price' => '5555',
-                'image' => '5555',
+                'image' => '1.jpg',
                 'Time' => 'available',
                 'governorate_id' => '4'
 
@@ -70,7 +70,7 @@ class FarmSeeder extends Seeder
                 'description' => '5555',
                 'phone' => '5555',
                 'price' => '5555',
-                'image' => '5555',
+                'image' => '1.jpg',
                 'Time' => 'available',
                 'governorate_id' => '5'
 
@@ -82,7 +82,7 @@ class FarmSeeder extends Seeder
                 'description' => '5555',
                 'phone' => '5555',
                 'price' => '5555',
-                'image' => '5555',
+                'image' => '1.jpg',
                 'Time' => 'available',
                 'governorate_id' => '6'
 

@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Booking;
 use App\Models\Farm;
+use App\Models\Governorate;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -57,9 +59,12 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function show(Booking $booking)
+    public function show($id)
     {
-        //
+
+        $governorates=Governorate::all();
+        $order=Booking::where('user_id','=',$id)->get();
+        return response(['order' => $order,'governorates'=>$governorates, 'status' => 200]);
     }
 
     /**

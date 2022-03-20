@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import './Calender.css'
+
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
+import styled from './Calender.module.css'
 const BookingForm = (props) => {
 
     // console.log(props.Farms);
@@ -54,20 +55,24 @@ const BookingForm = (props) => {
                 // console.log(response);
 
             });
+            swal({
+                title: ` Successfully Booked ${booking.farmName} farm on ${booking.date}  `,
+                text: 'Check Your Profile'
+              });
 
         }
     }
     return (
-        <div className='ContainerCalender' >
-            <form onSubmit={handleSubmit}>
-                <label className='today'>Today {today}</label>
-                <label className='booking'>Start Booking</label>
-                <input name='date' className='inputDate' type='date' required min={startbook} value={date} onChange={handleChange} />
+        <div className={styled.ContainerCalender} >
+            <form onSubmit={handleSubmit}><br/>
+                {/* <label className={styled.today}>Today {today}</label> */}
+                <label className={styled.booking}>Start Booking</label>
+                <input name='date' className={styled.inputDate} type='date' required min={startbook} value={date} onChange={handleChange} />
                 {/* <label className='booking'> Select Time</label> */}
                 {/* <select className='inputDate' required onChange={(e) => { setTime(e.target.value) }}>
           {TimeSlot.map((item) => { return <option value={item.value}>{item.text}</option> })}
         </select> */}
-                <input className='btnCalender' type="submit" />
+                <input className={styled.btnCalender} type="submit" />
             </form>
         </div >
     )

@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import styles from './Profile.module.css'
 import { AiOutlineSetting, AiOutlineMail, AiOutlineUser } from 'react-icons/ai';
@@ -9,15 +9,23 @@ import EditProfile from './editProfile'
 import { UserContext } from '../../App'
 
 const Profile = () => {
-
+    let i = 1;
     const { User, setUser } = useContext(UserContext)
 
-
-
+    const [Order, setOrder] = useState([])
+    const [Governorates, setGovernorates] = useState()
     const [click, setClick] = useState(false)
+    useEffect(async () => {
 
-
-
+        await axios.get("http://127.0.0.1:8000/api/profileOrder/" + User.id).then((response) => {
+            setOrder(response.data.order);
+            setGovernorates(response.data.governorates);
+        });
+    }, []);
+    if (Order)
+        console.log(Order);
+    if (Governorates)
+        console.log(Governorates);
     const Settings = () => {
         setClick(true)
     }
@@ -59,37 +67,39 @@ const Profile = () => {
                         <div className={styles.customProfile}>
                             <table >
                                 <tr>
-                                    <th><h3>name</h3></th>
-                                    <th><h3>name</h3></th>
-                                    <th><h3>name</h3></th>
-                                    <th><h3>name</h3></th>
-                                    <th><h3>name</h3></th>
+                                    <th><h3>#</h3></th>
+                                    <th><h3>Farm Name</h3></th>
+                                    <th><h3>Governorate Name</h3></th>
+                                    <th><h3>Booking Date</h3></th>
+                                    <th><h3>Status</h3></th>
                                 </tr>
 
-                                <tr>
+                                {Order ? Order.map(item => <tr>
 
-                                    <td><h5>ahmad</h5></td>
-                                    <td><h5>ahmad</h5></td>
-                                    <td><h5>ahmad</h5></td>
-                                    <td><h5>ahmad</h5></td>
-                                    <td><h5>ahmad</h5></td>
-                                </tr>
-                                <tr>
+                                    <td><h4>{i++}</h4></td>
+                                    <td><h4>{item.farmName}</h4></td>
+                                    <td><h4>
 
-                                    <td><h5>ahmad</h5></td>
-                                    <td><h5>ahmad</h5></td>
-                                    <td><h5>ahmad</h5></td>
-                                    <td><h5>ahmad</h5></td>
-                                    <td><h5>ahmad</h5></td>
-                                </tr>
-                                <tr>
+                                        {Order && Governorates ?
+                                            Governorates.map(element => {
+                                                if (element.id === item.governorate_id) {
+                                                   return element.governorateName
+                                                }
+                                            })
 
-                                    <td><h5>ahmad</h5></td>
-                                    <td><h5>ahmad</h5></td>
-                                    <td><h5>ahmad</h5></td>
-                                    <td><h5>ahmad</h5></td>
-                                    <td><h5>ahmad</h5></td>
-                                </tr>
+                                            : 0}
+
+
+
+                                    </h4></td>
+                                    <td><h4>{item.date}</h4></td>
+                                    <td>
+                                        {item.status==='pending'?<h4 style={{ color:'red' }}>{item.status}</h4>:
+                                        <h4 style={{ color:'green' }}>{item.status}</h4>}
+
+                                        </td>
+                                </tr>) : <h2>No Order Yet</h2>}
+
                             </table>
                         </div>
                     </div>

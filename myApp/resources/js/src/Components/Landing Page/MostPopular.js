@@ -29,11 +29,11 @@ const MostPopular = () => {
     return (
         <Fragment>
             <br /><br />
-            <h1 style={{ textAlign: 'center' }}>Most Popular Neighbourhoods</h1>
+            <h1 style={{ textAlign: 'center' }}>Most Popular Farms</h1>
             <div className={styles.mostPopular}>
 
                 {Farms ? Farms.map(farm =>
-                    <Link className={styles.link} to={'/ConfirmBooking/' + farm.id}>
+                    <Link className={styles.link} to={'/SingleFarmPage/' + farm.id}>
                         <div className={styles.governoratesContainer} >
                             <img height={190} src={require('/img/Farms/' + farm.image).default} alt={farm.farmName} />
                             <h4>{farm.price}</h4>

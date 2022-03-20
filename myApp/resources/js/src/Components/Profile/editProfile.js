@@ -40,6 +40,10 @@ const EditProfile = (props) => {
         localStorage.setItem('loggedUser', JSON.stringify(User))
         // setUser(localStorage.getItem('loggedUser') ? JSON.parse(localStorage.getItem('loggedUser')) : [])
         navigate('/Profile')
+        swal({
+            title: ` Your Information has been Successfully Updated! `,
+            text: 'Thank You'
+          });
 
     }
 
