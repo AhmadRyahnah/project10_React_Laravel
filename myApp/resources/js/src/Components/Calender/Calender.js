@@ -12,7 +12,7 @@ const BookingForm = (props) => {
     // console.log({...booking,...5});
 
     let navigate = useNavigate()
-    const [User, setUser] = useState(localStorage.getItem('loggedUser')?JSON.parse(localStorage.getItem('loggedUser')) : [])
+    const [User, setUser] = useState(localStorage.getItem('loggedUser') ? JSON.parse(localStorage.getItem('loggedUser')) : [])
     const [date, setdate] = useState()
     const [booking, setBooking] = useState()
 
@@ -52,19 +52,19 @@ const BookingForm = (props) => {
             navigate('/SignInUp')
         } else {
             axios.post('http://127.0.0.1:8000/api/insertBooking', booking).then((response) => {
-                // console.log(response);
-
+                console.log(response.data[0]);
+                swal({
+                    title: response.data[0],
+                    text: 'Check Your Profile'
+                });
             });
-            swal({
-                title: ` Successfully Booked ${booking.farmName} farm on ${booking.date}  `,
-                text: 'Check Your Profile'
-              });
+
 
         }
     }
     return (
         <div className={styled.ContainerCalender} >
-            <form onSubmit={handleSubmit}><br/>
+            <form onSubmit={handleSubmit}><br />
                 {/* <label className={styled.today}>Today {today}</label> */}
                 <label className={styled.booking}>Start Booking</label>
                 <input name='date' className={styled.inputDate} type='date' required min={startbook} value={date} onChange={handleChange} />

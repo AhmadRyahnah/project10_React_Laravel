@@ -35,13 +35,13 @@ const acceptedOrder=(Order)=>{
                         <th>Farm Name</th>
                         <th>Governorate Name</th>
                         <th>Phone User</th>
-                        {/* <th>price</th> */}
+                        <th>price</th>
                         <th>Booking Date</th>
                         <th>Status</th>
 
                     </tr>
                 </thead>
-                {Orders ? Orders.map(Order =>
+                {Orders ? Orders.reverse().map(Order =>
 
 
                     <tbody>
@@ -51,7 +51,7 @@ const acceptedOrder=(Order)=>{
                             <td>{Order.farmName}</td>
                             <td>{Order.governorateName}</td>
                             <td>{Order.phone}</td>
-                            {/* <td>{Order.price}</td> */}
+                            <td>{Order.price}</td>
                             {/* <td><img src={'img/Farms/' + Order.image} width='100' /></td> */}
                             <td>{Order.date}</td>
 

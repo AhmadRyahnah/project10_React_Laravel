@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('farmName');
             $table->string('date');
             $table->enum('status', ['pending', 'accepted'])->default('pending');
+            $table->double('price');
             // $table->string('status')->default('pending');
             $table->timestamps();
 

@@ -10,6 +10,8 @@ use App\Models\Governorate;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class BookingController extends Controller
 {
@@ -43,14 +45,25 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $book = new Booking();
-        // $book->user_id = Auth::user()->id;
-        $book->user_id = $request->input('user_id');
-        $book->governorate_id = $request->input('governorate_id');
-        $book->farmName = $request->input('farmName');
-        $book->date = $request->input('date');
-        $book->save();
+        $date = $request->input('date');
+        $userId = $request->input('user_id');
+        $order = Booking::where([['user_id', '=', $userId], ['date', '=', $date]])->get();
+
+
+
+        if ($order->isEmpty()) {
+
+            $book = new Booking();
+            $book->user_id = $request->input('user_id');
+            $book->governorate_id = $request->input('governorate_id');
+            $book->farmName = $request->input('farmName');
+            $book->price = $request->input('price');
+            $book->date = $request->input('date');
+            $book->save();
+            return response(['Successfully Booked ' . $request->input('farmName') . ' farm on ' . $request->input('date')]);
+        } else {
+            return response(['You Are Booking Farm on ' . $request->input('date') . ' Please Choose Another Time']);
+        }
     }
 
     /**
@@ -72,7 +85,7 @@ class BookingController extends Controller
 
         $orders = Booking::join('users', 'bookings.user_id', '=', 'users.id')
             ->join('governorates', 'bookings.governorate_id', '=', 'governorates.id')
-            ->get(['date', 'bookings.id', 'name', 'farmName', 'status', 'phone', 'governorateName']);
+            ->get(['price', 'date', 'bookings.id', 'name', 'farmName', 'status', 'phone', 'governorateName']);
 
         return response(['orders' => $orders, 'status' => 200]);
     }
