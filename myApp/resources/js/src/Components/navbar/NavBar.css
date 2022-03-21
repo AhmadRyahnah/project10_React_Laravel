@@ -44,6 +44,13 @@
     color: #2e739e;
 }
 
+
+
+.nav-icon svg {
+    height: 2.3em !important;
+    width: 2.3em !important;
+    margin: 0 auto !important;
+}
 /* .shoppingIcon {
   display: flex;
   justify-content: end;
@@ -88,8 +95,11 @@
     /* color: white; */
 
 @media screen and (max-width: 950px) {
+    .nav-list{
+        margin-top: -8px;
+    }
     .navbarContainer .nav-list ul {
-        height: 100px;
+        height: 140px;
         padding: 1em 0;
     }
     .nav-list ul,
@@ -108,7 +118,8 @@
         flex-direction: column;
     }
     .logo {
-        margin: auto 0;
+        margin: 1.5em 1em;
+        /* margin: auto 1em; */
         display: flex;
         align-items: center;
     }
