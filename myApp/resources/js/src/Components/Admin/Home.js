@@ -17,6 +17,7 @@ import { UserContext } from '../../App'
 import Admin from "./Admin";
 import { useNavigate } from "react-router-dom";
 import Orders from "./Orders";
+import { BiLogOut } from "react-icons/bi";
 
 
 
@@ -44,32 +45,12 @@ navigate('/')
             <nav id="sidebar" className="sidebar-wrapper">
                 <div className="sidebar-content">
                     <div className="sidebar-brand">
-                        <a href="#">pro sidebar</a>
+                        <a href="#">Mzr3ti.com</a>
                         <div onClick={logout} id="close-sidebar">
-                            <i className="fas fa-times"></i>
+                          <BiLogOut/>
                         </div>
                     </div>
-                    <div className="sidebar-header">
-                        <div className="user-pic">
-                            <img
-                                className="img-responsive img-rounded"
-                                src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-                                alt="User picture"
-                            />
-                        </div>
-                        <div className="user-info">
-                            <span className="user-name"
-                            >Jhon
-                                <strong>Smith</strong>
-                            </span>
-                            <span className="user-role">Administrator</span>
-                            <span className="user-status">
-                                <i className="fa fa-circle"></i>
-                                <span>Online</span>
-                            </span>
-                        </div>
-                    </div>
-
+<br/><br/><br/><br/>
                     {/* sidebar-search   */}
                     <div className="sidebar-menu">
                         <ul>

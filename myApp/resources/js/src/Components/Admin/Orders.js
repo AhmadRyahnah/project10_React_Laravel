@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styled from './Button.module.css'
 
 const Orders = () => {
     let i=1
@@ -55,9 +56,15 @@ const acceptedOrder=(Order)=>{
                             <td>{Order.date}</td>
 
                             <td>
-                                <button variant="danger" onClick={() =>acceptedOrder(Order.id)}>
+
+
+                             {Order.status==='pending'?   <button className={styled.btnDelete} variant="danger" onClick={() =>acceptedOrder(Order.id)}>
                                     {Order.status}
-                                </button></td>
+                                </button>:<h4 style={{color:'green'}}>
+                                    {Order.status}
+                                </h4>}
+
+                                </td>
 
 
 

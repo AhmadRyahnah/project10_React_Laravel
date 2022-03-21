@@ -1,0 +1,39 @@
+.btnAdd {
+    background-color: #218838;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 46px !important;
+    cursor: pointer;
+}
+.btnDelete {
+    background-color: #c82333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 1em;
+    width: 70px;
+    height: 35px;
+    cursor: pointer;
+
+}
+.btnEdit {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 1em;
+    width: 70px;
+    height: 35px;
+    cursor: pointer;
+}
+.btnView {
+    background-color: #138496;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 1em;
+    width: 70px;
+    height: 35px;
+    cursor: pointer;
+}

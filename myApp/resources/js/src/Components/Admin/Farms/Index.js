@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link ,useNavigate , useParams} from "react-router-dom";
 import axios from 'axios';
 import './Farm.css'
+import styled from '../Button.module.css'
+
 const Farm = () => {
     // const { id } = useParams();
     const [Farms, setFarms] = useState();
@@ -37,7 +39,7 @@ const Farm = () => {
             <h1>Farms Details</h1>
             <Link to="/createFarm">
                 <div className='addUser'>
-                    <button >Add Farm</button>
+                    <button className={styled.btnAdd}>Add Farm</button>
                 </div>
             </Link>
             <br /><br />
@@ -47,13 +49,13 @@ const Farm = () => {
                         <th>#</th>
                         <th>Name</th>
                         <th>Governorate</th>
-                        <th>Description</th>
+                        <th style={{ width:'30%' }}>Description</th>
                         <th>Phone</th>
                         <th>price</th>
                         <th>Image</th>
                         <th>Time</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th style={{ width:'17%' }}><center>Action</center></th>
+
                     </tr>
                 </thead>
                 {Farms ? Farms.map(Farm =>
@@ -71,11 +73,11 @@ const Farm = () => {
                             <td>{Farm.Time}</td>
 
                             <td><Link to={`/editFarm/${Farm.id}`}>
-                                <button variant="danger">
+                                <button className={styled.btnEdit} variant="danger">
                                     Edit
-                                </button></Link></td>
+                                </button></Link>
 
-                            <td> <button variant="danger" onClick={() => deleteProduct(Farm.id)}>
+                          <button className={styled.btnDelete} variant="danger" onClick={() => deleteProduct(Farm.id)}>
                                 Delete
                             </button></td>
 

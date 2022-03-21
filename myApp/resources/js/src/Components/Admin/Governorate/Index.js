@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import './Farm.css'
+
+import styled from '../Button.module.css'
 const Governorate = () => {
 
     const [governorates, setgovernorates] = useState();
@@ -41,7 +43,7 @@ const Governorate = () => {
             <h1>Farms Details</h1>
             <Link to="/createGovernorate">
                 <div className='addUser'>
-                    <button class="btn btn-success" >Add Governorate</button>
+                    <button className={styled.btnAdd} >Add Governorate</button>
                 </div>
             </Link>
             <br /><br />
@@ -54,7 +56,7 @@ const Governorate = () => {
 
 
                         <th>Image</th>
-                        <th>Action</th>
+                        <th style={{ width:'30%' }}><center>Action</center></th>
                         {/* <th>view Farms</th>
                         <th>Edit</th>
                         <th>Delete</th> */}
@@ -73,20 +75,20 @@ const Governorate = () => {
 
                             <td>
                                 <Link to={`/viewFarms/${governorate.id}`}>
-                                    <button class="btn btn-info" variant="danger" >
+                                    <button className={styled.btnView} variant="danger" >
                                         view
                                     </button>
                                 </Link>
                                 {/* </td>
                             <td> */}
                                 <Link to={`/editGovernorate/${governorate.id}`}>
-                                    <button class="btn btn-primary" variant="danger">
+                                    <button className={styled.btnEdit} variant="danger">
                                         Edit
                                     </button></Link>
                                 {/* </td>
 
                             <td> */}
-                                <button class="btn btn-danger" variant="danger" onClick={() => deleteProduct(governorate.id)}>
+                                <button className={styled.btnDelete} variant="danger" onClick={() => deleteProduct(governorate.id)}>
                                     Delete
                                 </button></td>
 

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import styled from '../Button.module.css'
+
 const User = () => {
 
     const [Users, setUsers] = useState('');
@@ -35,7 +37,7 @@ const User = () => {
             <h1>Users Details</h1>
             <Link to="/createUser">
             <div className='addUser'>
-            <button >Add User</button>
+            <button className={styled.btnAdd}>Add User</button>
             </div>
             </Link>
             <br/><br/>
@@ -47,8 +49,7 @@ const User = () => {
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Role</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th style={{ width:'17%' }}><center>Action</center></th>
                     </tr>
                 </thead>
                 {Users ? Users.map(user =>
@@ -63,16 +64,16 @@ const User = () => {
                             <td>{user.role !== 0 ? 'Admin' : 'User'}</td>
 
                             <td><Link to={`/editUser/${user.id}`}>
-                                <button variant="danger" >
+                                <button className={styled.btnEdit} variant="danger" >
                                     Edit
-                                </button></Link></td>
+                                </button></Link>
                             {user.role === 0 ? <>
-                                <td> <button variant="danger" onClick={() => deleteProduct(user.id)}>
+                                 <button className={styled.btnDelete} variant="danger" onClick={() => deleteProduct(user.id)}>
                                     Delete
-                                </button></td>
+                                </button>
 
-                            </> : <><td></td></>}
-
+                            </> : null}
+</td>
                         </tr>
                     </tbody>) : null}
 
