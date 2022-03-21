@@ -70,6 +70,7 @@ const Profile = () => {
                                     <th><h3>#</h3></th>
                                     <th><h3>Farm Name</h3></th>
                                     <th><h3>Governorate Name</h3></th>
+                                    <th><h3>Price</h3></th>
                                     <th><h3>Booking Date</h3></th>
                                     <th><h3>Status</h3></th>
                                 </tr>
@@ -92,6 +93,7 @@ const Profile = () => {
 
 
                                     </h4></td>
+                                    <td><h4>{item.price}</h4></td>
                                     <td><h4>{item.date}</h4></td>
                                     <td>
                                         {item.status==='pending'?<h4 style={{ color:'red' }}>{item.status}</h4>:

@@ -62,11 +62,28 @@ class BookingController extends Controller
     public function show($id)
     {
 
-        $governorates=Governorate::all();
-        $order=Booking::where('user_id','=',$id)->get();
-        return response(['order' => $order,'governorates'=>$governorates, 'status' => 200]);
+        $governorates = Governorate::all();
+        $order = Booking::where('user_id', '=', $id)->get();
+        return response(['order' => $order, 'governorates' => $governorates, 'status' => 200]);
     }
 
+    public function OrderAdmin()
+    {
+
+        $orders = Booking::join('users', 'bookings.user_id', '=', 'users.id')
+            ->join('governorates', 'bookings.governorate_id', '=', 'governorates.id')
+            ->get(['date', 'bookings.id', 'name', 'farmName', 'status', 'phone', 'governorateName']);
+
+        return response(['orders' => $orders, 'status' => 200]);
+    }
+    public function acceptedOrder(Request $request, $id)
+    {
+
+        $acceptedOrder = Booking::findOrFail($id);
+
+        $acceptedOrder->status = 'accepted';
+        $acceptedOrder->update();
+    }
     /**
      * Show the form for editing the specified resource.
      *

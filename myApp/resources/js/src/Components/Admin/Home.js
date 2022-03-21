@@ -16,6 +16,7 @@ import ErrorPage from "../404/404";
 import { UserContext } from '../../App'
 import Admin from "./Admin";
 import { useNavigate } from "react-router-dom";
+import Orders from "./Orders";
 
 
 
@@ -134,6 +135,7 @@ navigate('/')
                         <Route path='editGovernorate/:id' element={<EditGovernorate />} />
                         <Route path='viewFarms/:id' element={<ViewFarm />} />
 
+                        <Route path='Orders' element={<Orders />} />
 
                         <Route path='*' element={<ErrorPage />} />
                     </Routes>

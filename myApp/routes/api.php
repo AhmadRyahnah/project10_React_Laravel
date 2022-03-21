@@ -68,3 +68,9 @@ Route::post('/insertImgGover', [GovernorateController::class, 'storeImg']);
 Route::get('/showConfirmBooking/{id}', [BookingController::class, 'index']);
 Route::post('/insertBooking', [BookingController::class, 'store']);
 Route::get('/profileOrder/{id}', [BookingController::class, 'show']);
+Route::get('/Orders', [BookingController::class, 'OrderAdmin']);
+
+Route::patch('/Orders', [BookingController::class, 'OrderAdmin']);
+Route::patch('/acceptedOrder/{id}', [BookingController::class, 'acceptedOrder']);
+// acceptedOrder
+// OrderAdmin
