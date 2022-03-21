@@ -21,9 +21,9 @@ const Register = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         axios.post('http://127.0.0.1:8000/api/register', inputs).then( response =>{
-            console.log(response.data.status);
-            localStorage.setItem('loggedUser', JSON.stringify(inputs))
-            setUser(inputs)
+            console.log(response.data);
+            localStorage.setItem('loggedUser', JSON.stringify(response.data.user))
+            setUser(response.data.user)
 
 
 

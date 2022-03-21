@@ -45,7 +45,7 @@ navigate('/')
             <nav id="sidebar" className="sidebar-wrapper">
                 <div className="sidebar-content">
                     <div className="sidebar-brand">
-                        <a href="#">Mzr3ti.com</a>
+                        <Link to='Orders'>Mzr3ti.com</Link>
                         <div onClick={logout} id="close-sidebar">
                           <BiLogOut/>
                         </div>

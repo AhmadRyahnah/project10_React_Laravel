@@ -2,26 +2,23 @@ import React, { useState, useEffect } from 'react'
 import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
 import './Farm.css'
+import styled from '../Button.module.css'
 
 
 const ViewFarm = () => {
     const { id } = useParams();
 
-    // console.log(id);
 
-
-    // const governorate = JSON.parse(localStorage.getItem('governorate'));
-    // const id=governorate.id
-    // const name = governorate.governorateName
-    const [Farms, setFarms] = useState();
+    const [Farms, setFarms] = useState([]);
     const [deleted, setDeleted] = useState(0);
+const [Governorate,setGovernorate]=useState();
 
-    // console.log(Farms);
     let i = 1;
     useEffect(async () => {
 
         await axios.get("http://127.0.0.1:8000/api/showFarm/" + id).then((response) => {
-            setFarms(response.data);
+            setFarms(response.data.farm);
+            setGovernorate(response.data.Governorat.governorateName);
             // console.log(response.date);
         });
     }, [deleted]);
@@ -40,12 +37,14 @@ const ViewFarm = () => {
     //     localStorage.setItem('editFarm', JSON.stringify(Farm))
     // }
     // console.log(user);
+
+
     return (
         <div >
             <h1>Farms Details</h1>
             <Link to="/createFarm">
                 <div className='addUser'>
-                    <button >Add Farm</button>
+                    <button className={styled.btnAdd}>Add Farm</button>
                 </div>
             </Link>
             <br /><br />
@@ -60,10 +59,11 @@ const ViewFarm = () => {
                         <th>price</th>
                         <th>Image</th>
                         <th>Time</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
+                        <th style={{ width:'17%' }}><center>Action</center></th>
+
                     </tr>
                 </thead>
+
                 {Farms ? Farms.map(Farm =>
 
 
@@ -72,7 +72,7 @@ const ViewFarm = () => {
                             <td>{i++}</td>
                             <td>{Farm.farmName}</td>
                             <td>
-                                {/* {name} */}
+                                {Governorate?Governorate:null}
                             </td>
                             <td>{Farm.description}</td>
                             <td>{Farm.phone}</td>
@@ -80,12 +80,11 @@ const ViewFarm = () => {
                             <td><img src={'img/' + Farm.image} width='100' /></td>
                             <td>{Farm.Time}</td>
 
-                            <td><Link to='/editFarm'>
-                                <button variant="danger" >
+                            <td><Link to={`/editFarm/${Farm.id}`}>
+                                <button className={styled.btnEdit} variant="danger" >
                                     Edit
-                                </button></Link></td>
-
-                            <td> <button variant="danger" onClick={() => deleteProduct(Farm.id)}>
+                                </button></Link>
+                                <button className={styled.btnDelete} variant="danger" onClick={() => deleteProduct(Farm.id)}>
                                 Delete
                             </button></td>
 
