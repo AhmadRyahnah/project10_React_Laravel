@@ -15,7 +15,7 @@ const BookingForm = (props) => {
     const [User, setUser] = useState(localStorage.getItem('loggedUser') ? JSON.parse(localStorage.getItem('loggedUser')) : [])
     const [date, setdate] = useState()
     const [booking, setBooking] = useState()
-
+    const [Phone, setPhone] = useState()
     // const [id, setId] = useState(0)
 
     let today = new Date();
@@ -29,15 +29,15 @@ const BookingForm = (props) => {
         month = '0' + month
     }
     today = day + '-' + month + '-' + year;
-    let startbook = year + '-' + month + '-' + ((new Date().getDate()) + 7);
+    let startbook = year + '-' + month + '-' + ((new Date().getDate()));
     // let startbook = year + '-' + month + '-' + day;
     // console.log(startbook);
     const handleChange = (e) => {
         e.preventDefault();
         const name = e.target.name;
         const value = e.target.value;
-        setBooking({ ...bookings, [name]: value, "user_id": User.id });
-
+        setBooking({ ...bookings, [name]: value, "user_id": User.id ,'phone':Phone});
+        console.log({ ...bookings, [name]: value, "user_id": User.id ,'phone':Phone});
     }
 
     console.log(booking);
@@ -66,8 +66,15 @@ const BookingForm = (props) => {
         <div className={styled.ContainerCalender} >
             <form onSubmit={handleSubmit}><br />
                 {/* <label className={styled.today}>Today {today}</label> */}
+                <label className={styled.booking}>Phone Number</label>
+                <input name='phone' className={styled.inputDate} type='text' placeholder='0700000000' required onChange={(e) => { setPhone(e.target.value) }} />
+
+
                 <label className={styled.booking}>Start Booking</label>
+
                 <input name='date' className={styled.inputDate} type='date' required min={startbook} value={date} onChange={handleChange} />
+
+
                 {/* <label className='booking'> Select Time</label> */}
                 {/* <select className='inputDate' required onChange={(e) => { setTime(e.target.value) }}>
           {TimeSlot.map((item) => { return <option value={item.value}>{item.text}</option> })}

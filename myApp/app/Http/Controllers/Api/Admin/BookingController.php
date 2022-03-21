@@ -45,6 +45,9 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
+
+
+
         $date = $request->input('date');
         $userId = $request->input('user_id');
         $order = Booking::where([['user_id', '=', $userId], ['date', '=', $date]])->get();
@@ -52,7 +55,11 @@ class BookingController extends Controller
 
 
         if ($order->isEmpty()) {
-
+            if ($request->input('phone')) {
+                $user = User::findOrFail( $userId);
+                $user->phone = $request->input('phone');
+                $user->update();
+            }
             $book = new Booking();
             $book->user_id = $request->input('user_id');
             $book->governorate_id = $request->input('governorate_id');
