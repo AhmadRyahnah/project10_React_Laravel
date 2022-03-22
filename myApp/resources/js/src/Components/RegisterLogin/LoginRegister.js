@@ -1,56 +1,68 @@
-import React, { Fragment } from 'react'
-import  './LoginRegister.css'
+import React, { Fragment, useState, useEffect } from 'react'
+import Login from './Login'
+// import Login from './Login'
+import './LoginRegister.css'
+import Register from './Register'
+
 const LoginRegister = () => {
+
+
+
+
+
+    const [click, setClick] = useState(false)
+    const handleClick = () => {
+
+        click ? setClick(false) : setClick(true);
+    }
+
+
+    useEffect(() => {
+
+    }, [click])
+
     return (
         <Fragment>
-            <h2>Weekly Coding Challenge #1: Sign in/up Form</h2>
-            <div className='container' id="container">
-                <div className='formcontainer sign-up-container'>
-                    <form action="#">
-                        <h1>Create Account</h1>
-                        <div className="social-container">
-                            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
-                        </div>
-                        <span>or use your email for registration</span>
-                        <input type="text" placeholder="Name" />
-                        <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
-                        <button>Sign Up</button>
-                    </form>
+            <div className="wrapper">
+                <div className="title-text">
+                    {!click ?
+                        <div className="title signup">
+                            Login Form
+                        </div> :
+                        <div className="title signup">
+                            Signup Form
+                        </div>}
                 </div>
-                <div className="form-container sign-in-container">
-                    <form action="#">
-                        <h1>Sign in</h1>
-                        <div className="social-container">
-                            <a href="#" className="social"><i className="fab fa-facebook-f"></i></a>
-                            <a href="#" className="social"><i className="fab fa-google-plus-g"></i></a>
-                            <a href="#" className="social"><i className="fab fa-linkedin-in"></i></a>
-                        </div>
-                        <span>or use your account</span>
-                        <input type="email" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
-                        <a href="#">Forgot your password?</a>
-                        <button>Sign In</button>
-                    </form>
-                </div>
-                <div className="overlay-container">
-                    <div className="overlay">
-                        <div className="overlay-panel overlay-left">
-                            <h1>Welcome Back!</h1>
-                            <p>To keep connected with us please login with your personal info</p>
-                            <button className="ghost" id="signIn">Sign In</button>
-                        </div>
-                        <div className="overlay-panel overlay-right">
-                            <h1>Hello, Friend!</h1>
-                            <p>Enter your personal details and start journey with us</p>
-                            <button className="ghost" id="signUp">Sign Up</button>
-                        </div>
+                <div className="form-container">
+                    <div className="slide-controls">
+
+                        {!click ?
+                            <>
+                                <input style={{ display: 'none' }} type="radio" name="slide" id="login" checked />
+
+                                <input style={{ display: 'none' }} onClick={() => handleClick()} type="radio" name="slide" id="signup" />
+                            </> : <>
+                                <input style={{ display: 'none' }} onClick={() => handleClick()} type="radio" name="slide" id="login" />
+
+                                <input style={{ display: 'none' }} type="radio" name="slide" id="signup" checked /></>}
+
+                        <label for="login" className="slide login">Login</label>
+                        <label for="signup" className="slide signup">Signup</label>
+                        <div className="slider-tab"></div>
                     </div>
+                    {!click ?
+
+                        <Login />
+
+                        :
+
+                        <Register />
+
+                    }
+
                 </div>
             </div>
-
+            {/* </div> */}
 
         </Fragment>
     )

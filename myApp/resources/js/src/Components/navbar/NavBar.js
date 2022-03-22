@@ -75,7 +75,7 @@ const NavBar = (props) => {
                             //         Log out</button></Link>
 
                             :
-                            <Link to="/SignInUp" onClick={handleClick}>
+                            <Link to="/LoginRegister" onClick={handleClick}>
                                 <button>Log In
                                 </button></Link>
                         }

@@ -7,7 +7,7 @@ import Footer from "./Components/footer/footer";
 import NavBar from "./Components/navbar/NavBar";
 import Home from "./Page/Home";
 import Services from "./Page/Services";
-import SignInUp from './Page/Sign-In-Up'
+// import SignInUp from './Page/Sign-In-Up'
 
 import Governorates from "./Components/Services/governorates/governorates";
 import ConfirmBooking from "./Components/Services/governorates/ConfirmBooking";
@@ -16,6 +16,7 @@ import About from "./Components/About/About";
 import HomeAdmin from "./Components/Admin/Home";
 import ErrorPage from './Components/404/404';
 import SingleFarmPage from "./Components/Services/SingleFarm";
+import LoginRegister from "./Components/RegisterLogin/LoginRegister";
 
 export const UserContext = createContext();
 const App = () => {
@@ -42,13 +43,14 @@ const App = () => {
                     <Routes>
 
                         <Route path="/" element={<Home />} />
-                        <Route path='SignInUp' element={<SignInUp />} />
+                        {/* <Route path='SignInUp' element={<SignInUp />} /> */}
                         <Route path='Services' element={<Services />} />
                         <Route path='governorates/:id' element={<Governorates />} />
                         <Route path='Farms' element={<Governorates />} />
                         <Route path='ConfirmBooking/:id' element={<ConfirmBooking />} />
                         <Route path="SingleFarmPage/:id" element={<SingleFarmPage/>}/>
                         <Route path='Profile' element={<Profile />} />
+                        <Route path='LoginRegister' element={<LoginRegister />} />
                         <Route path='About' element={<About />} />
                         <Route path='*' element={<ErrorPage />} />
                     </Routes>
