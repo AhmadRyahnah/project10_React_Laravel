@@ -49,7 +49,7 @@ const BookingForm = (props) => {
                 title: "Please Login ",
                 button: "ok ",
             });
-            navigate('/SignInUp')
+            navigate('/LoginRegister')
         } else {
             axios.post('http://127.0.0.1:8000/api/insertBooking', booking).then((response) => {
                 console.log(response.data[0]);

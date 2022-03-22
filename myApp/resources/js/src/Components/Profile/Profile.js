@@ -22,10 +22,7 @@ const Profile = () => {
             setGovernorates(response.data.governorates);
         });
     }, []);
-    if (Order)
-        console.log(Order);
-    if (Governorates)
-        console.log(Governorates);
+
     const Settings = () => {
         setClick(true)
     }
@@ -45,7 +42,7 @@ const Profile = () => {
                 <h1>My Profile</h1>
                 <ul className={styles.listButton}>
                     <li><button className={styles.btnSetting} onClick={Settings} >Settings<i><AiOutlineSetting /></i> </button></li>
-                    <li><Link to="/SignInUp" ><button onClick={logout} className={styles.btnLogout}>Logout</button></Link></li>
+                    <li><Link to="/LoginRegister" ><button onClick={logout} className={styles.btnLogout}>Logout</button></Link></li>
                 </ul>
             </div><br /> {!click ? <>
                 <div className={styles.information}>

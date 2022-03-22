@@ -7,7 +7,7 @@ import Footer from "./Components/footer/footer";
 import NavBar from "./Components/navbar/NavBar";
 import Home from "./Page/Home";
 import Services from "./Page/Services";
-// import SignInUp from './Page/Sign-In-Up'
+// import LoginRegister from './Page/Sign-In-Up'
 
 import Governorates from "./Components/Services/governorates/governorates";
 import ConfirmBooking from "./Components/Services/governorates/ConfirmBooking";
@@ -43,7 +43,7 @@ const App = () => {
                     <Routes>
 
                         <Route path="/" element={<Home />} />
-                        {/* <Route path='SignInUp' element={<SignInUp />} /> */}
+                        {/* <Route path='LoginRegister' element={<LoginRegister />} /> */}
                         <Route path='Services' element={<Services />} />
                         <Route path='governorates/:id' element={<Governorates />} />
                         <Route path='Farms' element={<Governorates />} />

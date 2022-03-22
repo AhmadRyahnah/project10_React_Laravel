@@ -10,7 +10,7 @@ import { FaTimes } from "react-icons/fa";
 export default function Navpath() {
     const navigate = useNavigate();
     const handleUseNavigate = () => {
-        localStorage.getItem('loggedUser') ? navigate('/Services') : navigate('/SignInUp');
+        localStorage.getItem('loggedUser') ? navigate('/Services') : navigate('/LoginRegister');
     };
     return <NavBar handleUseNavigate={handleUseNavigate} />
 }
@@ -70,7 +70,7 @@ const NavBar = (props) => {
                         {isLoggedIn ?
                             null
                             // <p> welcome ,{isLoggedIn.name}</p>
-                            // <Link to="/SignInUp" onClick={handleClick}>
+                            // <Link to="/LoginRegister" onClick={handleClick}>
                             //     <button onClick={logout}>
                             //         Log out</button></Link>
 
