@@ -1,7 +1,7 @@
 .heroImage {
     height: 433px;
     width: 100%;
-    background-image: url("https://hz-cdn.hagzi.com/imgs/wallpaper.webp");
+    background-image: url("./heroImg.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,7 +17,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    /* background-color: rgba(0, 0, 0, 0.3); */
+    background-color: #53A0DE;
+    opacity: 0.5;
     width: 100%;
     height: 100%;
 }
@@ -27,9 +28,9 @@
 }
 .btnOne h1 {
     color: white;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bolder;
-    margin-bottom: 2em;
+    margin-bottom: 0.9em;
 }
 .btnOne .btn {
     width: 15rem;
@@ -38,7 +39,7 @@
     border: none;
     background-size: 300% 100%;
     font-size: 1.7rem;
-    border-radius: 50px;
+    border-radius: 20px;
     -o-transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;

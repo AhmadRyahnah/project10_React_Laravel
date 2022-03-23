@@ -6,7 +6,7 @@
   box-shadow: 0 0 4px black;
   justify-content: center;
   flex-direction: column;
-  border-radius: 3%;
+  border-radius: 1%;
   align-items: center;
 }
 .ContainerCalender form{
@@ -31,7 +31,8 @@
 }
 .ContainerCalender .btnCalender{
   width: 70%;
-  background-color: #36A420;
+  background-color: #08d261;
+
   /* height: 40px; */
   color: white;
   font-size: 1em;

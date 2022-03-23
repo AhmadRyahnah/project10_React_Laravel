@@ -26,7 +26,7 @@ const ConfirmBooking = () => {
                 {Image ?
                     <img src={require('/img/Farms/' + Image).default} alt={Farms ? Farms.farmName : null} />
                     : null}
-                <h2>{Farms ? Farms.farmName : null}</h2>
+                {/* <h2>{Farms ? Farms.farmName : null}</h2> */}
                 <h5>{Farms ? Farms.description : null}</h5>
                 <h4>{Farms ? Farms.price : null} $</h4>
             </div>

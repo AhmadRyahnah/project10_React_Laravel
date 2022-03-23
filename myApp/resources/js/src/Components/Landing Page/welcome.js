@@ -5,7 +5,7 @@ const Welcome = () => {
         <div className='bodywelc'>
             <div className='welcomContainer'>
                 <div className='paraWelcom'>
-                    <h1>Welcome To<br /> Mzr3ti.com !</h1>
+                    <h1>Welcome To Mzr3ti.com</h1><br/>
                     <p>
                         <strong>Mzr3ti.com </strong> is designed to help suppliers and owners of farms, owners or furnished apartments reach the right customers at the time.
 

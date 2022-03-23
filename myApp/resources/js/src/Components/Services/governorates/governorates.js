@@ -97,7 +97,7 @@ const Governorates = () => {
         <Fragment>
 
             <div className={styles.ryahnah}>
-                <div className={styles.sidebars}>
+                {/* <div className={styles.sidebars}>
                     <h1>Filter by:</h1>
                     <div className={styles.customSideBackground}>
                         <p>Price:</p>
@@ -125,38 +125,40 @@ const Governorates = () => {
                     </div>
 
 
-                </div>
-                <div className={styles.navMobile}>
-                    <h1>Filter by:</h1>
+                </div> */}
 
-
-                    {/* <div className={styles.customSideBackground}> */}
-                    <p>Trending Neighbourhoods</p>
-                    <select onChange={handleChange} name="fav_language">
-                        <option value={'all'} >All</option>
-                        {GovernoratesAll ? GovernoratesAll.map(item =>
-                            <>
-
-                                <option value={item.id} >{item.governorateName}</option>
-
-
-
-
-                            </>
-
-                        )
-
-                            : null}</select>
-                    {/* </div> */}
-
-
-                </div>
 
                 {/* <Slider /> */}
 
                 <div className={styles.governoratesCont}>
 
                     <h1 className={styles.header}> {Governorate ? 'Farms in' + ' ' + Governorate : 'All Farms'}</h1>
+                    <div className={styles.navMobile}>
+                        <div className={styles.selectC}>
+                            {/* <label>Trending Neighbourhoods</> */}
+
+
+
+                            <select onChange={handleChange} name="fav_language">
+                                <option value={'all'} >Trending Neighbourhoods</option>
+                                <option value={'all'} >All</option>
+                                {GovernoratesAll ? GovernoratesAll.map(item =>
+                                    <>
+
+                                        <option value={item.id} >{item.governorateName}</option>
+
+
+
+
+                                    </>
+
+                                )
+
+                                    : null}</select>
+                            {/* </div> */}
+                        </div>
+
+                    </div>
                     <div className={styles.governorates}>
                         {FarmsItems}
                     </div>

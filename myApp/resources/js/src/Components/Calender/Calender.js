@@ -66,11 +66,11 @@ const BookingForm = (props) => {
         <div className={styled.ContainerCalender} >
             <form onSubmit={handleSubmit}><br />
                 {/* <label className={styled.today}>Today {today}</label> */}
-                <label className={styled.booking}>Phone Number</label>
-                <input name='phone' className={styled.inputDate} type='text' placeholder='0700000000' required onChange={(e) => { setPhone(e.target.value) }} />
+                {/* <label className={styled.booking}>Phone Number</label> */}
+                <input name='phone' className={styled.inputDate} type='text' placeholder='Phone Number' required onChange={(e) => { setPhone(e.target.value) }} />
 
 
-                <label className={styled.booking}>Start Booking</label>
+                {/* <label className={styled.booking}>Start Booking</label> */}
 
                 <input name='date' className={styled.inputDate} type='date' required min={startbook} value={date} onChange={handleChange} />
 

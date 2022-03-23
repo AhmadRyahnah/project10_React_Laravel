@@ -26,10 +26,10 @@ const LoginRegister = () => {
             <div className="wrapper">
                 <div className="title-text">
                     {!click ?
-                        <div className="title signup">
+                        <div style={{ color:'#08D2C8' }} className="title signup">
                             Login Form
                         </div> :
-                        <div className="title signup">
+                        <div style={{ color:'#08D2C8' }} className="title signup">
                             Signup Form
                         </div>}
                 </div>

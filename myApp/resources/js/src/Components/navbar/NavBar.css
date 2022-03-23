@@ -40,10 +40,15 @@
 }
 .navbarContainer .nav-list ul li a {
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.4em;
     color: #2e739e;
 }
-
+.navbarContainer .nav-list ul li a:hover {
+    text-decoration: none;
+    font-size: 1.4em;
+    color: #2e739e;
+    border-bottom: 2px solid #2e739e;
+}
 
 
 .nav-icon svg {

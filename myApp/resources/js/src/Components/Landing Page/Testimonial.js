@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./Tesimonial.css";
+import styles from './MostPopular.module.css'
 
 const Testimonial = () => {
     let imgNum = 0;
@@ -50,7 +51,7 @@ const Testimonial = () => {
         <div className="background">
 
             <div className="TestimonialContainer">
-                <h1>Check Out What Others are Saying</h1>
+                <h1 className={styles.headerM}>Check Out What Others are Saying</h1>
 
                 <div className="Testimonial">
                     <img src={img.src} alt={img.alt} />

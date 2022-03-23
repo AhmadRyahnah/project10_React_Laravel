@@ -21,23 +21,18 @@ const SingleFarmPage = () => {
     return (
         <Fragment>
             <div className='singleCont'>
-            {/* <PageHero title={'ahmad'} product /> */}
             <div className='section section-center page'>
-                <Link to='/products' className='btn'>
-                    {/* <button>back to Farms</button> */}
-                </Link>
+                    <h2>{Farms ? Farms.farmName : null} Farm</h2>
+
                 <div className=' product-center'>
-                    {/* <ProductImages images={'images'} /> */}
-                    {/* <img height={500} width={450} src='./img/wlc.jpg'/> */}
-                    {/* <Slider /> */}
+
                     {Image ?
                     <img width={500} height={500} src={require('/img/Farms/' + Image).default} alt={Farms ? Farms.farmName : null} />
                     : null}
                     <section className='content'>
-                    <h2>{Farms ? Farms.farmName : null} Farm</h2>
                         {/* <Stars stars={stars} reviews={reviews} /> */}
-                        <h5 className='price'> {Farms ? Farms.price : null} JD/Day</h5>
                         <p className='desc'>{Farms ? Farms.description : null}</p>
+                        <h5 className='price'> {Farms ? Farms.price : null} JD/Day</h5>
                         <br />
                         <BookingForm Farms={Farms ? Farms : null} />
 

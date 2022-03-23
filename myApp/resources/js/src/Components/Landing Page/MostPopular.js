@@ -29,17 +29,17 @@ const MostPopular = () => {
     return (
         <Fragment>
             <br /><br />
-            <h1 style={{ textAlign: 'center' }}>Most Popular Farms</h1>
+            <h1 className={styles.headerM}>Most Popular Farms</h1>
             <div className={styles.mostPopular}>
 
                 {Farms ? Farms.map(farm =>
                     <Link className={styles.link} to={'/SingleFarmPage/' + farm.id}>
                         <div className={styles.governoratesContainer} >
                             <img height={190} src={require('/img/Farms/' + farm.image).default} alt={farm.farmName} />
-                            <h4>{farm.price}</h4>
-
-                            <h2>{farm.farmName}</h2>
-                            <h5><MdLocationOn /> location</h5>
+                            <h4>{farm.farmName} Farm</h4>
+                            <h2>{farm.price} JD/Day</h2>
+{/* <p></p> */}
+                            <h6><MdLocationOn /> <span>Amman-shmeasine</span></h6>
 
                         </div>
                     </Link>) : null}

@@ -85,16 +85,12 @@ const Login = () => {
                 <div className="field">
                     <input name="password" type="password" placeholder="Password" value={password} onChange={handleChange} required />
                 </div>
-                <div className="pass-link">
-                    <a href="#">Forgot password?</a>
-                </div>
+
                 <div className="field btn">
                     <div className="btn-layer"></div>
                     <button className='btnSign'>Login</button>
                 </div>
-                <div className="signup-link">
-                    Not a member? <a href="">Signup now</a>
-                </div>
+
             </form>
         </div>
     )

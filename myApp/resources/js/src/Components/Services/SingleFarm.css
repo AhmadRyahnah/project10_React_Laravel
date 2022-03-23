@@ -2,7 +2,11 @@
 min-height: 85vh;
 margin: 5em auto;
 }
-
+.section h2{
+    color: #53A0DE;
+    text-align: center;
+    font-size: 2.5rem;
+}
 .product-center {
     width: 70%;
     display: grid;
@@ -10,12 +14,18 @@ margin: 5em auto;
     /* margin-top: 2rem; */
     margin: 2em auto;
   }
+  .product-center img {
+    border-radius: 20px;
+  }
   .price {
-    color: var(--clr-primary-5);
+    font-size: 1.8em !important;
+    text-align: center;
+    color: #08D2C8
   }
   .desc {
     line-height: 2;
     max-width: 45em;
+    font-size: 1.1rem;
   }
   .info {
     text-transform: capitalize;

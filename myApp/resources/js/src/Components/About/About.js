@@ -15,6 +15,7 @@ const About = () => {
                     </h3>
                 </div>
                 <div className='imgAbout'>
+                    <br/><br/>
                     <img src={img} alt='civil engineer academy' />
                 </div>
             </div>

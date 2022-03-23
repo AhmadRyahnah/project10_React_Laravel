@@ -1,5 +1,5 @@
 footer {
-  background-color: #283d56d9;
+  background-color: #054f88;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
@@ -10,10 +10,14 @@ footer .about h2,
 footer .about p {
   margin: 0.5em 0;
 }
+footer .about h2{
+    color: #08D2C8
+}
 .about .Icon {
   margin: 0.5em 0.8em;
   font-size: 1.5rem;
   color: whitesmoke;
+   /* color:#08D2C8; */
 }
 @media screen and (max-width: 950px) {
   footer {

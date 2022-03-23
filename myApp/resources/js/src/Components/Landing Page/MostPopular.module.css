@@ -4,6 +4,13 @@
 * {
     font-family: "Cairo", sans-serif !important;
 }
+
+
+.headerM{
+    color: #53A0DE;
+    text-align: center;
+    font-size: 2.5rem;
+}
 .link {
     text-decoration: none !important;
     color: black;
@@ -29,30 +36,43 @@
 }
 .governoratesContainer img {
     /* margin: 0 0 1em; */
-    margin: 0 0 1em 0;
+    /* margin: 0 0 0.5em 0; */
     /* width: 100%; */
     width: 275px;
-    border-radius: 3px;
+    border-radius: 10px;
     /* max-width: 356px; */
 }
-.governoratesContainer h5 {
+.governoratesContainer h6 {
     width: 80%;
     text-align: center;
     margin-bottom: 0.2em !important;
-    font-size: 1.25rem !important;
+    font-size: 1.1rem !important;
+    color: #0979D2;
+}
+.governoratesContainer h6 span {
+  margin-top: 1em;
 }
 .governoratesContainer h4 {
-    margin-bottom: 0.2em;
+    margin-bottom: -0.4em;
+    text-align: center;
+
     font-size: 2rem;
     font-weight: 700;
-    align-self: baseline !important;
-    margin-left: 10px !important;
+    /* align-self: baseline !important; */
+    /* margin-left: 10px !important; */
 }
-
-.governoratesContainer h4::after {
-    content: "JD/Day";
-    font-size: 1.25rem !important;
-    margin-left: 5px;
+.governoratesContainer p {
+ text-align: center;
+}
+.governoratesContainer p svg {
+color: #0979D2;
+    text-align: center;
+    font-size: 1.5em;
+   }
+.governoratesContainer h2 {
+    font-size: 1.9em;
+    text-align: center;
+    color: #08D2C8;
 }
 
 .governoratesContainer button {
