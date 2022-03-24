@@ -140,7 +140,7 @@ const Governorates = () => {
 
 
                             <select onChange={handleChange} name="fav_language">
-                                <option value={'all'} >Trending Neighbourhoods</option>
+                                {/* <option value={'all'} >Trending Neighbourhoods</option> */}
                                 <option value={'all'} >All</option>
                                 {GovernoratesAll ? GovernoratesAll.map(item =>
                                     <>
