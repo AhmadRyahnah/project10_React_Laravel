@@ -12,6 +12,9 @@
     width: 80%;
     margin: 0 auto;
     position: relative;
+    color: #53A0DE;
+    /* text-align: center; */
+    /* font-size: 2.5rem; */
 }
 .profileHeader .listButton {
     display: flex;
@@ -40,7 +43,7 @@
     font-size: 1.1rem;
     border-radius: 4px;
     cursor: pointer;
-    background-color: #bb2d3b;
+    background-color: #d20814;
     border: none;
     color: white;
     font-weight: 700;
