@@ -33,7 +33,7 @@ class ImageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
         if ($request->hasFile('images')) {
             $file = $request->file('images');
@@ -43,7 +43,7 @@ class ImageController extends Controller
             // $farm->image = $filename;
 
             $image = new Image();
-            $image->farm_id = 1;
+            $image->farm_id = $id;
             $image->images = $filename;
 
             $image->save();
@@ -60,9 +60,10 @@ class ImageController extends Controller
      * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function show(Image $image)
+    public function show(Image $image, $id)
     {
-        //
+        $slider = Image::where('farm_id', '=', $id)->get(['images']);
+        return response(['imagesSlider' => $slider ,'status' =>200]);
     }
 
     /**

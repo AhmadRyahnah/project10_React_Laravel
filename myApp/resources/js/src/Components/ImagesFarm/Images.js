@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from "react-router-dom";
-import swal from 'sweetalert';
 
+import swal from 'sweetalert';
+import { useNavigate, useParams } from "react-router-dom";
 const Images = () => {
 
-
+    const { id } = useParams();
     const [Image, setImage] = useState('')
 
-
+    let navigate = useNavigate()
 
 
 
@@ -38,9 +38,7 @@ const Images = () => {
 
         event.preventDefault();
 
-        console.log('ahmad');
 
-        console.log('omar');
 
 
 
@@ -49,20 +47,13 @@ const Images = () => {
         for (let i = 0; i < inputs.length; i++) {
             let dataImg = new FormData()
             dataImg.append("images", inputs[i])
-            axios.post('http://127.0.0.1:8000/api/insertMultiImage', dataImg).then((response) => {
+            axios.post('http://127.0.0.1:8000/api/insertMultiImage/'+id, dataImg).then((response) => {
                 console.log(response.data);
 
             });
         }
 
-
-
-
-        // axios.post('http://127.0.0.1:8000/api/insertMultiImage', inputs).then((response) => {
-        //     console.log(response);
-
-        // });
-
+        navigate('/Farms')
     }
 
     return (

@@ -10,9 +10,9 @@ const SingleFarmPage = () => {
     const [Farms, setFarms] = useState();
     const [Image, setImage] = useState();
 
-    useEffect(async () => {
+    useEffect( () => {
 
-        await axios.get("http://127.0.0.1:8000/api/showConfirmBooking/" + id).then((response) => {
+         axios.get("http://127.0.0.1:8000/api/showConfirmBooking/" + id).then((response) => {
             setFarms(response.data.farm);
             setImage(response.data.farm.image)
             // console.log(response.data.farm);
@@ -21,24 +21,25 @@ const SingleFarmPage = () => {
     return (
         <Fragment>
             <div className='singleCont'>
-            <div className='section section-center page'>
+                <div className='section section-center page'>
                     <h2>{Farms ? Farms.farmName : null} Farm</h2>
 
-                <div className=' product-center'>
-
-                    {Image ?
+                    <div className=' product-center'>
+                        {Image?
+                        <Slider Image={'/img/Farms/' + Image} id={id} />:null}
+                        {/* {Image ?
                     <img width={500} height={500} src={require('/img/Farms/' + Image).default} alt={Farms ? Farms.farmName : null} />
-                    : null}
-                    <section className='content'>
-                        {/* <Stars stars={stars} reviews={reviews} /> */}
-                        <p className='desc'>{Farms ? Farms.description : null}</p>
-                        <h5 className='price'> {Farms ? Farms.price : null} JD/Day</h5>
-                        <br />
-                        <BookingForm Farms={Farms ? Farms : null} />
+                    : null} */}
+                        <section className='content'>
+                            {/* <Stars stars={stars} reviews={reviews} /> */}
+                            <p className='desc'>{Farms ? Farms.description : null}</p>
+                            <h5 className='price'> {Farms ? Farms.price : null} JD/Day</h5>
+                            <br />
+                            <BookingForm Farms={Farms ? Farms : null} />
 
-                    </section>
-                </div>
-            </div></div>
+                        </section>
+                    </div>
+                </div></div>
         </Fragment>
     )
 }

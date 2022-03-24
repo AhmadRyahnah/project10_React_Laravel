@@ -18,6 +18,7 @@ import Admin from "./Admin";
 import { useNavigate } from "react-router-dom";
 import Orders from "./Orders";
 import { BiLogOut } from "react-icons/bi";
+import Images from "../ImagesFarm/Images";
 
 
 
@@ -33,8 +34,8 @@ const HomeAdmin = () => {
         localStorage.removeItem('governorates')
         setUser([])
 
-navigate('/')
- }
+        navigate('/')
+    }
 
     return (
 
@@ -47,10 +48,10 @@ navigate('/')
                     <div className="sidebar-brand">
                         <Link to='Orders'>Mzr3ti.com</Link>
                         <div onClick={logout} id="close-sidebar">
-                          <BiLogOut/>
+                            <BiLogOut />
                         </div>
                     </div>
-<br/><br/><br/><br/>
+                    <br /><br /><br /><br />
                     {/* sidebar-search   */}
                     <div className="sidebar-menu">
                         <ul>
@@ -115,7 +116,7 @@ navigate('/')
                         <Route path='createGovernorate' element={<CreateGovernorate />} />
                         <Route path='editGovernorate/:id' element={<EditGovernorate />} />
                         <Route path='viewFarms/:id' element={<ViewFarm />} />
-
+                        <Route path="AddImages/:id" element={<Images />} />
                         <Route path='Orders' element={<Orders />} />
 
                         <Route path='*' element={<ErrorPage />} />

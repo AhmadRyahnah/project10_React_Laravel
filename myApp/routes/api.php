@@ -77,4 +77,5 @@ Route::patch('/acceptedOrder/{id}', [BookingController::class, 'acceptedOrder'])
 // OrderAdmin
 
 
-Route::post('insertMultiImage',[ImageController::class,'store']);
+Route::post('insertMultiImage/{id}',[ImageController::class,'store']);
+Route::get('ImageSlider/{id}',[ImageController::class,'show']);

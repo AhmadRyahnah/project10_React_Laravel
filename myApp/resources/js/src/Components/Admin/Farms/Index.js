@@ -54,7 +54,7 @@ const Farm = () => {
                         <th>price</th>
                         <th>Image</th>
                         <th>Time</th>
-                        <th style={{ width:'17%' }}><center>Action</center></th>
+                        <th style={{ width:'30%' }}><center>Action</center></th>
 
                     </tr>
                 </thead>
@@ -72,7 +72,15 @@ const Farm = () => {
                             <td><img src={'img/Farms/' + Farm.image} width='100' /></td>
                             <td>{Farm.Time}</td>
 
-                            <td><Link to={`/editFarm/${Farm.id}`}>
+                            <td>
+                            <Link to={`/AddImages/${Farm.id}`}>
+
+                                <button className={styled.btnAddImg} variant="danger">
+                                    Add Images
+                                </button></Link>
+
+                                <Link to={`/editFarm/${Farm.id}`}>
+
                                 <button className={styled.btnEdit} variant="danger">
                                     Edit
                                 </button></Link>

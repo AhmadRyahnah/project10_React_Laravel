@@ -37,3 +37,12 @@
     height: 35px;
     cursor: pointer;
 }
+.btnAddImg {
+    background-color: #218838;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 35px !important;
+    cursor: pointer;
+    width: 90px;
+}
