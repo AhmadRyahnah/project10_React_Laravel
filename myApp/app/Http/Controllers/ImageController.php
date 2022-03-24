@@ -35,7 +35,23 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->hasFile('images')) {
+            $file = $request->file('images');
+
+            $filename = $file->getClientOriginalName();;
+            $file->move('uploads', $filename);
+            // $farm->image = $filename;
+
+            $image = new Image();
+            $image->farm_id = 1;
+            $image->images = $filename;
+
+            $image->save();
+
+            return response(['status' => 'created', 'user' => $request, 200]);
+        } else {
+            return "failed";
+        }
     }
 
     /**

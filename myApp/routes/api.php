@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\Admin\BookingController;
 use App\Http\Controllers\Api\Admin\FarmController;
 use App\Http\Controllers\Api\Admin\GovernorateController;
 use App\Http\Controllers\Api\Admin\UserController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -74,3 +75,6 @@ Route::patch('/Orders', [BookingController::class, 'OrderAdmin']);
 Route::patch('/acceptedOrder/{id}', [BookingController::class, 'acceptedOrder']);
 // acceptedOrder
 // OrderAdmin
+
+
+Route::post('insertMultiImage',[ImageController::class,'store']);

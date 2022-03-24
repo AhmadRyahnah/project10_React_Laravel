@@ -17,10 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('farm_id');
             $table->foreign('farm_id')->references('id')->on('farms')->onDelete('cascade');
-            $table->string('image_one');
-            $table->string('image_two');
-            $table->string('image_three');
-            $table->string('image_four');
+            $table->string('images');
+
             $table->timestamps();
         });
     }
