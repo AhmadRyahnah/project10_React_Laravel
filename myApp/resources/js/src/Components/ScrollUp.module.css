@@ -1,0 +1,19 @@
+.ScrollUp div{
+    position: 'fixed';
+    top: 515px !important;
+    right: 30px !important;
+    cursor: 'pointer' !important;
+    transition-duration: '0.2s'!important;
+    transition-timing-function: 'linear' !important;
+    transition-delay: '0s' !important;
+
+}
+.ScrollUp div svg{
+    height: 2.5em !important;
+    width: 2.5em !important;
+    margin: 0 auto !important;
+    color: #08D2C8;
+}
+/* html {
+    scroll-behavior: smooth;
+} */

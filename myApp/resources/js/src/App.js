@@ -19,6 +19,7 @@ import SingleFarmPage from "./Components/Services/SingleFarm";
 import LoginRegister from "./Components/RegisterLogin/LoginRegister";
 import Images from "./Components/ImagesFarm/Images";
 import LocationFarm from "./Components/LocationFarm/LocationFarm";
+import ScrollUp from "./Components/ScrollUp";
 
 export const UserContext = createContext();
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
                         <Route path='About' element={<About />} />
                         <Route path='*' element={<ErrorPage />} />
                     </Routes>
+                    <ScrollUp/>
                     <Footer />
                 </> : null}
         </UserContext.Provider>
