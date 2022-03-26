@@ -1,45 +1,28 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import MapPicker from 'react-google-map-picker'
 
-const DefaultLocation = { lat: 32.43680220237413, lng: 35.59582111528747};
-const DefaultZoom = 10;
+const LocationFarm = (props) => {
 
-const LocationFarm = () => {
-    const [defaultLocation, setDefaultLocation] = useState(DefaultLocation);
-
-    const [location, setLocation] = useState(defaultLocation);
-    const [zoom, setZoom] = useState(DefaultZoom);
-
-    function handleChangeLocation(lat, lng) {
-        setLocation({ lat: lat, lng: lng });
-    }
-
-    function handleChangeZoom(newZoom) {
-        setZoom(newZoom);
-    }
-
-    function handleResetLocation() {
-        setDefaultLocation({ ...DefaultLocation });
-        setZoom(DefaultZoom);
-    }
-
+    // const loc="32.53378819133625, 35.862708200183135"
     return (
-        <>
-            <button onClick={handleResetLocation}>Reset Location</button>
-            <label>Latitute:</label><input type='text' value={location.lat} disabled />
-            <label>Longitute:</label><input type='text' value={location.lng} disabled />
-            <label>Zoom:</label><input type='text' value={zoom} disabled />
 
-            <MapPicker defaultLocation={defaultLocation}
-                zoom={zoom}
-                mapTypeId="roadmap"
-                style={{ height: '700px' }}
-                onChangeLocation={handleChangeLocation}
-                onChangeZoom={handleChangeZoom}
-                apiKey='AIzaSyD07E1VvpsN_0FvsmKAj4nK9GnLq-9jtj8' />
-        </>
+
+
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe width="500" height="500" id="gmap_canvas" src={`https://maps.google.com/maps?q=${props.Location}&t=&z=13&ie=UTF8&iwloc=&output=embed`} frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+
+                </iframe>
+                <a href="https://123movies-to.org"></a>
+                <br />
+
+                {/* <a href="https://www.embedgooglemap.net">google maps plugin html</a> */}
+
+            </div>
+        </div>
+
     );
 }
 
 export default LocationFarm
+

@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\Admin\BookingController;
 use App\Http\Controllers\Api\Admin\FarmController;
 use App\Http\Controllers\Api\Admin\GovernorateController;
 use App\Http\Controllers\Api\Admin\UserController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ImageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -49,8 +50,11 @@ Route::put('/editFarm/{id}', [FarmController::class, 'update']);
 Route::get('/createFarm', [FarmController::class, 'create']);
 Route::post('/insertFarm', [FarmController::class, 'store']);
 Route::post('/insertImg', [FarmController::class, 'storeImg']);
-
 Route::get('/MostPopular', [FarmController::class, 'MostPopular']);
+
+// Comments
+Route::post('/addComents/{id}', [CommentController::class, 'store']);
+Route::get('/allComents/{id}', [CommentController::class, 'show']);
 // MostPopular
 // Governorates
 

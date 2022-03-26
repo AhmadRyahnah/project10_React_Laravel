@@ -49,7 +49,8 @@ class FarmController extends Controller
         $farm->governorate_id = $request->input('governorate_id');
         $farm->phone = $request->input('phone');
         $farm->price = $request->input('price');
-        $farm->Time = $request->input('Time');
+        $farm->Location = $request->input('Location');
+
         $farm->description = $request->input('description');
 
         $farm->image = substr($request->input('image'),12);
@@ -127,7 +128,7 @@ class FarmController extends Controller
         $farm->governorate_id = $request->input('governorate_id');
         $farm->phone = $request->input('phone');
         $farm->price = $request->input('price');
-        $farm->Time = $request->input('Time');
+        $farm->Location = $request->input('Location');
         $farm->description = $request->input('description');
         if($request->input('image')[0]==='C' && $request->input('image')[1]===':'){
             $farm->image = substr($request->input('image'),12);

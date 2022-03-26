@@ -2,6 +2,8 @@ import React, { Fragment, useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import BookingForm from '../Calender/Calender'
+import Comments from '../LocationFarm/Comments';
+import LocationFarm from '../LocationFarm/LocationFarm';
 import Slider from '../Slider/SliderImg'
 import './SingleFarm.css'
 const SingleFarmPage = () => {
@@ -10,14 +12,16 @@ const SingleFarmPage = () => {
     const [Farms, setFarms] = useState();
     const [Image, setImage] = useState();
 
-    useEffect( () => {
+    useEffect(() => {
 
-         axios.get("http://127.0.0.1:8000/api/showConfirmBooking/" + id).then((response) => {
+        axios.get("http://127.0.0.1:8000/api/showConfirmBooking/" + id).then((response) => {
             setFarms(response.data.farm);
             setImage(response.data.farm.image)
             // console.log(response.data.farm);
         });
     }, []);
+    if (Farms)
+        console.log(Farms);
     return (
         <Fragment>
             <div className='singleCont'>
@@ -25,8 +29,8 @@ const SingleFarmPage = () => {
                     <h2>{Farms ? Farms.farmName : null} Farm</h2>
 
                     <div className=' product-center'>
-                        {Image?
-                        <Slider Image={'/img/Farms/' + Image} id={id} />:null}
+                        {Image ?
+                            <Slider Image={'/img/Farms/' + Image} id={id} /> : null}
                         {/* {Image ?
                     <img width={500} height={500} src={require('/img/Farms/' + Image).default} alt={Farms ? Farms.farmName : null} />
                     : null} */}
@@ -39,7 +43,20 @@ const SingleFarmPage = () => {
 
                         </section>
                     </div>
-                </div></div>
+                </div>
+            </div>
+
+            <div className='LocationAndReview'>
+                <div className='LocationFarm'>
+                    <LocationFarm Location={Farms ? Farms.Location : null} />
+
+                </div>
+                <div className='Reviews'>
+                    <Comments idFarm={id} />
+                </div>
+            </div>
+
+
         </Fragment>
     )
 }

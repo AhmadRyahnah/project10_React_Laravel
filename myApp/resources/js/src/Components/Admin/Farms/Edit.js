@@ -119,13 +119,23 @@ const EditFarm = () => {
                     <label htmlFor="country">Price</label>
                     <input value={Farm ? Farm.price : 0} onChange={handleChange} type="text" name="price" placeholder="Your last name.." required />
 
-                    <label htmlFor="country">Time</label>
+
+                    <label htmlFor="country">Location</label>
+
+                    <input value={Farm ? Farm.Location : 0}  onChange={handleChange} type="text" name="Location" placeholder="Location" required />
+
+
+
+
+
+
+                    {/* <label htmlFor="country">Time</label>
                     <select name="Time" onChange={handleChange} required>
 
                         <option value={Farm ? Farm.Time === 'available' ? 'available' : 'unavailable' : 0} >{Farm ? Farm.Time === 'available' ? 'Available' : 'Unavailable' : 0}</option>
                         <option value={Farm ? Farm.Time !== 'available' ? 'available' : 'unavailable' : 0} >{Farm ? Farm.Time !== 'available' ? 'Available' : 'Unavailable' : 0}</option>
 
-                    </select>
+                    </select> */}
                     <label htmlFor="country">Description</label>
                     {/* <input onChange={handleChange} type="text" id="lname" name="description" placeholder="Your last name.." /> */}
                     <textarea value={Farm ? Farm.description : 0} onChange={handleChange} name="description" cols="30" rows="4" placeholder="Add description" required />

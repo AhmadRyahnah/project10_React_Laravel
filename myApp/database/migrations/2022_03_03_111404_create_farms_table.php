@@ -20,9 +20,11 @@ return new class extends Migration
             $table->text('phone');
             $table->double('price');
             $table->string('image')->default('');
-            $table->enum('Time', ['available', 'unavailable']);
+            // $table->enum('Time', ['available', 'unavailable']);
             $table->unsignedBigInteger('governorate_id')->nullable();
             $table->foreign('governorate_id')->references('id')->on('governorates')->onDelete('cascade');
+            $table->string('Location')->nullable();
+            // $table->double('Longitude')->nullable();
             $table->timestamps();
         });
 
