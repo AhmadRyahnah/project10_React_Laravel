@@ -11,13 +11,13 @@ const SingleFarmPage = () => {
 
     const [Farms, setFarms] = useState();
     const [Image, setImage] = useState();
-
+    const [Count, setCount] = useState();
     useEffect(() => {
 
         axios.get("http://127.0.0.1:8000/api/showConfirmBooking/" + id).then((response) => {
             setFarms(response.data.farm);
             setImage(response.data.farm.image)
-            // console.log(response.data.farm);
+            setCount(response.data.order);
         });
     }, []);
     if (Farms)
@@ -39,7 +39,7 @@ const SingleFarmPage = () => {
                             <p className='desc'>{Farms ? Farms.description : null}</p>
                             <h5 className='price'> {Farms ? Farms.price : null} JD/Day</h5>
                             <br />
-                            <BookingForm Farms={Farms ? Farms : null} />
+                            <BookingForm Count={Count ? Count : null} Farms={Farms ? Farms : null} />
 
                         </section>
                     </div>

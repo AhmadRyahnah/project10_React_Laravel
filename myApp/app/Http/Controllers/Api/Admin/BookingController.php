@@ -23,8 +23,9 @@ class BookingController extends Controller
     public function index($id)
     {
         $farm = Farm::find($id);
-
-        return response(['farm' => $farm, 'status' => 200]);
+        $order = Booking::where('farm_id', '=', $id)->get();
+        $countOrder=$order->count();
+        return response(['farm' => $farm,'order' => $countOrder, 'status' => 200]);
     }
 
     /**
@@ -56,12 +57,13 @@ class BookingController extends Controller
 
         if ($order->isEmpty()) {
             if ($request->input('phone')) {
-                $user = User::findOrFail( $userId);
+                $user = User::findOrFail($userId);
                 $user->phone = $request->input('phone');
                 $user->update();
             }
             $book = new Booking();
             $book->user_id = $request->input('user_id');
+            $book->farm_id = $request->input('id');
             $book->governorate_id = $request->input('governorate_id');
             $book->farmName = $request->input('farmName');
             $book->price = $request->input('price');

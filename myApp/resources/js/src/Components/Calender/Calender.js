@@ -19,7 +19,7 @@ const BookingForm = (props) => {
     // const [id, setId] = useState(0)
 
     let today = new Date();
-    let day = today.getDate();
+    let day = today.getDate()+props.Count;
     let month = today.getMonth() + 1;
     let year = today.getFullYear();
     if (day < 10) {
@@ -29,8 +29,8 @@ const BookingForm = (props) => {
         month = '0' + month
     }
     today = day + '-' + month + '-' + year;
-    let startbook = year + '-' + month + '-' + ((new Date().getDate()));
-    // let startbook = year + '-' + month + '-' + day;
+    // let startbook = year + '-' + month + '-' + ((new Date().getDate()));
+    let startbook = year + '-' + month + '-' + day;
     // console.log(startbook);
     const handleChange = (e) => {
         e.preventDefault();

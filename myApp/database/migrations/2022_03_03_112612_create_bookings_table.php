@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('farm_id');
+            $table->foreign('farm_id')->references('id')->on('farms')->onDelete('cascade');
             $table->unsignedBigInteger('governorate_id');
             $table->foreign('governorate_id')->references('id')->on('governorates')->onDelete('cascade');
             $table->string('farmName');
