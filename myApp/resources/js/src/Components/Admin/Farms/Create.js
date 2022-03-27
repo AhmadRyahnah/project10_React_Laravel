@@ -4,7 +4,7 @@ import swal from 'sweetalert';
 import '../User/User.css'
 
 const CreateFarm = () => {
-    const [Image, setImage] = useState('img/noimg.png')
+    const [Image, setImage] = useState('img/Farms/noimg.png')
     const [fileImg, setfileImg] = useState('');
     const [Governorate, setGovernorate] = useState('');
 

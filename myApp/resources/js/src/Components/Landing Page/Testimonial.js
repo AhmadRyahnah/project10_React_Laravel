@@ -8,26 +8,29 @@ const Testimonial = () => {
     let imgAlt = 0;
     let nameNum = 0;
     const [img, setImg] = useState({
-        src: 'https://civilengineeringacademy.com/wp-content/uploads/2020/08/Victor-Torres.jpg',
-        alt: "After 8 years out of school, I took the test back then and I did terrible(I honestly did not study) This time with the help of this course I finally got it done! Thank you!!",
-        name: 'Victor Guzman, PE'
+        src: 'https://images.unsplash.com/photo-1618077360395-f3068be8e001?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80',
+        alt: "I recently moved to Amman from the US, and rented an apartment through mzr3ti for the first month of my stay. Hamza from mzr3ti was extremely helpful and responsive and found me an apartment that contained everything I was looking for.",
+        name: 'christian buehner'
     });
     const images = [
-        'https://civilengineeringacademy.com/wp-content/uploads/2020/08/Victor-Torres.jpg',
-        'https://civilengineeringacademy.com/wp-content/uploads/2021/02/Makenzie-Allen.jpg',
-        'https://civilengineeringacademy.com/wp-content/uploads/2021/02/St-Pierre-Jason.jpg',
+        'https://images.unsplash.com/photo-1618077360395-f3068be8e001?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80',
+        'https://images.unsplash.com/photo-1585807515950-bc46d934c28b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+        'https://images.unsplash.com/photo-1517677129300-07b130802f46?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
 
     ];
     const alt = [
-        "After 8 years out of school, I took the test back then and I did terrible(I honestly did not study) This time with the help of this course I finally got it done! Thank you!!",
-        "I passed!! Second attempt taking the PE and first time with this review course! The video lectures, example problems, and practice exams definitely helped! Thank you so much everyone!",
-        "CEA is an excellent place to strengthen your breadth portion and the depth exam can complement your breadth studies. Very thankful for the course! This course is worth every penny!",
+        "I recently moved to Amman from the US, and rented an apartment through mzr3ti for the first month of my stay. Hamza from mzr3ti was extremely helpful and responsive and found me an apartment that contained everything I was looking for.",
+        "As a newcomer to Amman with an urgent need for good  high-quality accommodation the mzr3ti team especially came in handy with their prompt  rapid responses and thoughtful suggestions of good places to rent everything I was looking for",
+        "Great service for new residents to Jordan, friendly team who curate a variety of housing options and help clients find their ideal home. Good awareness of different neighborhoods and housing styles. Would definitely recommend to others!",
 
     ];
+
+
+
     const name = [
-        "Victor Guzman, PE",
-        "Makenzie Allen",
-        "St Pierre Jason",
+        "christian buehner",
+        "Robert Godwin",
+        "Vinicius Wiesehofer",
 
     ];
 

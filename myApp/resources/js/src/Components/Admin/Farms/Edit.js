@@ -11,7 +11,6 @@ const EditFarm = () => {
     const [Farm, setFarm] = useState();
 
 
-    const [Image, setImage] = useState('1.jpg')
     const [Governorate, setGovernorate] = useState();
 
 
@@ -24,6 +23,7 @@ const EditFarm = () => {
             setGovernorate(response.data.Governorat)
         });
     }, []);
+    const [Image, setImage] = useState(Image?Image:null)
     // if (Farm)
     //     console.log(Farm.farmName);
 
@@ -145,7 +145,7 @@ const EditFarm = () => {
 
                     <input accept='image/*' onChange={handleChange} type="file" id="fileinput" name="image" />
 
-                    <br /><br /><img width={200} src={Image} /><br /><br />
+                    <br /><br />{Image?<img width={200} src={require('/img/Farms/'+Image).default} />:null}<br /><br />
 
 
                     <input type="submit" value="Submit" />

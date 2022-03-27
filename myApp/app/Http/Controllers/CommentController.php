@@ -56,7 +56,8 @@ class CommentController extends Controller
     {
         // $userName = Comment::join('users', 'comments.user_id', '=', 'users.id')->get(['name']);
         $comments = Comment::where('farm_id', '=', $id)
-        ->join('users', 'comments.user_id', '=', 'users.id')->get(['*']);
+        ->join('users', 'comments.user_id', '=', 'users.id')
+        ->get(['comments.id','comments.farm_id','comments.user_id','users.name','comments.comments']);
         return response((['comments' => $comments,  'status' => 200]));
     }
 

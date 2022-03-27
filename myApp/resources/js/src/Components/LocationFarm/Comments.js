@@ -8,6 +8,7 @@ const Comments = (props) => {
     const [inputs, setInputs] = useState([]);
     const [AddComent, setAddComent] = useState(0);
     const [Comments, setComments] = useState([]);
+    const [deleted, setDeleted] = useState(0);
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -24,7 +25,7 @@ const Comments = (props) => {
 
             setComments(response.data.comments)
         })
-    }, [AddComent])
+    }, [AddComent, deleted])
     let arrComment = []
 
     if (Comments)
@@ -42,25 +43,41 @@ const Comments = (props) => {
         });
 
         setAddComent(AddComent + 1)
+
         // navigate('/Farms')
+    }
+
+
+    const deleteProduct = async (id) => {
+        console.log(id);
+        await axios.delete(`http://127.0.0.1:8000/api/deleteComment/${id}`);
+        setDeleted(deleted + 1)
+
     }
     return (
         <div className={styles.CommentsContainer}>
             <h1>Reviews ({Comments ? Comments.length : 0}) </h1>
             <hr />
             {localStorage.getItem('loggedUser') ? <form onSubmit={handleSubmit}>
-                <textarea onChange={handleChange} name="Comments" cols="30" rows="4" placeholder="Add Comment" required />
-                <input type="submit" value="Send" />
+                <textarea  onChange={handleChange} name="Comments" cols="30" rows="4" placeholder="Add Comment" required />
+                <input className={styles.sendBtn} type="submit" value="Send" />
 
             </form> : null}
-            <hr />
+            <br /><br />
             {
+
                 arrComment ? arrComment.map(Comment =>
-                    <div>
+                    <div>  <hr />
                         <h2>{Comment.name}</h2>
-                        <p>{Comment.comments}</p>
+                        <p>{Comment.comments}
+
+
+                            {Comment.user_id == User.id ? <button onClick={() => deleteProduct(Comment.id)} className={styles.deleteComment}>X</button>
+                                : null}
+
+                        </p>
                         <br />
-                        <hr />
+
                     </div>
                 ) : null
             }
