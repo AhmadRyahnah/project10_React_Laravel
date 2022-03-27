@@ -53,8 +53,10 @@ Route::post('/insertImg', [FarmController::class, 'storeImg']);
 Route::get('/MostPopular', [FarmController::class, 'MostPopular']);
 
 // Comments
+Route::get('/Comments', [CommentController::class, 'index']);
 Route::post('/addComents/{id}', [CommentController::class, 'store']);
 Route::get('/allComents/{id}', [CommentController::class, 'show']);
+Route::delete('/deleteComment/{id}', [CommentController::class, 'destroy']);
 // MostPopular
 // Governorates
 

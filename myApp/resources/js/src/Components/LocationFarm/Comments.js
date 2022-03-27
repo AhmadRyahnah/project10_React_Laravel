@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { comment } from 'postcss';
 import React, { useEffect, useState } from 'react'
 import styles from "./Location.module.css";
 const Comments = (props) => {
@@ -49,11 +48,11 @@ const Comments = (props) => {
         <div className={styles.CommentsContainer}>
             <h1>Reviews ({Comments ? Comments.length : 0}) </h1>
             <hr />
-            <form onSubmit={handleSubmit}>
+            {localStorage.getItem('loggedUser') ? <form onSubmit={handleSubmit}>
                 <textarea onChange={handleChange} name="Comments" cols="30" rows="4" placeholder="Add Comment" required />
                 <input type="submit" value="Send" />
 
-            </form>
+            </form> : null}
             <hr />
             {
                 arrComment ? arrComment.map(Comment =>

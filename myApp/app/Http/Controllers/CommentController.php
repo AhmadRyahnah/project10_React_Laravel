@@ -14,7 +14,10 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $comments=Comment::join('users','comments.user_id','=','users.id')
+        ->join('farms','comments.farm_id','=','farms.id')
+        ->get(['comments.id','name','farmName','comments','comments.created_at']);
+        return $comments;
     }
 
     /**
@@ -86,8 +89,9 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy($id)
     {
-        //
+        $comment = Comment::find($id);
+        $comment->delete();
     }
 }

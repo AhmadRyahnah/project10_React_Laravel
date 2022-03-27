@@ -19,6 +19,7 @@ import { useNavigate } from "react-router-dom";
 import Orders from "./Orders";
 import { BiLogOut } from "react-icons/bi";
 import Images from "../ImagesFarm/Images";
+import Comments from "./Comments/Comments";
 
 
 
@@ -86,6 +87,13 @@ const HomeAdmin = () => {
 
                                 </Link>
                             </li>
+                            <li className="sidebar-dropdown">
+                                <Link to="Comments">
+                                    <i className="fa fa-tachometer-alt"></i>
+                                    <span>Comments Dashboard</span>
+
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                     {/* sidebar-menu  */}
@@ -119,6 +127,8 @@ const HomeAdmin = () => {
                         <Route path="AddImages/:id" element={<Images />} />
                         <Route path='Orders' element={<Orders />} />
 
+
+                        <Route path='Comments' element={<Comments />} />-
                         <Route path='*' element={<ErrorPage />} />
                     </Routes>
                 </div>
