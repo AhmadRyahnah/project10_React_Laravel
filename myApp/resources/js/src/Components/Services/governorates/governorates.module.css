@@ -49,6 +49,7 @@
  border: 2px solid #0778D2;
  border-style: inset;
  outline-color: #0778D2;
+
 }
 .sidebars .customSideBackground p {
     font-weight: 600;
@@ -90,6 +91,12 @@
         /* display: grid;
         grid-template-columns: auto auto; */
     }
+    .navMobile {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+
+    }
     .sidebars {
         display: none;
     }
@@ -114,7 +121,10 @@
         display: none;
     }
     .navMobile {
+        width: 90%;
         display: block;
+        margin: 0 auto;
+
     }
     /* .governoratesCont .governorates {
         width: 90%;

@@ -5,7 +5,7 @@ import BookingForm from '../Calender/Calender'
 import Comments from '../LocationFarm/Comments';
 import LocationFarm from '../LocationFarm/LocationFarm';
 import Slider from '../Slider/SliderImg'
-import './SingleFarm.css'
+import styles from './SingleFarm.module.css'
 const SingleFarmPage = () => {
     const { id } = useParams();
 
@@ -24,38 +24,40 @@ const SingleFarmPage = () => {
         console.log(Farms);
     return (
         <Fragment>
-            <div className='singleCont'>
-                <div className='section section-center page'>
-                    <h2>{Farms ? Farms.farmName : null} Farm</h2>
+            <h2 className={styles.headerH}>{Farms ? Farms.farmName : null} Farm</h2>
+            <div className={styles.singleCont}>
 
-                    <div className=' product-center'>
+
+                <div className={styles.sliderAndDetailes}>
+
+
+                    <div className={styles.sliderImg}>
                         {Image ?
                             <Slider Image={'/img/Farms/' + Image} id={id} /> : null}
-                        {/* {Image ?
-                    <img width={500} height={500} src={require('/img/Farms/' + Image).default} alt={Farms ? Farms.farmName : null} />
-                    : null} */}
-                        <section className='content'>
-                            {/* <Stars stars={stars} reviews={reviews} /> */}
-                            <p className='desc'>{Farms ? Farms.description : null}</p>
-                            <h5 className='price'> {Farms ? Farms.price : null} JD/Day</h5>
-                            <br />
-                            <BookingForm Count={Count ? Count : null} Farms={Farms ? Farms : null} />
+                    </div>
+                    <div className={styles.detailesAndBooking}>
+                        {/* <Stars stars={stars} reviews={reviews} /> */}
+                        <p className={styles.desc}>{Farms ? Farms.description : null}</p>
+                        <h5 className={styles.price}> {Farms ? Farms.price : null} JD/Day</h5>
+                        <br />
+                        <BookingForm Count={Count ? Count : null} Farms={Farms ? Farms : null} />
 
-                        </section>
+
+
+                    </div>
+                </div>
+
+
+                <div className={styles.LocationAndReview}>
+                    <div className={styles.LocationFarm}>
+                        <LocationFarm Location={Farms ? Farms.Location : null} />
+
+                    </div>
+                    <div className={styles.Reviews}>
+                        <Comments idFarm={id} />
                     </div>
                 </div>
             </div>
-
-            <div className='LocationAndReview'>
-                <div className='LocationFarm'>
-                    <LocationFarm Location={Farms ? Farms.Location : null} />
-
-                </div>
-                <div className='Reviews'>
-                    <Comments idFarm={id} />
-                </div>
-            </div>
-
 
         </Fragment>
     )

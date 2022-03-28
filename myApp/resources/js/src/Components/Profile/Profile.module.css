@@ -3,6 +3,10 @@
 * {
     font-family: "Cairo", sans-serif !important;
 }
+
+.tabMobile {
+    display: none;
+}
 .profileContianer {
     background-color: whitesmoke;
     min-height: 100vh;
@@ -12,7 +16,7 @@
     width: 80%;
     margin: 0 auto;
     position: relative;
-    color: #53A0DE;
+    color: #53a0de;
     /* text-align: center; */
     /* font-size: 2.5rem; */
 }
@@ -54,7 +58,7 @@
 }
 .profileContianer .information {
     background-color: white;
-    height: 100px;
+    height: auto;
     /* padding: 2em; */
     border-radius: 10px;
     width: 80%;
@@ -62,6 +66,7 @@
 }
 .information .detailes {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
@@ -78,11 +83,11 @@ svg {
     width: 1.5em !important;
     margin: 0 auto !important;
 }
-.booking{
+.booking {
     display: flex;
     justify-content: center;
 
-    margin: 1em auto ;
+    margin: 1em auto;
 }
 .BookingsContaiiner {
     margin: 2em 0;
@@ -114,13 +119,25 @@ tr:nth-child(even) {
     background-color: white;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 980px) {
     .profileContainer {
         width: 70%;
     }
+    .profileContianer .booking {
+        background-color: white;
+        /* height: 400px; */
+        /* padding: 2em; */
+        border-radius: 10px;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .customProfile table {
+        width: 115%;
+        text-align: center;
+    }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 730px) {
     .profileContainer {
         width: 85%;
     }
@@ -128,8 +145,43 @@ tr:nth-child(even) {
         margin: 2em 0;
         width: 100%;
     }
+    .customProfile {
+        display: none;
+    }
+    .tabMobile {
+        display: block;
+    }
+    .tabMobile h2 {
+        text-align: center;
+    }
+    .tabMobile table {
+        margin: 0 auto;
+        /* display: block; */
+        width: 90%;
+    }
+}
+@media screen and (max-width: 650px) {
+    .profileContianer .profileHeader {
+        display: grid;
+        /* flex-direction: column; */
+        grid-template-columns: 1fr;
+
+        grid-template-rows: 1fr 1fr;
+    }
 }
 @media screen and (max-width: 385px) {
+    .profileHeader .listButton {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+    }
+    .profileHeader .listButton li {
+        list-style: none;
+        margin: 1em 0.35em;
+    }
+    .profileHeader .listButton .btnSetting i {
+        padding-left: 0;
+    }
     .profileContainer {
         width: 98%;
     }

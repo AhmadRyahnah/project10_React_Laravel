@@ -134,14 +134,14 @@ const Governorates = () => {
 
                     <h1 className={styles.header}> {Governorate ? 'Farms in' + ' ' + Governorate : 'All Farms'}</h1>
                     <div className={styles.navMobile}>
-                        <div className={styles.selectC}>
+                        <div className={styles.selectGove}>
                             {/* <label>Trending Neighbourhoods</> */}
 
 
 
                             <select onChange={handleChange} name="fav_language">
                                 {/* <option value={'all'} >Trending Neighbourhoods</option> */}
-                                <option value={'all'} >All</option>
+                                <option className={styles.selectGove} value={'all'} >All </option>
                                 {GovernoratesAll ? GovernoratesAll.map(item =>
                                     <>
 
@@ -154,7 +154,8 @@ const Governorates = () => {
 
                                 )
 
-                                    : null}</select>
+                                    : null}
+                            </select>
                             {/* </div> */}
                         </div>
 

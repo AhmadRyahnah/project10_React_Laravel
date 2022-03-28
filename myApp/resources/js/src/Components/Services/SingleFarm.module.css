@@ -1,0 +1,71 @@
+.headerH {
+    text-align: center;
+    margin: 1.5em auto;
+    color: #53a0de;
+
+    font-size: 2.5rem;
+}
+.sliderImg {
+    width: 100%;
+}
+.singleCont {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 2em auto;
+}
+.sliderAndDetailes {
+    display: flex;
+    margin-bottom: 2em;
+}
+.LocationAndReview {
+    display: flex;
+}
+.detailesAndBooking {
+    width: 80%;
+    /* margin-left: 3em; */
+    padding-top: 2em;
+}
+.Reviews,
+.LocationFarm {
+    width: 80%;
+    margin-left: 5em;
+}
+.price {
+    font-size: 1.8em !important;
+    text-align: center;
+    color: #08d2c8;
+}
+.desc {
+    line-height: 2;
+    max-width: 45em;
+    font-size: 1.1rem;
+}
+@media screen and (max-width: 915px) {
+    .sliderAndDetailes {
+        display: flex;
+        flex-direction: column;
+    }
+    .LocationAndReview {
+        display: flex;
+        flex-direction: column;
+    }
+    .LocationFarm {
+        width: 95%;
+    }
+    .detailesAndBooking,
+    .LocationFarm,
+    .Reviews {
+        margin: 2em auto;
+    }
+    .detailesAndBooking {
+        padding-top: 2em;
+    }
+
+    .desc {
+        padding-top: 2em;
+    }
+    /* .sliderImg {
+        height: 400px;
+    } */
+}

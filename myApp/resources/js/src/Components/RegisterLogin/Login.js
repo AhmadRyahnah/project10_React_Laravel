@@ -14,7 +14,7 @@ const Login = () => {
     let navigate = useNavigate()
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const [errorMsg, setErrormsg] = useState();
+    const [errorMsg, setErrormsg] = useState('');
 
 
     const [inputs, setInputs] = useState([]);
@@ -29,17 +29,11 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // for (let i = 0; i <= localStorage.length; i++) {
-        //     const user = JSON.parse(localStorage.getItem('User'));
-
-        //     if (user[i].email ===email && user[i].password === password) {
-        //         localStorage.setItem('loggedUser', JSON.stringify(user))
-        //         // alert('Successful Login');
-
-        //     } else {
-        //         setErrormsg('The Email or Password incorrect')
-        //     }
-        // }
+//         if (e.target.email.value == '') {
+//             setErrormsg('ahmad')
+// return
+//         }
+//         console.log(e.target.email.value.length);
         axios.post('http://127.0.0.1:8000/api/login', inputs).then(response => {
             console.log(response.data);
             if (response.data[0] === 'Not Matched') {
@@ -56,7 +50,7 @@ const Login = () => {
                 response.data.user.role !== 0 ? navigate('/Orders') : navigate('/Farms')
 
             }
-        }).catch(error=> {
+        }).catch(error => {
             console.log("registration error", error);
             swal({
 
@@ -80,8 +74,10 @@ const Login = () => {
 
             <form onSubmit={handleSubmit} className="signup">
                 <div className="field">
-                    <input name="email" type="text" placeholder="Email Address" value={email} onChange={handleChange} required />
+
+                    <input name="email" type="text" placeholder="Email Address" value={email} onChange={handleChange} />
                 </div>
+                    {/* <p>{errorMsg?errorMsg:null}</p> */}
                 <div className="field">
                     <input name="password" type="password" placeholder="Password" value={password} onChange={handleChange} required />
                 </div>
